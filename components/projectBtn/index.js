@@ -1,7 +1,6 @@
 import styles from './projectBtn.module.css'
 import { FaYoutube, FaGithub } from 'react-icons/fa'
-import cls from 'classnames'
-export default function ProjectBtn({ type, small }) {
+export default function ProjectBtn({ type, small, link }) {
   const name = {
     view: 'Visit Live',
     youtube: 'Watch on Youtube',
@@ -14,12 +13,17 @@ export default function ProjectBtn({ type, small }) {
     github: <FaGithub />,
   }
   return small ? (
-    <button
+    <a
+      target='_blank'
+      rel='noreferrer'
+      href={link}
       className={type === 'youtube' ? styles.youtubeSmall : styles.githubSmall}
     >
       {icon[type]}
-    </button>
+    </a>
   ) : (
-    <button className={styles[type]}>{name[type]}</button>
+    <a target='_blank' rel='noreferrer' href={link} className={styles[type]}>
+      {name[type]}
+    </a>
   )
 }
