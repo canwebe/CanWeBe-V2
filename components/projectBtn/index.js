@@ -3,9 +3,9 @@ import { FaYoutube, FaGithub } from 'react-icons/fa'
 export default function ProjectBtn({ type, small, link }) {
   const name = {
     view: 'Visit Live',
-    youtube: 'Watch on Youtube',
-    github: 'View on Github',
-    fb: 'View on Facebook',
+    youtube: 'Watch This',
+    github: 'Github Repo',
+    fb: 'View This',
   }
 
   const icon = {

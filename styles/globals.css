@@ -43,10 +43,17 @@ body {
 }
 
 footer {
-  /* background-color: #2f2f2f; */
-  border-top: 1px solid #2f2f2f;
+  background-color: #161616;
+  /* border-top: 1px solid #2f2f2f; */
   text-align: center;
   padding: 18px 5px;
   color: #ffffff2e;
   word-spacing: 2px;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    font-size: 0.8rem;
+    word-spacing: 1px;
+  }
 }

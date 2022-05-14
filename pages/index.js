@@ -1,12 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
+import TestimonyGrid from '../components/testimonyGrid'
 import { getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
 
 export default function Home({ data }) {
+  const [isModal, setIsModal] = useState(false)
   const projectRef = useRef()
   return (
     <>
@@ -48,7 +51,7 @@ export default function Home({ data }) {
               </div>
               <div className={styles.heroRight}>
                 <Image
-                  src='/Unt.png'
+                  src='/logo.webp'
                   alt='logo'
                   layout='responsive'
                   width={500}
@@ -60,7 +63,7 @@ export default function Home({ data }) {
         </section>
         <section className={styles.maintainence}>
           <div className='wrapper'>
-            <p>
+            <p className={styles.maintainenceP}>
               We are on maintainence wait for our full website to back online
             </p>
           </div>
@@ -73,10 +76,46 @@ export default function Home({ data }) {
             <ProjectScroll data={data} />
           </div>
         </section>
+        {/* <section className={styles.testimonySection}>
+          <div className='wrapper'>
+            <h3 className={styles.testimonyH3}>
+              What do people feel about us !!
+              <TestimonyGrid />
+            </h3>
+          </div>
+        </section> */}
+        <section className={styles.fundSection}>
+          <div className='wrapper'>
+            <div className={styles.fundContent}>
+              <p className={styles.fundP}>Want us to help, Buy us a coffee</p>
+              <button
+                onClick={() => setIsModal(true)}
+                className={styles.fundBtn}
+              >
+                help
+              </button>
+            </div>
+          </div>
+        </section>
         <section className={styles.teamSection}>
           <div className='wrapper'>
             <h3 className={styles.header}>Our Team</h3>
             <TeamList />
+          </div>
+        </section>
+        <section className={styles.feedbackSection}>
+          <div className='wrapper'>
+            <div className={styles.feedbackCard}>
+              <p>How was your experience with our services ?</p>
+              <a
+                href='https://xtrvl3ys9ze.typeform.com/to/jGwX9FWH'
+                target='_blank'
+                rel='noreferrer'
+                className={styles.feedbackBtn}
+              >
+                Rate Us
+              </a>
+            </div>
           </div>
         </section>
         <footer>
@@ -87,6 +126,7 @@ export default function Home({ data }) {
           </div>
         </footer>
       </div>
+      {isModal && <Modal setIsModal={setIsModal} />}
     </>
   )
 }

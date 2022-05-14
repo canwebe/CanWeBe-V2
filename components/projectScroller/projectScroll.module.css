@@ -4,7 +4,8 @@
   flex-wrap: nowrap;
 
   gap: 30px;
-  padding: 30px 40px 30px 0;
+  padding: 30px 40px 30px 25px;
+  margin-left: -25px;
 }
 
 .card {
@@ -42,4 +43,10 @@
   bottom: 20px;
   left: 10px;
   right: 10px;
+}
+@media screen and (max-width: 361px) {
+  .card {
+    position: relative;
+    min-width: 270px;
+  }
 }
