@@ -4,14 +4,44 @@ import ProjectBtn from '../projectBtn'
 import styles from './projectScroll.module.css'
 import Image from 'next/image'
 export default function ProjectScroll({ data }) {
-  console.log(data)
-  // useEffect(() => {
-  //   const handleData = async () => {
-  //     const dta = await getProjectList()
-  //     console.log(dta)
-  //   }
-  //   handleData()
-  // })
+  const renderBtn = (type, links) => {
+    if (type === 'liveyoutube') {
+      return (
+        <>
+          <ProjectBtn type='view' link={links.live} />
+          <ProjectBtn small type='youtube' link={links.youtube} />
+        </>
+      )
+    } else if (type === 'livegithub') {
+      return (
+        <>
+          <ProjectBtn type='view' link={links.live} />
+          <ProjectBtn small type='github' link={links.github} />
+        </>
+      )
+    } else if (type === 'youtubegithub') {
+      return (
+        <>
+          <ProjectBtn type='youtube' link={links.youtube} />
+          <ProjectBtn small type='github' link={links.github} />
+        </>
+      )
+    } else if (type === 'youtube') {
+      return (
+        <>
+          <ProjectBtn type='youtube' link={links.youtube} />
+        </>
+      )
+    } else if (type === 'fb') {
+      return (
+        <>
+          <ProjectBtn type='fb' link={links.fb} />
+        </>
+      )
+    } else {
+      return null
+    }
+  }
   return (
     <div className={styles.scroller}>
       {data.map((item, i) => (
@@ -26,21 +56,22 @@ export default function ProjectScroll({ data }) {
               layout='responsive'
             />
           ) : (
-            <video
+            <iframe
               width='100%'
-              height='120px'
-              src={item.youtube}
+              height='170px'
+              src={item.embed}
+              title='YouTube video player'
               frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen
-            ></video>
+            ></iframe>
           )}
 
           <div className={styles.content}>
             <p className={styles.name}>{item.name}</p>
             <p className={styles.info}>{item.info}</p>
             <div className={styles.btnDiv}>
-              <ProjectBtn type='view' />
-              <ProjectBtn small type='youtube' />
+              {renderBtn(item.btn, item.links)}
             </div>
           </div>
         </div>
