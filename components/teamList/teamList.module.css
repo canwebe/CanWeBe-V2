@@ -83,6 +83,9 @@
     padding: 10px 50px 31px 20px;
     margin-left: -20px;
   }
+  .cardWrapper::-webkit-scrollbar-track {
+    margin-left: 20px;
+  }
   .card {
     flex-direction: column;
   }
@@ -97,6 +100,6 @@
     height: 125px;
   }
   .socialWrapper {
-    gap: 17px;
+    gap: 20px;
   }
 }
