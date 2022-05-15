@@ -1,8 +1,8 @@
 export const employeeData = [
   {
     name: 'Golam Rabbani',
-    position: 'Founder & Developer',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    position: 'Co-Founder & Developer',
+    info: 'Rabbani is the Lead Developer and Co-Creator of this Organization, who is Full-Stack Developer expert on PWA, he is also skilled in UI/UX and AI.',
     img: '/assets/rabbani.webp',
     social: [
       {
@@ -26,7 +26,7 @@ export const employeeData = [
   {
     name: 'Kaushik Das',
     position: 'Co-Founder',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    info: 'Kaushik is Marketing maniac and Resource Specialist.He helps to publicise our products and introduce clients to our organization',
     img: '/assets/kaushik.webp',
     social: [
       {
@@ -50,7 +50,7 @@ export const employeeData = [
   {
     name: 'Ganesh Kumar',
     position: 'Developer',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    info: 'Ganesh is one of our Finest React Developer, Who gets the job done with precision and on time .',
     img: '/assets/ganesh.webp',
     social: [
       {
@@ -59,111 +59,111 @@ export const employeeData = [
       },
       {
         name: 'twitter',
-        link: 'https://twitter.com/kaushikian',
+        link: 'https://twitter.com/GaneshTiwary13',
       },
       {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/kaushik-das-a95710145/',
+        link: 'https://www.linkedin.com/in/ganesh-kumar-a7a1441ba/',
       },
       {
         name: 'github',
-        link: 'https://github.com/kaushikd207',
+        link: 'https://github.com/rohittiwari833',
       },
     ],
   },
   {
     name: 'Anish Tharu',
     position: 'Developer',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    info: 'Anish is an outstanding React developer,He is known to work under pressure and clear deadlines.',
     img: '/assets/anish.webp',
     social: [
       {
         name: 'instagram',
-        link: 'https://www.instagram.com/kaushik2201/',
+        link: 'https://www.instagram.com/namo_anish/',
       },
       {
-        name: 'twitter',
-        link: 'https://twitter.com/kaushikian',
+        name: 'facebook',
+        link: 'https://www.facebook.com/anish.nammochhiyatharu',
       },
       {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/kaushik-das-a95710145/',
+        link: 'https://www.linkedin.com/in/tharuanish',
       },
       {
         name: 'github',
-        link: 'https://github.com/kaushikd207',
+        link: 'https://github.com/tharuAnish',
       },
     ],
   },
   {
-    name: 'Mohd Zahid',
+    name: 'MOHD ZAHID',
     position: 'Developer',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    info: 'Zahid is our prime React Developer.His Product Presenting skills and Vocabulary are Unmatched ',
     img: '/assets/zahid.webp',
     social: [
       {
         name: 'instagram',
-        link: 'https://www.instagram.com/kaushik2201/',
+        link: 'https://www.instagram.com/this.is.mohd_zahid/',
       },
       {
         name: 'twitter',
-        link: 'https://twitter.com/kaushikian',
+        link: 'https://twitter.com/MOHD_ZAHID_1',
       },
       {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/kaushik-das-a95710145/',
+        link: 'https://www.linkedin.com/in/mohd-zahid/',
       },
       {
         name: 'github',
-        link: 'https://github.com/kaushikd207',
+        link: 'https://github.com/Mohd-Zahid-01',
       },
     ],
   },
   {
     name: 'Hirak J Kalita',
     position: 'Graphic Designer',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    info: 'Hirak is our skilled Graphic Designer, His Genius Work and skills are Second to None.',
     img: '/assets/hirak.webp',
     social: [
       {
         name: 'instagram',
-        link: 'https://www.instagram.com/kaushik2201/',
+        link: 'https://www.instagram.com/its_hirak_jk/',
       },
       {
-        name: 'twitter',
-        link: 'https://twitter.com/kaushikian',
+        name: 'facebook',
+        link: 'https://www.facebook.com/hirakjyoti.kalita99',
       },
       {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/kaushik-das-a95710145/',
+        link: 'https://www.linkedin.com/in/hirakjk99',
       },
       {
         name: 'github',
-        link: 'https://github.com/kaushikd207',
+        link: 'https://github.com/HirakJK99',
       },
     ],
   },
   {
     name: 'Rejaul Hoque',
-    position: 'Marketing',
-    info: 'Rabbani is the creator and lead developer of this organization.His main skill is full stack development expert in PWA ,Other than this he knows UI/UX and AI also.',
+    position: 'Marketing Expert',
+    info: 'Rejaul is ne of well commmuned marketing executives, His intellect has allowed us develop multiple products.',
     img: '/assets/rejaul.webp',
     social: [
       {
         name: 'instagram',
-        link: 'https://www.instagram.com/kaushik2201/',
+        link: 'http://instagram.com/rejaul3301',
       },
       {
-        name: 'twitter',
-        link: 'https://twitter.com/kaushikian',
+        name: 'facebook',
+        link: 'https://www.facebook.com/rambo.reja.5',
       },
       {
         name: 'linkedin',
-        link: 'https://www.linkedin.com/in/kaushik-das-a95710145/',
+        link: 'https://www.linkedin.com/in/rejaul-hoque-0656041aa/',
       },
       {
-        name: 'github',
-        link: 'https://github.com/kaushikd207',
+        name: 'twitter',
+        link: 'https://twitter.com/1046Hoque',
       },
     ],
   },
