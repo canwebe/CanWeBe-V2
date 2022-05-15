@@ -57,6 +57,7 @@
   background-color: transparent;
   border: none;
   font-size: 1.2rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .heroBtnContact {
@@ -65,10 +66,27 @@
   padding: 9px 30px;
   color: #d79292;
 }
+.heroBtnContact:hover {
+  background-color: #d79292;
+  color: #000;
+}
+.heroBtnContact:active {
+  transform: scale(0.96);
+  border-color: white;
+}
+
 .heroBtnProjects {
   background-color: #3939ef;
   border-radius: 7px;
   color: rgb(215, 215, 215);
+}
+
+.heroBtnProjects:hover {
+  background-color: #2222b7;
+}
+
+.heroBtnProjects:active {
+  transform: translateY(3px);
 }
 
 .maintainence {
@@ -94,4 +112,186 @@
   background-color: rgb(126, 126, 233);
   display: block;
   margin: 7px 0 20px 4px;
+}
+
+.fundSection {
+  background-color: #beb8b2;
+  color: #000000;
+  padding: 80px 0;
+  margin: 30px 0 40px;
+}
+
+.fundContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.fundP {
+  font-size: 1.5rem;
+}
+
+.fundBtn {
+  padding: 8px 40px;
+  font-size: 1.4rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.24s ease-in;
+  border: 1px solid black;
+  outline: none;
+}
+
+.fundBtn:hover {
+  background-color: #000000;
+  color: rgb(224, 224, 224);
+}
+
+.fundBtn:active {
+  transform: scale(0.9);
+}
+
+.feedbackSection {
+  padding: 50px 0;
+  background-color: rgb(168, 65, 10);
+  margin: 30px 0 0;
+}
+
+.feedbackCard {
+  margin: 0 auto;
+  background-color: #000000;
+  width: fit-content;
+  padding: 35px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 23px;
+  font-size: 1.4rem;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.3);
+  color: rgb(227, 227, 227);
+}
+.feedbackBtn {
+  padding: 9px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.24s ease-in-out;
+  background-color: white;
+  color: #000000;
+}
+.feedbackBtn:hover {
+  background-color: rgb(160, 58, 10);
+  color: white;
+  border-radius: 30px;
+}
+
+.feedbackBtn:active {
+  transform: translateY(4px);
+}
+
+.testimonySection {
+  padding: 50px 0;
+  background-color: goldenrod;
+}
+
+.testimonyH3 {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 860px) {
+  .feedbackCard {
+    padding: 35px;
+    gap: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .heroDiv {
+    flex-direction: column-reverse;
+    padding: 60px 0;
+  }
+  .heroLeft {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .heroRight {
+    width: 315px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .maintainence {
+    font-size: 1.4rem;
+  }
+
+  .fundSection {
+    padding: 40px 0;
+    margin: 30px 0 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .heroDiv {
+    padding: 30px 0;
+    min-height: 100vh;
+  }
+  .heroRight {
+    width: 260px;
+    padding: 23px;
+  }
+  .heroH1 {
+    font-size: 2rem;
+    margin: 7px 0 10px;
+  }
+  .heroSubline {
+    font-size: 0.9rem;
+  }
+  .subpara {
+    font-size: 1rem;
+  }
+
+  .heroBtnDiv {
+    gap: 20px;
+  }
+  .maintainence {
+    padding: 45px 0;
+    font-size: 1.3rem;
+  }
+  .maintainenceP {
+    padding: 5px;
+  }
+  .fundContent {
+    text-align: center;
+    gap: 15px;
+  }
+  .fundP {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .heroDiv {
+    padding: 40px 0;
+  }
+  .heroRight {
+    width: 250px;
+  }
+  .maintainenceP {
+    padding: 8px;
+  }
+  .fundSection {
+    padding: 35px 0;
+  }
+  .feedbackCard {
+    padding: 25px;
+  }
 }
