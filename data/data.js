@@ -171,35 +171,30 @@ export const employeeData = [
 
 export const testimonyData = [
   {
-    name: 'Daniel Clifford',
+    name: 'Nitesh Agarwal',
     quoteTitle:
-      'I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny’s worth.',
+      'Great help upskilling myself and gaining knowledge through CanWeBe applications and blog.',
     quote:
-      'I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people whom had an amazing experience here. I signed up for the free intro course and found it incredibly fun!  at a VR startup.',
+      'After i graduated i lacked industrial skills and couldnt find a job, with the help of CanWeBe Free to Use Applications i found myself a path to grow more in Development skills.',
   },
   {
-    name: 'Jonathan Walters',
-    quoteTitle: 'The team was very supportive and kept me motivated',
+    name: 'Varun Nayar',
+    quoteTitle: 'Its a Dream Come True with the help of these people.',
     quote:
-      'I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of I’ve made in myself.',
+      'I had a basic idea to provide tips to daily workers in my society,CanWeBe helped me convert that idea into a genius application that allows all the people of my society to contribute to this good cause.',
   },
   {
-    name: 'Jeanette Harmon',
-    quoteTitle: 'An overall wonderful and rewarding experience',
-    quote:
-      'Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love.',
-  },
-  {
-    name: 'Patrick Abrams',
+    name: 'Jeremy Broker',
     quoteTitle:
-      'Awesome teaching support from TAs who did the bootcamp themselves.Getting guidance from them and learning from their experiences was easy.',
+      'For an organization overseas they are eco friendly to all people with ideas.',
     quote:
-      'The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out You will get the personal attention you need from an incredible community of smart and amazing people.',
+      'I was looking for a low cost source to furnish my idea, they explained the procedure of work and cleared my dobts and eventually saved me from fraudlent people.',
   },
   {
-    name: 'Kira Whittle',
-    quoteTitle: 'Such a life-changing experience. Highly recommended!',
+    name: 'Zakir k',
+    quoteTitle:
+      'This is one of best experience i have had with a tech organization.',
     quote:
-      'Before joining the bootcamp, I’ve never written a line of code.I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former student of theirs who can only say wonderful things about the program. The entire curriculum and staff did not disappoint. They were very hands-on and developer after receiving multiple offers.100% recommend!',
+      'I wanted maintenance for my e-commerce website because my old contact had abandoned my project,People at CanWeBe assured me a succesful outcome and delivered it rightfully even though i know it was a hectic job to maintain someone elses work.',
   },
 ]
