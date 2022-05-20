@@ -6,24 +6,27 @@ import styles from './nav.module.css'
 import { useState } from 'react'
 export default function Nav() {
   const [isMenu, setIsMenu] = useState(false)
+
   return (
     <nav className={styles.nav}>
       <div className='wrapper'>
         <div className={styles.navWrapper}>
-          <div className={styles.logo}>
-            <div className={styles.img}>
-              <Image
-                src='/logo.webp'
-                alt='logo'
-                width={70}
-                height={70}
-                layout='responsive'
-              />
-            </div>
-            <div>
-              <span className={styles.can}>Can</span>WeBe!
-            </div>
-          </div>
+          <Link href='/'>
+            <a className={styles.logo}>
+              <div className={styles.img}>
+                <Image
+                  src='/logo.webp'
+                  alt='logo'
+                  width={70}
+                  height={70}
+                  layout='responsive'
+                />
+              </div>
+              <div>
+                <span className={styles.can}>Can</span>WeBe!
+              </div>
+            </a>
+          </Link>
           <div className={styles.linkWrapper}>
             <NavLink link='/' content='Home' />
             <NavLink link='/projects' content='Projects' />
@@ -37,7 +40,6 @@ export default function Nav() {
               Contact
             </a>
           </div>
-
           <div
             onClick={() => setIsMenu((prev) => !prev)}
             className={styles.menu}
@@ -50,9 +52,16 @@ export default function Nav() {
         <div className={styles.sideMenuBg}>
           <div className='wrapper'>
             <div className={styles.sideMenu}>
-              <NavLink link='/' content='Home' />
-              <NavLink link='/projects' content='Projects' />
-              <NavLink link='/blogs' content='Blogs' />
+              <div onClick={() => setIsMenu(false)}>
+                <NavLink link='/' content='Home' />
+              </div>
+              <div onClick={() => setIsMenu(false)}>
+                <NavLink link='/projects' content='Projects' />
+              </div>
+              <div onClick={() => setIsMenu(false)}>
+                <NavLink link='/blogs' content='Blogs' />
+              </div>
+
               <a
                 target='_blank'
                 rel='noreferrer'

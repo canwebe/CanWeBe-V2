@@ -231,7 +231,7 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const newdata = await getProjectList()
+  const newdata = await getProjectList(6)
   const data = await JSON.parse(await JSON.stringify(newdata))
   return {
     props: {

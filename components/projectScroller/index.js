@@ -3,6 +3,9 @@ import { getProjectList } from '../../helpers'
 import ProjectBtn from '../projectBtn'
 import styles from './projectScroll.module.css'
 import Image from 'next/image'
+import Link from 'next/link'
+import { FaChevronRight } from 'react-icons/fa'
+
 export default function ProjectScroll({ data }) {
   const renderBtn = (type, links) => {
     if (type === 'liveyoutube') {
@@ -76,6 +79,14 @@ export default function ProjectScroll({ data }) {
           </div>
         </div>
       ))}
+      <div className={styles.seeMoreDiv}>
+        <Link href='/projects'>
+          <a className={styles.seeMoreBtn}>
+            <FaChevronRight className={styles.btnSvg} />
+            See All
+          </a>
+        </Link>
+      </div>
     </div>
   )
 }

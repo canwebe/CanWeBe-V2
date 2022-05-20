@@ -4,6 +4,7 @@ import cls from 'classnames'
 import { useRouter } from 'next/router'
 export default function NavLink({ link, content }) {
   const router = useRouter()
+
   return (
     <Link href={link}>
       <a
