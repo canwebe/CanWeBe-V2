@@ -1,0 +1,10 @@
+.menu {
+  transition: all 0.3s ease-in-out;
+}
+.active {
+  color: #e77e22;
+}
+
+.menu:not(.active):hover {
+  color: rgb(171, 207, 239);
+}

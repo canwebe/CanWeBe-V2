@@ -146,7 +146,7 @@ export const employeeData = [
   {
     name: 'Rejaul Hoque',
     position: 'Marketing Expert',
-    info: 'Rejaul is ne of well commmuned marketing executives, His intellect has allowed us develop multiple products.',
+    info: 'Rejaul is one of well commmuned marketing executives, His intellect has allowed us develop multiple products.',
     img: '/assets/rejaul.webp',
     social: [
       {

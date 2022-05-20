@@ -1,10 +1,27 @@
 .heroSection {
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('/headerbg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; */
+  position: relative;
+  overflow-x: hidden;
+}
+.heroBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('/headerbg.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+
+  z-index: -1;
 }
 
 .heroDiv {
@@ -12,7 +29,7 @@
   justify-content: center;
   gap: 50px;
   align-items: center;
-  min-height: 95vh;
+  min-height: 91vh;
 }
 .heroLeft {
   width: 60%;
@@ -118,7 +135,7 @@
   background-color: #beb8b2;
   color: #000000;
   padding: 80px 0;
-  margin: 30px 0 40px;
+  margin: 0 0 40px;
 }
 
 .fundContent {
@@ -254,6 +271,48 @@
   color: #ff0000;
 }
 
+.whyus {
+  min-height: 100%;
+  display: flex;
+  margin-top: 30px;
+}
+.whyusleft,
+.whyusright {
+  width: 50%;
+}
+.whyusleft {
+  height: 91vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  position: sticky;
+  top: 69px;
+  background-color: var(--color-black-1);
+}
+.point1,
+.point2,
+.point3 {
+  height: 91vh;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 120%;
+  position: sticky;
+  top: 69px;
+}
+.point1 {
+  background-color: #d79292;
+}
+.point2 {
+  background-color: #5957e2;
+}
+.point3 {
+  background-color: #b657e2;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 860px) {
@@ -279,6 +338,24 @@
   .heroRight {
     width: 315px;
   }
+
+  .whyus {
+    flex-direction: column;
+  }
+  .whyusleft,
+  .whyusright {
+    width: 100%;
+  }
+  .whyusleft {
+    height: 25vh;
+    z-index: 1;
+  }
+  .point1,
+  .point2,
+  .point3 {
+    height: 66.4vh;
+    top: 34.4vh;
+  }
 }
 
 @media screen and (max-width: 680px) {
@@ -288,7 +365,7 @@
 
   .fundSection {
     padding: 40px 0;
-    margin: 30px 0 40px;
+    margin: 0 0 40px;
   }
 }
 
@@ -297,8 +374,9 @@
     padding: 30px 0;
   }
   .heroRight {
-    width: 260px;
-    padding: 23px;
+    /* width: 260px;
+    padding: 23px; */
+    display: none;
   }
   .heroH1 {
     font-size: 2rem;

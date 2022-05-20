@@ -68,7 +68,9 @@ footer {
     inset -2px -2px 2px rgb(0 0 0 / 25%);
   border-radius: 100vw;
 }
-
+.navGap {
+  margin-top: 69px;
+}
 @media screen and (max-width: 500px) {
   footer {
     font-size: 0.8rem;

@@ -14,10 +14,12 @@ import {
 } from 'react-icons/fa'
 import { getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
+import useOffset from '../hooks/useOffset'
 
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
   const projectRef = useRef()
+  // console.log(Math.min(700, Math.ceil(offset + 1)), offset)
   return (
     <>
       <Head>
@@ -25,6 +27,7 @@ export default function Home({ data }) {
       </Head>
       <div className={styles.main}>
         <section className={styles.heroSection}>
+          <div className={styles.heroBg} />
           <div className='wrapper'>
             <div className={styles.heroDiv}>
               <div className={styles.heroLeft}>
@@ -75,14 +78,45 @@ export default function Home({ data }) {
             </p>
           </div>
         </section>
-        <section className={styles.projectSection}>
+        <section ref={projectRef} className={styles.projectSection}>
           <div className='wrapper'>
-            <h3 ref={projectRef} className={styles.header}>
-              Our Projects
-            </h3>
+            <h3 className={styles.header}>Our Projects</h3>
             <ProjectScroll data={data} />
           </div>
         </section>
+        <section className={styles.whyus}>
+          <div className={styles.whyusleft}>Why Us</div>
+          <div className={styles.whyusright}>
+            <div className={styles.point1}>
+              <h4>Some Points hhas ahahe e </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                quo a repellendus incidunt necessitatibus voluptate rerum animi,
+                in rem eaque ratione omnis pariatur explicabo cum sequi et
+                accusantium ullam minus.
+              </p>
+            </div>
+            <div className={styles.point2}>
+              <h4>Some Points hhas ahahe e </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                quo a repellendus incidunt necessitatibus voluptate rerum animi,
+                in rem eaque ratione omnis pariatur explicabo cum sequi et
+                accusantium ullam minus.
+              </p>
+            </div>
+            <div className={styles.point3}>
+              <h4>Some Points hhas ahahe e </h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
+                quo a repellendus incidunt necessitatibus voluptate rerum animi,
+                in rem eaque ratione omnis pariatur explicabo cum sequi et
+                accusantium ullam minus.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* <section className={styles.testimonySection}>
           <div className='wrapper'>
             <h3 className={styles.testimonyH3}>
