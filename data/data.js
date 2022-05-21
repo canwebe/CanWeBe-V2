@@ -171,30 +171,39 @@ export const employeeData = [
 
 export const testimonyData = [
   {
-    name: 'Nitesh Agarwal',
-    quoteTitle:
-      'Great help upskilling myself and gaining knowledge through CanWeBe applications and blog.',
+    name: 'Roshan Bhagat',
     quote:
-      'After i graduated i lacked industrial skills and couldnt find a job, with the help of CanWeBe Free to Use Applications i found myself a path to grow more in Development skills.',
+      'I had many skills but never got a chance to work in a team. Here at Canwebe, I got a chance to work in a team by contributing to an open source project.',
   },
   {
     name: 'Varun Nayar',
-    quoteTitle: 'Its a Dream Come True with the help of these people.',
     quote:
       'I had a basic idea to provide tips to daily workers in my society,CanWeBe helped me convert that idea into a genius application that allows all the people of my society to contribute to this good cause.',
   },
   {
-    name: 'Jeremy Broker',
-    quoteTitle:
-      'For an organization overseas they are eco friendly to all people with ideas.',
+    name: 'Nitesh Agarwal',
     quote:
-      'I was looking for a low cost source to furnish my idea, they explained the procedure of work and cleared my dobts and eventually saved me from fraudlent people.',
+      'With the help of SilentShare, I was able to share any documents, files, and photos securely without losing any privacy in the least amount of time.',
   },
   {
-    name: 'Zakir k',
-    quoteTitle:
-      'This is one of best experience i have had with a tech organization.',
+    name: 'Om Prakash Mishra',
     quote:
-      'I wanted maintenance for my e-commerce website because my old contact had abandoned my project,People at CanWeBe assured me a succesful outcome and delivered it rightfully even though i know it was a hectic job to maintain someone elses work.',
+      'I am an astronomy geek and, with the help of AstroData, I get astronomical pictures of the Day and Mars rover details for free.',
+  },
+  {
+    name: 'Zakir Khan',
+    quote:
+      'At the time of the COVID-19 pandemic, there was a lot of fake news spreading about the pandemic. It was very difficult to find authentic news, so with the help of SNewz, I was updated with the real and genuine news.',
+  },
+  {
+    name: 'Rakesh Kumar',
+    quote:
+      'I always forgot my family and friends birthdays until I found Timeborn. With the help of Timeborn, I was not only able to track birthdays but also share generated birthday wishes and plan events.',
+  },
+  {
+    name: 'Ravi Jaiswal',
+    quote:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
   },
 ]
+
