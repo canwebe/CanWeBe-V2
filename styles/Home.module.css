@@ -281,27 +281,45 @@
   width: 50%;
 }
 .whyusleft {
-  height: 91vh;
+  height: calc(100vh - 67px);
   display: flex;
+  flex-direction: column;
+  gap: 18px;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
   position: sticky;
-  top: 69px;
+  top: 67px;
+  z-index: 1;
   background-color: var(--color-black-1);
 }
+.whyusleftp {
+  font-size: 3rem;
+}
+.whyusleftsubp {
+  font-size: 1.2rem;
+  opacity: 0.7;
+}
+.whyusleftp::after {
+  width: 100px;
+  content: '';
+  height: 2px;
+  display: block;
+  background-color: rgb(126, 126, 233);
+  margin: 5px auto 0;
+}
+
 .point1,
 .point2,
 .point3 {
-  height: 91vh;
-  padding: 20px 10%;
+  height: calc(100vh - 67px);
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 120%;
   position: sticky;
-  top: 69px;
+  top: 68px;
+  box-shadow: 0 -3px 17px rgba(0, 0, 0, 0.4);
 }
 .point1 {
   background-color: #d79292;
@@ -313,8 +331,61 @@
   background-color: #b657e2;
 }
 
-/* Media Queries */
+/* Latest Tech Point 1 */
+.point1Svg {
+  width: 200px;
+}
 
+.point3Svg {
+  width: 170px;
+}
+.point1H4 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+.point1P {
+  font-size: 1.1rem;
+  max-width: 400px;
+  text-align: center;
+  line-height: 25px;
+}
+
+/* Problem Point 2 */
+.point2 {
+  flex-direction: row;
+  gap: 20px;
+}
+.problemQ {
+  font-size: 2rem;
+  text-align: right;
+  border-right: 4px solid white;
+  padding-right: 20px;
+  width: 250px;
+  color: #2d208c;
+  font-weight: 500;
+}
+
+.problemA {
+  width: 240px;
+  line-height: 28px;
+  font-size: 1.1rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 1000px) {
+  .whyusleft {
+    width: 40%;
+  }
+  .whyusright {
+    width: 60%;
+  }
+  .whyusleftp {
+    font-size: 2.3rem;
+  }
+  .whyusleftsubp {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 860px) {
   .feedbackCard {
     padding: 35px;
@@ -348,13 +419,12 @@
   }
   .whyusleft {
     height: 25vh;
-    z-index: 1;
   }
   .point1,
   .point2,
   .point3 {
-    height: 66.4vh;
-    top: 34vh;
+    height: calc(75vh - 67px);
+    top: calc(67px + 25vh);
   }
 }
 
@@ -418,6 +488,37 @@
     gap: 23px;
 
     font-size: 1.7rem;
+  }
+
+  .whyusleftp {
+    font-size: 1.8rem;
+  }
+  .whyusleftsubp {
+    font-size: 0.9rem;
+  }
+  .whyusleft {
+    gap: 12px;
+  }
+  .point1H4 {
+    font-size: 1.3rem;
+  }
+  .point1P {
+    font-size: 1rem;
+    opacity: 0.8;
+    max-width: 350px;
+  }
+  .point2 {
+    flex-direction: column;
+  }
+  .problemQ {
+    width: 100%;
+  }
+  .problemA {
+    text-align: left;
+    border-left: 5px solid #2d208c;
+    padding-left: 20px;
+    width: 100%;
+    line-height: 27px;
   }
 }
 

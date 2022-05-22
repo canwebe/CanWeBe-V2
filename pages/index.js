@@ -15,6 +15,8 @@ import {
 import { getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
 import useOffset from '../hooks/useOffset'
+import LatestTech from '../components/svg/latestTech'
+import FreeSvg from '../components/svg/freeSvg'
 
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
@@ -85,33 +87,48 @@ export default function Home({ data }) {
           </div>
         </section>
         <section className={styles.whyus}>
-          <div className={styles.whyusleft}>Why Us</div>
+          <div className={styles.whyusleft}>
+            <p className={styles.whyusleftp}>Why Us</p>
+            <p className={styles.whyusleftsubp}>
+              What make us different from others
+            </p>
+          </div>
           <div className={styles.whyusright}>
             <div className={styles.point1}>
-              <h4>Some Points hhas ahahe e </h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-                quo a repellendus incidunt necessitatibus voluptate rerum animi,
-                in rem eaque ratione omnis pariatur explicabo cum sequi et
-                accusantium ullam minus.
+              <div className={styles.point1Svg}>
+                <LatestTech />
+              </div>
+              <h4 className={styles.point1H4}>Cutting Edge Tech</h4>
+              <p className={styles.point1P}>
+                We use latest tech stacks for our projects. Most of our project
+                is PWA , Which is future of web app and our developers are
+                skilled in latest tech and tools.
               </p>
             </div>
             <div className={styles.point2}>
-              <h4>Some Points hhas ahahe e </h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-                quo a repellendus incidunt necessitatibus voluptate rerum animi,
-                in rem eaque ratione omnis pariatur explicabo cum sequi et
-                accusantium ullam minus.
+              <p className={styles.problemQ}>
+                What
+                <br />
+                type of
+                <br />
+                software we generally <br />
+                build ?
+              </p>
+              <p className={styles.problemA}>
+                We target general problems which will occur everyday in our
+                life. Most of our app solves these everyday life problems. We
+                follow the motto &quot; Tech for Good &quot;
               </p>
             </div>
             <div className={styles.point3}>
-              <h4>Some Points hhas ahahe e </h4>
-              <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit
-                quo a repellendus incidunt necessitatibus voluptate rerum animi,
-                in rem eaque ratione omnis pariatur explicabo cum sequi et
-                accusantium ullam minus.
+              <div className={styles.point3Svg}>
+                <FreeSvg />
+              </div>
+              <h4 className={styles.point1H4}>Cost Free Products</h4>
+              <p className={styles.point1P}>
+                Most of our softwares are cost free and open sourced. Our app
+                can easily accessible by most of general users with modern UI/UX
+                and easy to use Interface.
               </p>
             </div>
           </div>

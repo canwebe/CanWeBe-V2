@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   z-index: 999;
-  border-bottom: 2px solid black;
+  /* border-bottom: 2px solid black; */
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.51);
 }
 
