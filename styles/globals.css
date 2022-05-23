@@ -19,6 +19,7 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -38,15 +39,6 @@ img {
 body {
   background-color: var(--color-black-1);
   color: var(--color-white-1);
-}
-
-footer {
-  background-color: #161616;
-  /* border-top: 1px solid #2f2f2f; */
-  text-align: center;
-  padding: 18px 5px;
-  color: #ffffff2e;
-  word-spacing: 2px;
 }
 
 ::-webkit-scrollbar {
@@ -70,10 +62,4 @@ footer {
 }
 .navGap {
   margin-top: 69px;
-}
-@media screen and (max-width: 500px) {
-  footer {
-    font-size: 0.8rem;
-    word-spacing: 1px;
-  }
 }
