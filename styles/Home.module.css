@@ -7,7 +7,16 @@
   overflow-x: hidden;
   position: sticky;
   top: 0;
-  z-index: -1;
+  /* z-index: -1; */
+  background-color: var(--color-black-1);
+}
+
+.downArrow {
+  position: absolute;
+  font-size: 3.5rem;
+  bottom: 30px;
+  left: 50%;
+  opacity: 0.7;
 }
 .video {
   position: absolute;
@@ -19,8 +28,8 @@
 .videooverlay {
   background-color: #000;
   opacity: 0.7;
-  width: 101%;
-  height: 101%;
+  width: 100.5%;
+  height: 100%;
   position: absolute;
   z-index: -1;
 }
@@ -30,6 +39,8 @@
   gap: 50px;
   align-items: center;
   min-height: 90.5vh;
+  z-index: 999 !important;
+  position: relative;
 }
 .heroLeft {
   width: 60%;
@@ -40,16 +51,19 @@
   padding: 35px;
   box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
+  transition: all 1s ease;
 }
 
 .heroH1 {
   text-transform: uppercase;
   font-size: 2.5rem;
   margin: 3px 0 12px;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .heroSubline {
   opacity: 0.7;
+  filter: drop-shadow(2px 4px 6px black);
 }
 .canwebe {
   color: var(--color-canwebe);
@@ -59,6 +73,7 @@
   margin-bottom: 14px;
   font-size: 1.1rem;
   line-height: 24px;
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .heroBtnDiv {
@@ -112,11 +127,13 @@
   text-align: center;
   font-size: 1.8rem;
   color: rgb(199, 203, 212);
+  position: relative;
 }
 
 .projectSection {
   padding: 30px 0;
   background-color: var(--color-black-1);
+  position: relative;
 }
 
 .header {
@@ -136,6 +153,7 @@
   background-color: #beb8b2;
   color: #000000;
   padding: 80px 0;
+  position: relative;
 }
 
 .fundContent {
@@ -172,6 +190,7 @@
 .feedbackSection {
   padding: 50px 0;
   background-color: rgb(168, 65, 10);
+  position: relative;
 }
 
 .feedbackCard {
@@ -221,12 +240,14 @@
   padding: 35px 0;
   text-align: center;
   background-color: #0d0c0c;
+  position: relative;
 }
 
 /* Team Section */
 .teamSection {
   background-color: var(--color-black-1);
   padding: 40px 0 90px;
+  position: relative;
 }
 
 .teamSocialWrapper {
@@ -281,6 +302,7 @@
   display: flex;
   padding-top: 30px;
   background-color: var(--color-black-1);
+  position: relative;
 }
 .whyusleft,
 .whyusright {
@@ -398,6 +420,9 @@
     gap: 15px;
     text-align: center;
   }
+  .downArrow {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 810px) {
@@ -413,7 +438,8 @@
     text-align: center;
   }
   .heroRight {
-    width: 315px;
+    width: 250px;
+    padding: 20px;
   }
 
   .whyus {
@@ -528,6 +554,12 @@
     width: 100%;
     line-height: 27px;
     font-size: 0.9rem;
+  }
+
+  .downArrow {
+    display: block;
+    margin-left: -22px;
+    font-size: 2.6rem;
   }
 }
 

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRef, useState, useContext } from 'react'
+import { useRef, useEffect, useState, useContext, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
@@ -11,15 +11,21 @@ import {
   FaInstagram,
   FaLinkedin,
   FaYoutube,
+  FaChevronDown,
 } from 'react-icons/fa'
 import { getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
-import useOffset from '../hooks/useOffset'
+
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
 import { ScrollContext } from '../context/parralexContext'
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
+  const [isImgLoad, setIsImgLoad] = useState(false)
+  const [arrowStyle, setArrowStyle] = useState({
+    opacity: '0',
+    transform: 'translateY(0)',
+  })
   const projectRef = useRef()
   const heroRef = useRef(null)
   const scrollY = useContext(ScrollContext)
@@ -28,6 +34,10 @@ export default function Home({ data }) {
   if (current) {
     progress = Math.min(1, scrollY / current.clientHeight)
   }
+
+  const handleImg = useCallback(() => {
+    setIsImgLoad(true)
+  }, [])
 
   return (
     <>
@@ -38,7 +48,7 @@ export default function Home({ data }) {
         <section
           className={styles.heroSection}
           ref={heroRef}
-          style={{ transform: `translateY(-${progress * 30}vh)` }}
+          style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />
           <video className={styles.video} autoPlay loop muted playsInline>
@@ -75,16 +85,21 @@ export default function Home({ data }) {
                   </a>
                 </div>
               </div>
-              <div className={styles.heroRight}>
+              <div
+                className={styles.heroRight}
+                style={{ opacity: isImgLoad ? '1' : '0' }}
+              >
                 <Image
                   src='/logo.webp'
                   alt='logo'
                   layout='responsive'
                   width={500}
                   height={500}
+                  onLoad={handleImg}
                 />
               </div>
             </div>
+            <FaChevronDown className={styles.downArrow} />
           </div>
         </section>
         <section className={styles.maintainence}>
