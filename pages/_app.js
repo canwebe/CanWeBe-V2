@@ -2,6 +2,7 @@ import '../styles/globals.css'
 import Script from 'next/script'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import ScrollObserver from '../context/parralexContext'
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -29,7 +30,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Nav />
       <div className='navGap'></div>
-      <Component {...pageProps} />
+      <ScrollObserver>
+        <Component {...pageProps} />
+      </ScrollObserver>
     </>
   )
 }
