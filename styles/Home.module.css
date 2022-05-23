@@ -136,7 +136,7 @@
   position: relative;
 }
 
-.header {
+/* .header {
   font-size: 1.4rem;
 }
 
@@ -147,7 +147,7 @@
   background-color: rgb(126, 126, 233);
   display: block;
   margin: 7px 0 20px 4px;
-}
+} */
 
 .fundSection {
   background-color: #beb8b2;
@@ -450,19 +450,6 @@
   }
   .fundP {
     font-size: 1.4rem;
-  }
-  .teamPara {
-    width: 90%;
-    font-size: 0.88rem;
-    margin-bottom: 0;
-  }
-  .infoSection {
-    padding: 45px 0;
-  }
-  .teamSocialWrapper {
-    gap: 23px;
-
-    font-size: 1.7rem;
   }
 
   .whyusleftp {

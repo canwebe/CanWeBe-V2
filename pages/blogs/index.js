@@ -1,3 +1,7 @@
 export default function Blogs() {
-  return <h1>Blogs</h1>
+  return (
+    <div className='wrapper'>
+      <h1 className='pageHeader'>Blogs.</h1>
+    </div>
+  )
 }

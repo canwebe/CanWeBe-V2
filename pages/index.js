@@ -6,7 +6,7 @@ import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
 
 import { FaChevronDown } from 'react-icons/fa'
-import { getProjectList } from '../helpers'
+import { getProjectList, getTestimonyData } from '../helpers'
 import styles from '../styles/Home.module.css'
 
 import LatestTech from '../components/svg/latestTech'
@@ -14,7 +14,7 @@ import FreeSvg from '../components/svg/freeSvg'
 import { ScrollContext } from '../context/parralexContext'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
-export default function Home({ data }) {
+export default function Home({ data, testimonyData }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
   const projectRef = useRef()
@@ -102,7 +102,7 @@ export default function Home({ data }) {
         </section>
         <section ref={projectRef} className={styles.projectSection}>
           <div className='wrapper'>
-            <h3 className={styles.header}>Our Projects</h3>
+            <h3 className='header'>Our Projects</h3>
             <ProjectScroll data={data} />
           </div>
         </section>
@@ -153,7 +153,7 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
-        <Testimony />
+        <Testimony data={testimonyData} />
         <section className={styles.fundSection}>
           <div className='wrapper'>
             <div className={styles.fundContent}>
@@ -169,7 +169,7 @@ export default function Home({ data }) {
         </section>
         <section className={styles.teamSection}>
           <div className='wrapper'>
-            <h3 className={styles.header}>Our Team</h3>
+            <h3 className='header'>Our Team</h3>
             <TeamList />
           </div>
         </section>
@@ -196,12 +196,15 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  // const newdata = await getProjectList(6)
-  // const data = await JSON.parse(await JSON.stringify(newdata))
-  const data = []
+  const newdata = await getProjectList(6)
+  const testimonyData = await getTestimonyData()
+  const data = await JSON.parse(await JSON.stringify(newdata))
+  // const data = []
+  // const testimonyData = []
   return {
     props: {
       data,
+      testimonyData,
     },
   }
 }

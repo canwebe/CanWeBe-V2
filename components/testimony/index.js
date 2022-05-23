@@ -5,7 +5,7 @@ import Review from '../carausal/review'
 import { testimonyData } from '../../data/data'
 import TestimonySVG from '../svg/testimonySVG'
 
-export default function Testimony() {
+export default function Testimony({ data }) {
   return (
     <section className={styles.section}>
       <div className='wrapper'>
@@ -16,9 +16,9 @@ export default function Testimony() {
 
         <p className={styles.subheader}>What other people think about us !</p>
         <Carausal>
-          {testimonyData.map((item, i) => (
+          {data.map((item, i) => (
             <CarauselItem key={i} index={i}>
-              <Review name={item.name}>{item.quote}</Review>
+              <Review name={item.name}>{item.review}</Review>
             </CarauselItem>
           ))}
         </Carausal>

@@ -63,3 +63,26 @@ body {
 .navGap {
   margin-top: 69px;
 }
+
+.pageHeader {
+  margin: 90px 0 20px;
+  /* font-weight: 500; */
+  color: #5c5c5c;
+}
+
+.header {
+  font-size: 1.4rem;
+}
+
+.header::after {
+  content: '';
+  height: 2px;
+  width: 100px;
+  background-color: rgb(126, 126, 233);
+  display: block;
+  margin: 7px 0 20px 4px;
+}
+
+.sectionbody {
+  padding-bottom: 60px;
+}
