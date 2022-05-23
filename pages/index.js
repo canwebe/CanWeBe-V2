@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useRef, useState, useContext } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
@@ -17,19 +17,33 @@ import styles from '../styles/Home.module.css'
 import useOffset from '../hooks/useOffset'
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
-
+import { ScrollContext } from '../context/parralexContext'
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
   const projectRef = useRef()
-  // console.log(Math.min(700, Math.ceil(offset + 1)), offset)
+  const heroRef = useRef(null)
+  const scrollY = useContext(ScrollContext)
+  let progress = 0
+  const { current } = heroRef
+  if (current) {
+    progress = Math.min(1, scrollY / current.clientHeight)
+  }
+
   return (
     <>
       <Head>
         <title>Home | CanWeBe</title>
       </Head>
       <div className={styles.main}>
-        <section className={styles.heroSection}>
-          <div className={styles.heroBg} />
+        <section
+          className={styles.heroSection}
+          ref={heroRef}
+          style={{ transform: `translateY(-${progress * 30}vh)` }}
+        >
+          <div className={styles.videooverlay} />
+          <video className={styles.video} autoPlay loop muted playsInline>
+            <source src='/assets/bgvideo.mp4' type='video/mp4' />
+          </video>
           <div className='wrapper'>
             <div className={styles.heroDiv}>
               <div className={styles.heroLeft}>
