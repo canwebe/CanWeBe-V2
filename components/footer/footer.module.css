@@ -8,14 +8,12 @@
   align-items: center;
   flex-direction: column;
   gap: 20px;
-  min-height: 70vh;
-  border-top: 3px solid black;
 }
 
 .bottomFooter {
-  background-color: aliceblue;
+  background-color: rgb(213, 213, 213);
   width: 100%;
-  min-height: 20vh;
+  padding: 30px 0;
   display: flex;
   align-items: center;
 }
@@ -84,16 +82,11 @@
 
 /* Media */
 @media screen and (max-width: 800px) {
-  .bottomFooter {
-    min-height: auto;
-    padding: 30px 0;
-  }
   .bottomFooterP {
     padding-top: 8px;
   }
   .footer {
     gap: 20px;
-    min-height: auto;
   }
   .teamPara {
     width: 90%;

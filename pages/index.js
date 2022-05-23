@@ -5,14 +5,7 @@ import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
 
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-  FaChevronDown,
-} from 'react-icons/fa'
+import { FaChevronDown } from 'react-icons/fa'
 import { getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
 
@@ -24,10 +17,6 @@ import Footer from '../components/footer'
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
-  const [arrowStyle, setArrowStyle] = useState({
-    opacity: '0',
-    transform: 'translateY(0)',
-  })
   const projectRef = useRef()
   const heroRef = useRef(null)
   const scrollY = useContext(ScrollContext)
@@ -164,6 +153,7 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
+        <Testimony />
         <section className={styles.fundSection}>
           <div className='wrapper'>
             <div className={styles.fundContent}>
@@ -198,7 +188,6 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
-        <Testimony />
         <Footer />
       </div>
       {isModal && <Modal setIsModal={setIsModal} />}

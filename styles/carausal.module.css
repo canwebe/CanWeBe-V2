@@ -81,6 +81,9 @@
     max-width: max(10%, 240px);
     padding: 0 5px;
   }
+  .viewport {
+    margin-top: 30px;
+  }
   .review {
     padding: 0 10px;
     gap: 20px;

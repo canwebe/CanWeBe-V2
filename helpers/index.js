@@ -14,3 +14,10 @@ export const getProjectList = async (lim) => {
     return snapshot.docs.map((item) => item.data())
   }
 }
+
+export const getTestimonyData = async () => {
+  const snapshot = await getDocs(collection(db, 'testimony'))
+  if (!snapshot.empty) {
+    return snapshot.docs.map((item) => item.data())
+  }
+}
