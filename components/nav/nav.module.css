@@ -48,14 +48,34 @@
   border: none;
   background-color: white;
   color: black;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 }
 
-.contactBtn:hover,
+.contactBtn::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 2px solid white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+.contactBtn:hover {
+  transform: scale(0.9);
+}
+.contactBtn:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  padding: 4px;
+}
 .contactBtn:active {
   background-color: rgb(73, 73, 211);
   color: white;
 }
+
 .menu {
   display: none;
   font-size: 2rem;
@@ -66,10 +86,12 @@
 .sideMenuBg {
   background-color: #1a1717;
   position: absolute;
-  top: 70px;
+  top: 68px;
   left: 0;
   right: 0;
   /* height: 280px; */
+  border-bottom: 2px solid #c45c20;
+  box-shadow: 0 4px 19px rgba(0, 0, 0, 0.4);
 }
 .sideMenu {
   display: flex;

@@ -1,6 +1,6 @@
 export default function FreeSvg() {
   return (
-    <svg dataName='Layer 1' viewBox='0 0 711.1879 669.68268'>
+    <svg viewBox='0 0 711.1879 669.68268'>
       <title>feeling_proud</title>
       <polygon
         points='516.326 380.018 516.326 565.013 547.27 615.443 549.625 619.279 671.722 619.279 674.189 380.018 516.326 380.018'
