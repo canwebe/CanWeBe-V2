@@ -226,77 +226,18 @@
   transform: translateY(4px);
 }
 
-.testimonySection {
-  padding: 50px 0;
-  background-color: goldenrod;
-}
-
-.testimonyH3 {
-  font-size: 1.6rem;
-  text-align: center;
-}
-
-.infoSection {
+/* .infoSection {
   padding: 35px 0;
   text-align: center;
   background-color: #0d0c0c;
   position: relative;
-}
-
-/* Team Section */
+} */
 .teamSection {
   background-color: var(--color-black-1);
   padding: 40px 0 90px;
   position: relative;
 }
-
-.teamSocialWrapper {
-  display: flex;
-  gap: 18px;
-  /* align-items: center; */
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 10px 0 20px;
-}
-.teamName {
-  font-size: 3rem;
-  font-weight: 300;
-}
-
-.teamPara {
-  margin: 20px auto;
-  width: 60%;
-  line-height: 25px;
-  word-spacing: 1px;
-  opacity: 0.8;
-}
-
-.facebook,
-.twitter,
-.instagram,
-.linkedin,
-.youtube {
-  transition: all 0.3s ease-in-out;
-}
-
-.facebook:hover {
-  color: #1877f2;
-}
-
-.instagram:hover {
-  color: #e1306c;
-}
-.twitter:hover {
-  color: #1da1f2;
-}
-.linkedin:hover {
-  color: #0077b5;
-}
-
-.youtube:hover {
-  color: #ff0000;
-}
-
+/* Why US */
 .whyus {
   min-height: 100%;
   display: flex;

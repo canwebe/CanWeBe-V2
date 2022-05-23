@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, useContext, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
-import TestimonyGrid from '../components/testimonyGrid'
+
 import {
   FaFacebook,
   FaTwitter,
@@ -19,6 +19,8 @@ import styles from '../styles/Home.module.css'
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
 import { ScrollContext } from '../context/parralexContext'
+import Testimony from '../components/testimony'
+import Footer from '../components/footer'
 export default function Home({ data }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
@@ -162,15 +164,6 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
-
-        {/* <section className={styles.testimonySection}>
-          <div className='wrapper'>
-            <h3 className={styles.testimonyH3}>
-              What do people feel about us !!
-              <TestimonyGrid />
-            </h3>
-          </div>
-        </section> */}
         <section className={styles.fundSection}>
           <div className='wrapper'>
             <div className={styles.fundContent}>
@@ -205,71 +198,8 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
-        <section className={styles.infoSection}>
-          <div className='wrapper'>
-            <div>
-              <h2 className={styles.teamName}>CanWeBe!</h2>
-              <div className={styles.teamSocialWrapper}>
-                <a
-                  className={styles.facebook}
-                  href='https://www.facebook.com/TeamCanWeBe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  className={styles.instagram}
-                  href='https://www.instagram.com/canwebeofficial/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  className={styles.linkedin}
-                  href='https://www.linkedin.com/company/canwebe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaLinkedin />
-                </a>
-                <a
-                  className={styles.youtube}
-                  href='https://www.youtube.com/channel/UCZQme48ejS0QY3C4JmWgI4Q'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaYoutube />
-                </a>
-                <a
-                  className={styles.twitter}
-                  href='https://twitter.com/teamcanwebe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaTwitter />
-                </a>
-              </div>
-              <h4>contact@canwebe.tech</h4>
-              <p className={styles.teamPara}>
-                CanWeBe is a software development organization which is founded
-                by a group of students.We here at canwebe mainly developed
-                softwares to solve daily life problems, Other than this we have
-                a team of varius skilled person from different different field
-                of work. We collaborate and brainstorm on ideas and deliver easy
-                to use software to general users free of cost.
-              </p>
-            </div>
-          </div>
-        </section>
-        <footer>
-          <div className='wrapper'>
-            <p>
-              All rights are reserved by CanWeBe! {new Date().getFullYear()}{' '}
-            </p>
-          </div>
-        </footer>
+        <Testimony />
+        <Footer />
       </div>
       {isModal && <Modal setIsModal={setIsModal} />}
     </>
@@ -277,8 +207,9 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const newdata = await getProjectList(6)
-  const data = await JSON.parse(await JSON.stringify(newdata))
+  // const newdata = await getProjectList(6)
+  // const data = await JSON.parse(await JSON.stringify(newdata))
+  const data = []
   return {
     props: {
       data,

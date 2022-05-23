@@ -1,0 +1,95 @@
+.viewport:global(.is-draggable) {
+  cursor: move;
+  cursor: grab;
+}
+.viewport:global(.is-dragging) {
+  cursor: grabbing;
+}
+.viewport {
+  width: 80%;
+  /* height: 50vh; */
+  overflow: hidden;
+  color: white;
+  padding: 20px 0;
+  margin: 50px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  user-select: none;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.slide {
+  flex: 0 0 auto;
+  position: relative;
+  max-width: min(70%, 590px);
+  opacity: 0.3;
+  transition: opacity 0.4s;
+  /* background-color: blueviolet; */
+  padding: 0 20px;
+}
+.slide:global(.active) {
+  opacity: 1;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 15px;
+  gap: 30px;
+  height: 100%;
+}
+.message {
+  font-size: 1.12rem;
+  line-height: 33px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(87, 146, 199);
+}
+
+@media screen and (max-width: 1200px) {
+  .viewport {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .slide {
+    max-width: min(30%, 400px);
+  }
+}
+@media screen and (max-width: 700px) {
+  .container {
+    gap: 0px;
+  }
+  .review {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .slide {
+    max-width: max(10%, 240px);
+    padding: 0 5px;
+  }
+  .review {
+    padding: 0 10px;
+    gap: 20px;
+  }
+  .message {
+    font-size: 0.9rem;
+    line-height: 26px;
+  }
+  .name {
+    font-size: 1rem;
+  }
+}
