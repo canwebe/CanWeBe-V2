@@ -2,7 +2,7 @@ export const employeeData = [
   {
     name: 'Golam Rabbani',
     position: 'Co-Founder & Developer',
-    info: 'Rabbani is the Lead Developer and Co-Creator of this Organization, who is Full-Stack Developer expert on PWA, he is also skilled in UI/UX and AI.',
+    info: 'Rabbani is the Lead Developer and Co-Creator of this Organization, who is a Full-Stack Developer expert on PWA, he is also skilled in UI/UX and AI.',
     img: '/assets/rabbani.webp',
     social: [
       {
@@ -206,4 +206,3 @@ export const testimonyData = [
       'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
   },
 ]
-

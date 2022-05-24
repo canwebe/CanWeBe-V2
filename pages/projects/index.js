@@ -6,9 +6,7 @@ export default function Projects() {
   return (
     <div className='wrapper sectionbody'>
       <h1 className='pageHeader'>Projects.</h1>
-      <Featured />
-      <TopRelease />
-      <AllProjects />
+      <p className='mt'>On Maintenance , Visit After Some Time</p>
     </div>
   )
 }

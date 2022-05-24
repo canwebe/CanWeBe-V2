@@ -197,11 +197,11 @@ export default function Home({ data, testimonyData }) {
 }
 
 export async function getStaticProps() {
-  // const newdata = await getProjectList(6)
-  // const testimonyData = await getTestimonyData()
-  // const data = await JSON.parse(await JSON.stringify(newdata))
-  const data = []
-  const testimonyData = []
+  const newdata = await getProjectList(6)
+  const testimonyData = await getTestimonyData()
+  const data = await JSON.parse(await JSON.stringify(newdata))
+  // const data = []
+  // const testimonyData = []
   return {
     props: {
       data,
