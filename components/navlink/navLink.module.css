@@ -1,0 +1,25 @@
+.menu {
+  transition: all 0.3s ease;
+  position: relative;
+}
+.active {
+  color: #e77e22;
+}
+
+.menu::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 1.4px;
+  background-color: #e77e22;
+  transition: transform 0.2s ease;
+  transform-origin: right;
+  transform: scaleX(0);
+}
+
+.menu:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

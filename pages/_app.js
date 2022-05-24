@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import Script from 'next/script'
 import Head from 'next/head'
+import Nav from '../components/nav'
 function MyApp({ Component, pageProps }) {
   return (
     <>
@@ -26,6 +27,8 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1' />
       </Head>
+      <Nav />
+      <div className='navGap'></div>
       <Component {...pageProps} />
     </>
   )

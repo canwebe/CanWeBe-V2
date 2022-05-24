@@ -146,7 +146,7 @@ export const employeeData = [
   {
     name: 'Rejaul Hoque',
     position: 'Marketing Expert',
-    info: 'Rejaul is ne of well commmuned marketing executives, His intellect has allowed us develop multiple products.',
+    info: 'Rejaul is one of well commmuned marketing executives, His intellect has allowed us develop multiple products.',
     img: '/assets/rejaul.webp',
     social: [
       {
@@ -171,35 +171,39 @@ export const employeeData = [
 
 export const testimonyData = [
   {
-    name: 'Daniel Clifford',
-    quoteTitle:
-      'I received a job offer mid-course, and the subjects I learned were current, if not more so, in the company I joined. I honestly feel I got every penny’s worth.',
+    name: 'Roshan Bhagat',
     quote:
-      'I was an EMT for many years before I joined the bootcamp. I’ve been looking to make a transition and have heard some people whom had an amazing experience here. I signed up for the free intro course and found it incredibly fun!  at a VR startup.',
+      'I had many skills but never got a chance to work in a team. Here at Canwebe, I got a chance to work in a team by contributing to an open source project.',
   },
   {
-    name: 'Jonathan Walters',
-    quoteTitle: 'The team was very supportive and kept me motivated',
+    name: 'Varun Nayar',
     quote:
-      'I started as a total newbie with virtually no coding skills. I now work as a mobile engineer for a big company. This was one of I’ve made in myself.',
+      'I had a basic idea to provide tips to daily workers in my society,CanWeBe helped me convert that idea into a genius application that allows all the people of my society to contribute to this good cause.',
   },
   {
-    name: 'Jeanette Harmon',
-    quoteTitle: 'An overall wonderful and rewarding experience',
+    name: 'Nitesh Agarwal',
     quote:
-      'Thank you for the wonderful experience! I now have a job I really enjoy, and make a good living while doing something I love.',
+      'With the help of SilentShare, I was able to share any documents, files, and photos securely without losing any privacy in the least amount of time.',
   },
   {
-    name: 'Patrick Abrams',
-    quoteTitle:
-      'Awesome teaching support from TAs who did the bootcamp themselves.Getting guidance from them and learning from their experiences was easy.',
+    name: 'Om Prakash Mishra',
     quote:
-      'The staff seem genuinely concerned about my progress which I find really refreshing. The program gave me the confidence necessary to be able to go out You will get the personal attention you need from an incredible community of smart and amazing people.',
+      'I am an astronomy geek and, with the help of AstroData, I get astronomical pictures of the Day and Mars rover details for free.',
   },
   {
-    name: 'Kira Whittle',
-    quoteTitle: 'Such a life-changing experience. Highly recommended!',
+    name: 'Zakir Khan',
     quote:
-      'Before joining the bootcamp, I’ve never written a line of code.I needed some structure from professionals who can help me learn programming step by step. I was encouraged to enroll by a former student of theirs who can only say wonderful things about the program. The entire curriculum and staff did not disappoint. They were very hands-on and developer after receiving multiple offers.100% recommend!',
+      'At the time of the COVID-19 pandemic, there was a lot of fake news spreading about the pandemic. It was very difficult to find authentic news, so with the help of SNewz, I was updated with the real and genuine news.',
+  },
+  {
+    name: 'Rakesh Kumar',
+    quote:
+      'I always forgot my family and friends birthdays until I found Timeborn. With the help of Timeborn, I was not only able to track birthdays but also share generated birthday wishes and plan events.',
+  },
+  {
+    name: 'Ravi Jaiswal',
+    quote:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
   },
 ]
+

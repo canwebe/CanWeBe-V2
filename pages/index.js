@@ -1,30 +1,52 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRef, useState } from 'react'
+import { useRef, useEffect, useState, useContext, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
-import TestimonyGrid from '../components/testimonyGrid'
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
-} from 'react-icons/fa'
-import { getProjectList } from '../helpers'
+
+import { FaChevronDown } from 'react-icons/fa'
+import { getProjectList, getTestimonyData } from '../helpers'
 import styles from '../styles/Home.module.css'
 
-export default function Home({ data }) {
+import LatestTech from '../components/svg/latestTech'
+import FreeSvg from '../components/svg/freeSvg'
+import Testimony from '../components/testimony'
+import Footer from '../components/footer'
+import useOffset from '../hooks/useOffset'
+export default function Home({ data, testimonyData }) {
   const [isModal, setIsModal] = useState(false)
+  const [isImgLoad, setIsImgLoad] = useState(false)
   const projectRef = useRef()
+  const heroRef = useRef(null)
+
+  // const scrollY = useOffset()
+  // let progress = 0
+  // const { current } = heroRef
+  // if (current) {
+  //   progress = Math.min(1, scrollY / current.clientHeight)
+  // }
+
+  const handleImg = useCallback(() => {
+    setIsImgLoad(true)
+  }, [])
+
   return (
     <>
+      {console.log('run home')}
       <Head>
         <title>Home | CanWeBe</title>
       </Head>
       <div className={styles.main}>
-        <section className={styles.heroSection}>
+        <section
+          className={styles.heroSection}
+          ref={heroRef}
+          // style={{ transform: `translateY(-${progress * 20}vh)` }}
+        >
+          <div className={styles.videooverlay} />
+          <video className={styles.video} autoPlay loop muted playsInline>
+            <source src='/assets/bgvideo.mp4' type='video/mp4' />
+          </video>
           <div className='wrapper'>
             <div className={styles.heroDiv}>
               <div className={styles.heroLeft}>
@@ -56,13 +78,17 @@ export default function Home({ data }) {
                   </a>
                 </div>
               </div>
-              <div className={styles.heroRight}>
+              <div
+                className={styles.heroRight}
+                style={{ opacity: isImgLoad ? '1' : '0' }}
+              >
                 <Image
                   src='/logo.webp'
                   alt='logo'
                   layout='responsive'
                   width={500}
                   height={500}
+                  onLoad={handleImg}
                 />
               </div>
             </div>
@@ -75,22 +101,60 @@ export default function Home({ data }) {
             </p>
           </div>
         </section>
-        <section className={styles.projectSection}>
+        <section ref={projectRef} className={styles.projectSection}>
           <div className='wrapper'>
-            <h3 ref={projectRef} className={styles.header}>
-              Our Projects
-            </h3>
+            <h3 className='header'>Our Projects</h3>
             <ProjectScroll data={data} />
           </div>
         </section>
-        {/* <section className={styles.testimonySection}>
-          <div className='wrapper'>
-            <h3 className={styles.testimonyH3}>
-              What do people feel about us !!
-              <TestimonyGrid />
-            </h3>
+        <section className={styles.whyus}>
+          <div className={styles.whyusleft}>
+            <p className={styles.whyusleftp}>Why Us</p>
+            <p className={styles.whyusleftsubp}>
+              What make us different from others
+            </p>
           </div>
-        </section> */}
+          <div className={styles.whyusright}>
+            <div className={styles.point1}>
+              <div className={styles.point1Svg}>
+                <LatestTech />
+              </div>
+              <h4 className={styles.point1H4}>Cutting Edge Tech</h4>
+              <p className={styles.point1P}>
+                We use latest tech stacks for our projects. Most of our project
+                is PWA , Which is future of web app and our developers are
+                skilled in latest tech and tools.
+              </p>
+            </div>
+            <div className={styles.point2}>
+              <p className={styles.problemQ}>
+                What
+                <br />
+                type of
+                <br />
+                software we generally <br />
+                build ?
+              </p>
+              <p className={styles.problemA}>
+                We target general problems which will occur everyday in our
+                life. Most of our app solves these everyday life problems. We
+                follow the motto &quot; Tech for Good &quot;
+              </p>
+            </div>
+            <div className={styles.point3}>
+              <div className={styles.point3Svg}>
+                <FreeSvg />
+              </div>
+              <h4 className={styles.point1H4}>Cost Free Products</h4>
+              <p className={styles.point1P}>
+                Most of our softwares are cost free and open sourced. Our app
+                can easily accessible by most of general users with modern UI/UX
+                and easy to use Interface.
+              </p>
+            </div>
+          </div>
+        </section>
+        <Testimony data={testimonyData} />
         <section className={styles.fundSection}>
           <div className='wrapper'>
             <div className={styles.fundContent}>
@@ -106,7 +170,7 @@ export default function Home({ data }) {
         </section>
         <section className={styles.teamSection}>
           <div className='wrapper'>
-            <h3 className={styles.header}>Our Team</h3>
+            <h3 className='header'>Our Team</h3>
             <TeamList />
           </div>
         </section>
@@ -125,71 +189,7 @@ export default function Home({ data }) {
             </div>
           </div>
         </section>
-        <section className={styles.infoSection}>
-          <div className='wrapper'>
-            <div>
-              <h2 className={styles.teamName}>CanWeBe!</h2>
-              <div className={styles.teamSocialWrapper}>
-                <a
-                  className={styles.facebook}
-                  href='https://www.facebook.com/TeamCanWeBe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  className={styles.instagram}
-                  href='https://www.instagram.com/canwebeofficial/'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  className={styles.linkedin}
-                  href='https://www.linkedin.com/company/canwebe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaLinkedin />
-                </a>
-                <a
-                  className={styles.youtube}
-                  href='https://www.youtube.com/channel/UCZQme48ejS0QY3C4JmWgI4Q'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaYoutube />
-                </a>
-                <a
-                  className={styles.twitter}
-                  href='https://twitter.com/teamcanwebe'
-                  target='_blank'
-                  rel='noreferrer'
-                >
-                  <FaTwitter />
-                </a>
-              </div>
-              <h4>contact@canwebe.tech</h4>
-              <p className={styles.teamPara}>
-                CanWeBe is a software development organization which is founded
-                by a group of students.We here at canwebe mainly developed
-                softwares to solve daily life problems, Other than this we have
-                a team of varius skilled person from different different field
-                of work. We collaborate and brainstorm on ideas and deliver easy
-                to use software to general users free of cost.
-              </p>
-            </div>
-          </div>
-        </section>
-        <footer>
-          <div className='wrapper'>
-            <p>
-              All rights are reserved by CanWeBe! {new Date().getFullYear()}{' '}
-            </p>
-          </div>
-        </footer>
+        <Footer />
       </div>
       {isModal && <Modal setIsModal={setIsModal} />}
     </>
@@ -197,11 +197,15 @@ export default function Home({ data }) {
 }
 
 export async function getStaticProps() {
-  const newdata = await getProjectList()
-  const data = await JSON.parse(await JSON.stringify(newdata))
+  // const newdata = await getProjectList(6)
+  // const testimonyData = await getTestimonyData()
+  // const data = await JSON.parse(await JSON.stringify(newdata))
+  const data = []
+  const testimonyData = []
   return {
     props: {
       data,
+      testimonyData,
     },
   }
 }

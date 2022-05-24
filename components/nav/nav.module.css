@@ -1,0 +1,133 @@
+.nav {
+  background-color: #111111;
+  padding: 14px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  /* border-bottom: 2px solid black; */
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.51);
+}
+
+.logo {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.img {
+  display: none;
+  width: 40px;
+  height: 40px;
+}
+
+.can {
+  color: #c45c20;
+  font-weight: 500;
+}
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkWrapper {
+  display: flex;
+  gap: 44px;
+  font-size: 1.1rem;
+  align-items: center;
+}
+
+.contactBtn {
+  margin: 0 20px;
+  padding: 9px 24px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.contactBtn::after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 100%;
+  border: 2px solid white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+.contactBtn:hover {
+  transform: scale(0.9);
+}
+.contactBtn:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  padding: 4px;
+}
+.contactBtn:active {
+  background-color: rgb(73, 73, 211);
+  color: white;
+}
+
+.menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: -8px;
+}
+
+.sideMenuBg {
+  background-color: #1a1717;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  /* height: 280px; */
+  border-bottom: 2px solid #c45c20;
+  box-shadow: 0 4px 19px rgba(0, 0, 0, 0.4);
+}
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 20px 80px 20px;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 810px) {
+  .menu {
+    display: block;
+  }
+  .linkWrapper {
+    display: none;
+  }
+  .contactBtn {
+    /* margin-top: 20px; */
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sideMenu {
+    align-items: flex-end;
+    gap: 25px;
+    padding: 30px 20px 50px 20px;
+  }
+  .contactBtn {
+    margin: 10px 0 0;
+  }
+  .logo {
+    font-size: 1.8rem;
+  }
+  .img {
+    display: block;
+  }
+}

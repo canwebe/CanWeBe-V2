@@ -1,0 +1,91 @@
+/* Featured */
+.featured,
+.topRelease,
+.allProjects {
+  padding: 30px 25px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+.featuredWrapper {
+  display: flex;
+  gap: 50px;
+  margin-top: 30px;
+
+  width: fit-content;
+}
+.featuredLeft {
+  width: 50%;
+  padding: 20px;
+  background-color: var(--color-black-2);
+  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.3);
+}
+.featuredRight {
+  width: 30%;
+}
+
+.featuredName {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.featuredBtn {
+  padding: 7px 25px;
+  border: 1px solid white;
+  display: block;
+  width: fit-content;
+  margin-top: 20px;
+}
+
+/* All Projects */
+.allProjectWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  justify-content: space-evenly;
+  margin: 50px 0;
+}
+
+.allProjectCard {
+  background-color: var(--color-black-2);
+  padding: 15px 20px;
+  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.3);
+  width: 20%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 7px;
+  min-width: 200px;
+}
+.allProjectName {
+  font-size: 1.4rem;
+}
+.allProjectInfo {
+  font-size: 0.9rem;
+  margin: 10px 0 20px;
+  opacity: 0.7;
+}
+
+.allProjectBtn {
+  padding: 7px 20px;
+  border: 2px solid white;
+  display: block;
+}
+
+/* Top Relaese */
+.topReleaseWrapper {
+  display: flex;
+  overflow-x: scroll;
+  gap: 20px;
+  padding: 20px 0 30px;
+}
+
+.topReleaseImg {
+  width: 200px;
+  clip: rect(0, 0, 70%, 100%);
+}
+.topReleaseCard {
+  padding: 10px;
+  background-color: var(--color-black-2);
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+}

@@ -1,0 +1,110 @@
+.footer {
+  position: relative;
+  background-color: #0d0c0c;
+  text-align: center;
+  padding: 40px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bottomFooter {
+  background-color: rgb(213, 213, 213);
+  width: 100%;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+}
+.bottomFooterP {
+  border-top: 2px solid #a5a5a5;
+  padding-top: 13px;
+  word-spacing: 2px;
+  color: #2e2e2e;
+}
+
+/* footer {
+  background-color: #161616;
+  border-top: 1px solid #2f2f2f;
+  text-align: center;
+  padding: 18px 5px;
+  color: #ffffff2e;
+  word-spacing: 2px;
+} */
+/* Team Section */
+
+.teamSocialWrapper {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 15px 0 25px;
+}
+.teamName {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.teamPara {
+  margin: 20px auto;
+  width: 60%;
+  line-height: 25px;
+  word-spacing: 1px;
+  opacity: 0.8;
+}
+
+.facebook,
+.twitter,
+.instagram,
+.linkedin,
+.youtube {
+  transition: all 0.3s ease-in-out;
+}
+
+.facebook:hover {
+  color: #1877f2;
+}
+
+.instagram:hover {
+  color: #e1306c;
+}
+.twitter:hover {
+  color: #1da1f2;
+}
+.linkedin:hover {
+  color: #0077b5;
+}
+
+.youtube:hover {
+  color: #ff0000;
+}
+
+/* Media */
+@media screen and (max-width: 800px) {
+  .bottomFooterP {
+    padding-top: 8px;
+  }
+  .footer {
+    gap: 20px;
+  }
+  .teamPara {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .bottomFooterP {
+    font-size: 0.8rem;
+  }
+  .teamPara {
+    width: 90%;
+    font-size: 0.88rem;
+  }
+  .footer {
+    gap: 30px;
+  }
+  .teamSocialWrapper {
+    gap: 23px;
+    font-size: 1.7rem;
+  }
+}
