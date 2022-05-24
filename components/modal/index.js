@@ -27,7 +27,7 @@ export default function Modal({ setIsModal }) {
             <strong>Contact Us : </strong> contact@canwebe.tech
             <br />
             <br />
-            <strong>UPI : </strong> contact@canwebe.tech
+            <strong>UPI : </strong> 8867398996@paytm
             <br />
           </p>
         </div>

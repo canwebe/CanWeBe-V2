@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 export default function useOffset() {
-  const [offsetY, setOffsetY] = useState(0)
-  useEffect(() => {
-    const handleScroll = () => {
-      setOffsetY(window.pageYOffset)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+  const [scrollY, setScrollY] = useState(0)
+
+  const handleScroll = useCallback(() => {
+    setScrollY(window.scrollY)
   }, [])
-  return offsetY
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll, { passive: true })
+    return () => document.removeEventListener('scroll', handleScroll)
+  }, [handleScroll])
+
+  return scrollY
 }

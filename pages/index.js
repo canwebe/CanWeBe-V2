@@ -11,20 +11,21 @@ import styles from '../styles/Home.module.css'
 
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
-import { ScrollContext } from '../context/parralexContext'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
+import useOffset from '../hooks/useOffset'
 export default function Home({ data, testimonyData }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
   const projectRef = useRef()
   const heroRef = useRef(null)
-  const scrollY = useContext(ScrollContext)
-  let progress = 0
-  const { current } = heroRef
-  if (current) {
-    progress = Math.min(1, scrollY / current.clientHeight)
-  }
+
+  // const scrollY = useOffset()
+  // let progress = 0
+  // const { current } = heroRef
+  // if (current) {
+  //   progress = Math.min(1, scrollY / current.clientHeight)
+  // }
 
   const handleImg = useCallback(() => {
     setIsImgLoad(true)
@@ -32,6 +33,7 @@ export default function Home({ data, testimonyData }) {
 
   return (
     <>
+      {console.log('run home')}
       <Head>
         <title>Home | CanWeBe</title>
       </Head>
@@ -39,7 +41,7 @@ export default function Home({ data, testimonyData }) {
         <section
           className={styles.heroSection}
           ref={heroRef}
-          style={{ transform: `translateY(-${progress * 20}vh)` }}
+          // style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />
           <video className={styles.video} autoPlay loop muted playsInline>
@@ -90,7 +92,6 @@ export default function Home({ data, testimonyData }) {
                 />
               </div>
             </div>
-            <FaChevronDown className={styles.downArrow} />
           </div>
         </section>
         <section className={styles.maintainence}>
@@ -196,11 +197,11 @@ export default function Home({ data, testimonyData }) {
 }
 
 export async function getStaticProps() {
-  const newdata = await getProjectList(6)
-  const testimonyData = await getTestimonyData()
-  const data = await JSON.parse(await JSON.stringify(newdata))
-  // const data = []
-  // const testimonyData = []
+  // const newdata = await getProjectList(6)
+  // const testimonyData = await getTestimonyData()
+  // const data = await JSON.parse(await JSON.stringify(newdata))
+  const data = []
+  const testimonyData = []
   return {
     props: {
       data,

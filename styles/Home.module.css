@@ -11,13 +11,6 @@
   background-color: var(--color-black-1);
 }
 
-.downArrow {
-  position: absolute;
-  font-size: 3.5rem;
-  bottom: 30px;
-  left: 50%;
-  opacity: 0.7;
-}
 .video {
   position: absolute;
   z-index: -2;
@@ -361,9 +354,6 @@
     gap: 15px;
     text-align: center;
   }
-  .downArrow {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 810px) {
@@ -482,12 +472,6 @@
     width: 100%;
     line-height: 27px;
     font-size: 0.9rem;
-  }
-
-  .downArrow {
-    display: block;
-    margin-left: -22px;
-    font-size: 2.6rem;
   }
 }
 
