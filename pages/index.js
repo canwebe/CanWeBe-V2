@@ -40,7 +40,7 @@ export default function Home({ data, testimonyData }) {
       <div className={styles.main}>
         <section
           className={styles.heroSection}
-          ref={heroRef}
+          // ref={heroRef}
           // style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />
@@ -197,11 +197,11 @@ export default function Home({ data, testimonyData }) {
 }
 
 export async function getStaticProps() {
-  // const newdata = await getProjectList(6)
-  // const testimonyData = await getTestimonyData()
-  // const data = await JSON.parse(await JSON.stringify(newdata))
-  const data = []
-  const testimonyData = []
+  const newdata = await getProjectList(6)
+  const testimonyData = await getTestimonyData()
+  const data = await JSON.parse(await JSON.stringify(newdata))
+  // const data = []
+  // const testimonyData = []
   return {
     props: {
       data,

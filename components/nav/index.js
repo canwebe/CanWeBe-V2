@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import NavLink from '../navlink'
-import { FaStream } from 'react-icons/fa'
+import { MdMenu, MdClose } from 'react-icons/md'
 import styles from './nav.module.css'
 import { useState } from 'react'
 export default function Nav() {
@@ -44,7 +44,7 @@ export default function Nav() {
             onClick={() => setIsMenu((prev) => !prev)}
             className={styles.menu}
           >
-            <FaStream />
+            {isMenu ? <MdClose /> : <MdMenu />}
           </div>
         </div>
       </div>

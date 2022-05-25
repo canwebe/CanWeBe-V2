@@ -281,16 +281,18 @@
   flex-direction: column;
   position: sticky;
   top: 68px;
-  box-shadow: 0 -3px 17px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.3);
 }
 .point1 {
-  background-color: #d79292;
+  background-color: #205375;
+  background-color: #98613f;
 }
 .point2 {
-  background-color: #5957e2;
+  background-color: #6a67ce;
 }
 .point3 {
-  background-color: #b657e2;
+  background-color: #947ec3;
+  background-color: #417d7a;
 }
 
 /* Latest Tech Point 1 */
