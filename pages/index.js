@@ -40,7 +40,7 @@ export default function Home({ data, testimonyData }) {
       <div className={styles.main}>
         <section
           className={styles.heroSection}
-          ref={heroRef}
+          // ref={heroRef}
           // style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />

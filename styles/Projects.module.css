@@ -1,61 +1,175 @@
 /* Featured */
+.featured {
+  background-color: #c1bbc466;
+  background-image: linear-gradient(
+      to right,
+      rgba(27, 18, 15, 0.86),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(/assets/featuredbg.png);
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.newRelease {
+  position: absolute;
+  color: rgb(80, 80, 80);
+  transform-origin: top right;
+  right: 5px;
+  top: 50%;
+  font-size: 3.4rem;
+  transform: rotate(90deg) translateX(50%);
+}
 .featured,
 .topRelease,
 .allProjects {
-  padding: 30px 25px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  margin-bottom: 40px;
+  padding: 40px 35px;
+  margin-bottom: 50px;
 }
 .featuredWrapper {
   display: flex;
   gap: 50px;
   margin-top: 30px;
-
   width: fit-content;
 }
 .featuredLeft {
   width: 50%;
+  min-height: 360px;
   padding: 20px;
-  background-color: var(--color-black-2);
-  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.3);
+  background-color: #9c9c9c;
+  box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.4);
 }
 .featuredRight {
-  width: 30%;
+  width: 50%;
+  position: relative;
 }
-
 .featuredName {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 500;
   margin-bottom: 15px;
 }
-
+.featuredInfo {
+  /* border-left: 3px solid rgb(196, 196, 196);
+  padding-left: 15px; */
+  font-size: 1rem;
+  line-height: 27px;
+  width: 90%;
+}
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 17px;
+}
+.youtube,
+.live,
+.github,
 .featuredBtn {
   padding: 7px 25px;
   border: 1px solid white;
   display: block;
   width: fit-content;
-  margin-top: 20px;
+  transition: all 0.25s ease-in-out;
+}
+
+.youtube {
+  color: red;
+  border-color: red;
+  border-radius: 7px;
+}
+.live {
+  border-color: green;
+  background-color: green;
+}
+.github {
+  background-color: #000;
+}
+.youtube:hover {
+  background-color: rgb(194, 3, 3);
+  color: rgb(219, 219, 219);
+}
+.live:hover {
+  background-color: rgb(1, 79, 1);
+}
+.youtube:active,
+.live:active,
+.github:active {
+  transform: scale(0.9);
+}
+
+.featuredBtn {
+  position: relative;
+  z-index: 1;
+}
+
+.featuredBtn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: white;
+  transition: transform 0.25s ease-in-out;
+  transform: scaleX(0);
+}
+
+.featuredBtn:hover::after {
+  transform: scaleX(1);
+}
+
+.featuredBtn:hover {
+  color: black;
+}
+.featuredBtn:active {
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.581);
+}
+
+.list {
+  margin: 25px 0 0 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* All Projects */
+.allProjects {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(/assets/allprojects.png);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.95);
+}
 .allProjectWrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px 20px;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
   margin: 50px 0;
 }
 
 .allProjectCard {
   background-color: var(--color-black-2);
-  padding: 15px 20px;
-  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.3);
-  width: 20%;
+  padding: 25px 30px 20px;
+  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.4);
   text-align: center;
   cursor: pointer;
   border-radius: 7px;
   min-width: 200px;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  border-top: 5px solid rgb(102, 36, 196);
 }
+
+.allProjectCard:hover {
+  background-color: rgb(44, 41, 41);
+  border-color: orangered;
+}
+
 .allProjectName {
   font-size: 1.4rem;
 }
@@ -69,23 +183,247 @@
   padding: 7px 20px;
   border: 2px solid white;
   display: block;
+  z-index: 1;
+  position: relative;
+}
+
+.allProjectBtn::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+  transform-origin: right;
+  transform: scaleX(0);
+
+  transition: transform 0.25s ease;
+}
+
+.allProjectBtn:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+
+.allProjectBtn:hover {
+  color: black;
+}
+.allProjectBtn:active {
+  border-color: blueviolet;
 }
 
 /* Top Relaese */
+.topRelease {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(/assets/toprelease3.png);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+}
 .topReleaseWrapper {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   gap: 20px;
-  padding: 20px 0 30px;
+  padding: 50px 40px 40px 25px;
+  margin-left: -25px;
 }
 
 .topReleaseImg {
-  width: 200px;
-  clip: rect(0, 0, 70%, 100%);
+  min-width: 220px;
+  background-blend-mode: screen;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  position: relative;
 }
+.topReleaseImg::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background-color: rgba(255, 119, 0, 0.323);
+}
+
 .topReleaseCard {
-  padding: 10px;
   background-color: var(--color-black-2);
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 7px;
+  /* box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.3); */
+  border-radius: 13px;
+  box-shadow: -7px 0 25px #000;
+  z-index: 1;
+  transition: all 0.4s ease-out;
+  position: relative;
+  left: 0;
+}
+.topReleaseCard:first-child {
+  box-shadow: 2px 0 25px #000;
+}
+
+.topReleaseCard:hover {
+  transform: translateY(-20px);
+}
+
+.topReleaseCard:hover ~ .topReleaseCard {
+  left: 30px;
+}
+
+.topReleaseContent {
+  padding: 0 15px 17px;
+}
+
+.topReleaseCard:not(:first-child) {
+  margin-left: -50px;
+}
+
+.topReleaseH3 {
+  font-size: 1.4rem;
+}
+
+.topReleaseH3::after {
+  content: '';
+  height: 2px;
+  width: 100px;
+  background-color: rgb(126, 126, 233);
+  display: block;
+  margin: 7px 0 0px 4px;
+}
+
+.topReleaseName {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 5px 0 7px;
+  color: rgb(200, 200, 200);
+}
+.topReleaseInfo {
+  font-size: 0.9rem;
+  text-align: center;
+  color: rgb(133, 135, 156);
+}
+
+.topReleaseBtn {
+  background-color: rgb(90, 98, 104);
+  padding: 5px;
+  width: 90%;
+  color: #000;
+  margin: 10px auto 0;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.topReleaseBtn:hover {
+  background-color: rgb(165, 197, 186);
+}
+
+.topReleaseBtn:active {
+  background-color: rgb(114, 154, 140);
+  outline: 3px solid rgb(42, 40, 40);
+}
+/* .topReleaseBtn::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgb(165, 197, 186);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in;
+  transform-origin: right;
+}
+.topReleaseBtn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+} */
+
+/* Media Query */
+@media screen and (max-width: 1210px) {
+  .newRelease {
+    display: none;
+  }
+
+  .featuredLeft {
+    width: 60%;
+    padding: 7px;
+  }
+  .featuredRight {
+    width: 40%;
+  }
+  .featuredInfo {
+    width: 100%;
+  }
+
+  /* .topRelease {
+    padding-left: 60px;
+  }
+  .topReleaseWrapper {
+    margin-left: -25px;
+  } */
+}
+
+@media screen and (max-width: 1090px) {
+  .featuredWrapper {
+    flex-direction: column;
+  }
+  .featuredLeft {
+    width: 100%;
+    height: 360px;
+    padding: 13px;
+  }
+  .featuredRight {
+    width: 100%;
+  }
+  .allProjectWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .allProjectWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .allProjectWrapper {
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 35px;
+  }
+  .featuredLeft {
+    height: 260px;
+    min-height: auto;
+    padding: 10px;
+  }
+  .allProjects {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .allProjectCard {
+    width: 92%;
+    margin: 0 auto;
+  }
+  .featured,
+  .topRelease,
+  .allProjects {
+    padding: 20px 15px 40px;
+    margin-bottom: 50px;
+  }
+  .featuredWrapper {
+    gap: 25px;
+    margin-top: 30px;
+  }
+  .featuredName {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  .featuredInfo {
+    font-size: 0.9rem;
+  }
+
+  .featuredLeft {
+    height: 200px;
+    padding: 5px;
+  }
 }
