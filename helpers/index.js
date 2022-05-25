@@ -28,3 +28,10 @@ export const getFeaturedItem = async () => {
     return snapshot.docs[0].data()
   }
 }
+
+export const getAdditionalData = async (id) => {
+  const snapshot = await getDocs(collection(db, `projects/${id}/additional`))
+  if (!snapshot.empty) {
+    return snapshot.docs[0].data()
+  }
+}

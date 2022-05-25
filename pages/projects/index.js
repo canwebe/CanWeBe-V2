@@ -30,7 +30,8 @@ export async function getStaticProps() {
   const jsondata = await getProjectList()
   const data = await JSON.parse(await JSON.stringify(jsondata))
   const featured = await getFeaturedItem()
-
+  // const data = []
+  // const featured = []
   return {
     props: { data, featured },
   }
