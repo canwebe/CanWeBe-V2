@@ -11,6 +11,12 @@
   z-index: 1;
 }
 
+.nodata {
+  font-weight: 300;
+  text-align: center;
+  margin-top: 30vh;
+  opacity: 0.5;
+}
 .projectName {
   font-size: 3rem;
   margin-top: 10px;

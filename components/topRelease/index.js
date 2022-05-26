@@ -2,7 +2,6 @@ import styles from '../../styles/Projects.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 export default function TopRelease({ data }) {
-  console.log(data)
   return (
     <section className={styles.topRelease}>
       <div className='wrapper'>
