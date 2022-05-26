@@ -83,6 +83,8 @@ export default function Review({ projectlist }) {
         onChange={handleChange}
         type='text'
         required
+        autoFocus
+        autoCapitalize='words'
       />
     </>,
     <>
@@ -105,6 +107,9 @@ export default function Review({ projectlist }) {
         rows={2}
         placeholder='Type your feedback'
         onChange={handleChange}
+        autoFocus
+        required
+        autoCapitalize='on'
       />
     </>,
   ]
@@ -120,12 +125,16 @@ export default function Review({ projectlist }) {
             </span>
           </p>
         ) : (
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form
+            autoComplete='off'
+            className={styles.form}
+            onSubmit={handleSubmit}
+          >
             {question[page]}
             <div className={styles.btnWrapper}>
               {page !== 0 && (
                 <button
-                  className={styles.btn}
+                  className={styles.btnPrev}
                   onClick={(e) => handlePage(e, -1)}
                 >
                   <FaAngleLeft />
@@ -134,7 +143,7 @@ export default function Review({ projectlist }) {
               )}
               {page === 0 && (
                 <button
-                  className={styles.btn}
+                  className={styles.btnNext}
                   onClick={(e) => handlePage(e, 1)}
                 >
                   Next <FaAngleRight />
@@ -142,7 +151,9 @@ export default function Review({ projectlist }) {
               )}
               {page === 1 && (
                 <button
-                  className={`${styles.btn} ${name === '' ? 'disabled' : ''}`}
+                  className={`${styles.btnNext} ${
+                    name === '' ? 'disabled' : ''
+                  }`}
                   disabled={name === ''}
                   onClick={(e) => handlePage(e, 1)}
                 >
@@ -151,7 +162,9 @@ export default function Review({ projectlist }) {
               )}
               {page === 2 && (
                 <button
-                  className={`${styles.btn} ${rating === 0 ? 'disabled' : ''}`}
+                  className={`${styles.btnNext} ${
+                    rating === 0 ? 'disabled' : ''
+                  }`}
                   disabled={rating === 0}
                   onClick={(e) => handlePage(e, 1)}
                 >
