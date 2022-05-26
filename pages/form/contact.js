@@ -56,6 +56,9 @@ export default function Contact() {
         placeholder='Your Name'
         onChange={handleChange}
         type='text'
+        required
+        autoFocus
+        autoCapitalize='words'
       />
     </>,
     <>
@@ -70,6 +73,7 @@ export default function Contact() {
         placeholder='example@email.com'
         onChange={handleChange}
         type='email'
+        autoFocus
         required
       />
     </>,
@@ -84,6 +88,9 @@ export default function Contact() {
         rows={2}
         placeholder='Type your message here'
         onChange={handleChange}
+        required
+        autoCapitalize='on'
+        autoFocus
       />
     </>,
   ]
@@ -100,12 +107,16 @@ export default function Contact() {
             </span>
           </p>
         ) : (
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form
+            autoComplete='off'
+            className={styles.form}
+            onSubmit={handleSubmit}
+          >
             {question[page]}
             <div className={styles.btnWrapper}>
               {page !== 0 && (
                 <button
-                  className={styles.btn}
+                  className={styles.btnPrev}
                   onClick={(e) => handlePage(e, -1)}
                 >
                   <FaAngleLeft />
@@ -114,16 +125,20 @@ export default function Contact() {
               )}
               {page === 0 && name !== '' && (
                 <button
-                  className={`${styles.btn} ${name === '' ? 'disabled' : ''}`}
+                  className={`${styles.btnNext} ${
+                    name === '' ? 'disabled' : ''
+                  }`}
                   disabled={name === ''}
                   onClick={(e) => handlePage(e, 1)}
                 >
-                  Next <FaAngleRight />
+                  Ok <FaAngleRight />
                 </button>
               )}
               {page === 1 && (
                 <button
-                  className={`${styles.btn} ${email === '' ? 'disabled' : ''}`}
+                  className={`${styles.btnNext} ${
+                    email === '' ? 'disabled' : ''
+                  }`}
                   disabled={email === ''}
                   onClick={(e) => handlePage(e, 1)}
                 >
