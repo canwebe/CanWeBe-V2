@@ -1,0 +1,19 @@
+.input {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 3rem;
+  margin-right: 5px;
+  transition: color 0.2s;
+  color: #e4e5e9;
+}
+
+.star:global(.color) {
+  color: #ffc107;
+}
+
+.star:not(:global(.color)):global(.hover) {
+  color: rgb(208, 173, 233);
+}

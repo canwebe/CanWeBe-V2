@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useRef, useEffect, useState, useContext, useCallback } from 'react'
+import Link from 'next/link'
+import { useRef, useState, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
@@ -67,14 +68,9 @@ export default function Home({ data, testimonyData }) {
                   >
                     Our Projects
                   </button>
-                  <a
-                    href='https://xtrvl3ys9ze.typeform.com/to/T7w8fzfY'
-                    target='_blank'
-                    rel='noreferrer'
-                    className={styles.heroBtnContact}
-                  >
-                    Contact
-                  </a>
+                  <Link href='/form/contact'>
+                    <a className={styles.heroBtnContact}>Contact</a>
+                  </Link>
                 </div>
               </div>
               <div
@@ -177,14 +173,9 @@ export default function Home({ data, testimonyData }) {
           <div className='wrapper'>
             <div className={styles.feedbackCard}>
               <p>How was your experience with our services ?</p>
-              <a
-                href='https://xtrvl3ys9ze.typeform.com/to/jGwX9FWH'
-                target='_blank'
-                rel='noreferrer'
-                className={styles.feedbackBtn}
-              >
-                Rate Us
-              </a>
+              <Link href='/form/review'>
+                <a className={styles.feedbackBtn}>Rate Us</a>
+              </Link>
             </div>
           </div>
         </section>
