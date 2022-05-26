@@ -16,6 +16,8 @@ export default function Contact() {
   const [finish, setFinish] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const regex =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -36,7 +38,7 @@ export default function Contact() {
         setLoading(false)
         setTimeout(() => {
           router.back()
-        }, 2000)
+        }, 4000)
       })
     } catch (error) {
       setLoading(false)
@@ -73,7 +75,6 @@ export default function Contact() {
         placeholder='example@email.com'
         onChange={handleChange}
         type='email'
-        autoFocus
         required
       />
     </>,
@@ -137,7 +138,7 @@ export default function Contact() {
               {page === 1 && (
                 <button
                   className={`${styles.btnNext} ${
-                    email === '' ? 'disabled' : ''
+                    regex.test(email) ? '' : 'disabled'
                   }`}
                   disabled={email === ''}
                   onClick={(e) => handlePage(e, 1)}
