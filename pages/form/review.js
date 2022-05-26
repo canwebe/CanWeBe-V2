@@ -34,7 +34,7 @@ export default function Review({ projectlist }) {
         setFinsh(true)
         setTimeout(() => {
           router.back()
-        }, 2000)
+        }, 4000)
       })
     } catch (error) {
       setLoading(false)
@@ -119,7 +119,7 @@ export default function Review({ projectlist }) {
       <div className='wrapper'>
         {finish ? (
           <p className={styles.thanks}>
-            Thanks For You Your Time , We will get back to you soon.
+            Thanks For Your Review , We will add this soon.
             <span className={styles.redirect}>
               Wait automatically redirecting
             </span>
