@@ -1,39 +1,37 @@
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 import styles from '../../styles/Form.module.css'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-import { addMessageForms } from '../../helpers'
-import { useRouter } from 'next/router'
+import StarComponent from '../../components/starComponent'
 import BackBtn from '../../components/backBtn'
+import { addMessageForms, getProjectList } from '../../helpers'
 
-export default function Contact() {
+export default function Review({ projectlist }) {
+  const router = useRouter()
+  const pname = router.query?.project
   const [data, setData] = useState({
     name: '',
-    email: '',
-    query: '',
+    project: pname || 'canwebe',
+    feedback: '',
+    rating: 0,
   })
-  const { name, email, query } = data
-  const [page, setPage] = useState(0)
-  const [finish, setFinish] = useState(false)
+  const { name, project, feedback, rating } = data
+  const [finish, setFinsh] = useState(false)
   const [loading, setLoading] = useState(false)
-  const router = useRouter()
+  const [page, setPage] = useState(pname ? 1 : 0)
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handlePage = (e, dir) => {
-    e.preventDefault()
-    setPage((prev) => prev + dir)
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
     setLoading(true)
     try {
-      addMessageForms('contact', data).then(() => {
-        setFinish(true)
+      addMessageForms('review', data).then(() => {
         setLoading(false)
+        setFinsh(true)
         setTimeout(() => {
           router.back()
         }, 2000)
@@ -44,11 +42,39 @@ export default function Contact() {
     }
   }
 
+  const handleStar = (star) => {
+    setData((prev) => ({
+      ...prev,
+      rating: star,
+    }))
+  }
+
+  const handlePage = (e, dir) => {
+    e.preventDefault()
+    setPage((prev) => prev + dir)
+  }
+
   const question = [
     <>
       <label>
-        1. What Should we call you, <strong>Your Name</strong>.
+        1. Do you want to give <strong>review</strong> for
       </label>
+      <select
+        name='project'
+        onChange={handleChange}
+        value={project}
+        className={styles.textInput}
+      >
+        <option value='canwebe'>CanWeBe</option>
+        {projectlist.map((item, i) => (
+          <option key={i} value={item.toLowerCase()}>
+            {item}
+          </option>
+        ))}
+      </select>
+    </>,
+    <>
+      <label>2. Hey I&apos;m Anish. And you are ?</label>
       <input
         className={styles.textInput}
         name='name'
@@ -56,38 +82,32 @@ export default function Contact() {
         placeholder='Your Name'
         onChange={handleChange}
         type='text'
-      />
-    </>,
-    <>
-      <label>
-        2. What <strong>email address</strong> can we reach you at? This is only
-        to get in touch, not to send spam.
-      </label>
-      <input
-        className={styles.textInput}
-        name='email'
-        value={email}
-        placeholder='example@email.com'
-        onChange={handleChange}
-        type='email'
         required
       />
     </>,
     <>
       <label>
-        3. {name}, What is your <strong>Query</strong>.
+        3. Nice to meet you <span className={styles.name}>{name}</span>, How
+        would you rate
+        <strong> {project}</strong> ?
+      </label>
+      <StarComponent handleStar={handleStar} rating={rating} />
+    </>,
+    <>
+      <label>
+        4. <span className={styles.name}>{name}</span>, We want to hear from
+        you.
       </label>
       <textarea
         className={styles.textInput}
-        name='query'
-        value={query}
+        name='feedback'
+        value={feedback}
         rows={2}
-        placeholder='Type your message here'
+        placeholder='Type your feedback'
         onChange={handleChange}
       />
     </>,
   ]
-
   return (
     <div className={styles.formSection}>
       <BackBtn />
@@ -112,7 +132,15 @@ export default function Contact() {
                   Prev
                 </button>
               )}
-              {page === 0 && name !== '' && (
+              {page === 0 && (
+                <button
+                  className={styles.btn}
+                  onClick={(e) => handlePage(e, 1)}
+                >
+                  Next <FaAngleRight />
+                </button>
+              )}
+              {page === 1 && (
                 <button
                   className={`${styles.btn} ${name === '' ? 'disabled' : ''}`}
                   disabled={name === ''}
@@ -121,20 +149,21 @@ export default function Contact() {
                   Next <FaAngleRight />
                 </button>
               )}
-              {page === 1 && (
+              {page === 2 && (
                 <button
-                  className={`${styles.btn} ${email === '' ? 'disabled' : ''}`}
-                  disabled={email === ''}
+                  className={`${styles.btn} ${rating === 0 ? 'disabled' : ''}`}
+                  disabled={rating === 0}
                   onClick={(e) => handlePage(e, 1)}
                 >
                   Next <FaAngleRight />
                 </button>
               )}
-
-              {page == 2 && (
+              {page == 3 && (
                 <button
-                  className={`${styles.btn} ${query === '' ? 'disabled' : ''}`}
-                  disabled={query === '' || loading}
+                  className={`${styles.btn} ${
+                    feedback === '' ? 'disabled' : ''
+                  }`}
+                  disabled={feedback === '' || loading}
                   type='submit'
                 >
                   {loading ? 'loading' : 'Submit'}
@@ -146,4 +175,15 @@ export default function Contact() {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const data = await getProjectList()
+  const projectlist = data.map((item) => item.name)
+  // const projectlist = await JSON.parse(await JSON.stringify(data))
+  return {
+    props: {
+      projectlist,
+    },
+  }
 }
