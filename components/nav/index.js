@@ -31,14 +31,9 @@ export default function Nav() {
             <NavLink link='/' content='Home' />
             <NavLink link='/projects' content='Projects' />
             <NavLink link='/blogs' content='Blogs' />
-            <a
-              target='_blank'
-              rel='noreferrer'
-              href='https://xtrvl3ys9ze.typeform.com/to/T7w8fzfY'
-              className={styles.contactBtn}
-            >
-              Contact
-            </a>
+            <Link href='/form/contact'>
+              <a className={styles.contactBtn}>Contact</a>
+            </Link>
           </div>
           <div
             onClick={() => setIsMenu((prev) => !prev)}
@@ -61,15 +56,9 @@ export default function Nav() {
               <div onClick={() => setIsMenu(false)}>
                 <NavLink link='/blogs' content='Blogs' />
               </div>
-
-              <a
-                target='_blank'
-                rel='noreferrer'
-                href='https://xtrvl3ys9ze.typeform.com/to/T7w8fzfY'
-                className={styles.contactBtn}
-              >
-                Contact
-              </a>
+              <Link href='/form/contact'>
+                <a className={styles.contactBtn}>Contact</a>
+              </Link>
             </div>
           </div>
         </div>

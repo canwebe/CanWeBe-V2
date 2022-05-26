@@ -1,4 +1,11 @@
-import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore'
+import {
+  addDoc,
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+} from 'firebase/firestore'
 import { db } from '../lib/firebase'
 
 export const getProjectList = async (lim) => {
@@ -36,4 +43,8 @@ export const getAdditionalData = async (id) => {
   } else {
     return null
   }
+}
+
+export const addMessageForms = async (colname, data) => {
+  await addDoc(collection(db, colname), data)
 }
