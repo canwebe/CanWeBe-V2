@@ -33,7 +33,6 @@ export default function Home({ data, testimonyData }) {
 
   return (
     <>
-      {console.log('run home')}
       <Head>
         <title>Home | CanWeBe</title>
       </Head>

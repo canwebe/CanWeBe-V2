@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ['firebasestorage.googleapis.com'],
   },
+  experimental: {
+    scrollRestoration: true,
+  },
 }
 
 module.exports = nextConfig

@@ -52,13 +52,25 @@ export default function InfoSection({ data }) {
         </div>
       </div>
       <div className={styles.imgpart}>
-        <Image
-          src={data.hdimg}
-          width={2800}
-          height={1575}
-          alt={data.name}
-          layout='responsive'
-        />
+        {data.hdimg ? (
+          <Image
+            src={data.hdimg}
+            width={2800}
+            height={1575}
+            alt={data.name}
+            layout='responsive'
+          />
+        ) : (
+          <iframe
+            width='100%'
+            height='100%'
+            src={data.embed}
+            title={data.name}
+            frameBorder='0'
+            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+            allowFullScreen
+          ></iframe>
+        )}
       </div>
     </div>
   )

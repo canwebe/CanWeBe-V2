@@ -1,5 +1,3 @@
-import { useEffect } from 'react'
-import { getProjectList } from '../../helpers'
 import ProjectBtn from '../projectBtn'
 import styles from './projectScroll.module.css'
 import Image from 'next/image'
@@ -52,7 +50,7 @@ export default function ProjectScroll({ data }) {
           {item.imgsrc ? (
             <Image
               src={item.imgsrc}
-              alt='project image'
+              alt={item.name + ' image'}
               className={styles.img}
               width='200px'
               height='120px'
@@ -63,7 +61,7 @@ export default function ProjectScroll({ data }) {
               width='100%'
               height='170px'
               src={item.embed}
-              title='YouTube video player'
+              title={item.name}
               frameBorder='0'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen

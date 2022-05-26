@@ -13,7 +13,7 @@ export default function TeamList() {
               <Image
                 className={styles.img}
                 src={item.img}
-                alt='avatar image'
+                alt={item.nam + ' avatar'}
                 width={100}
                 height={100}
                 layout='responsive'

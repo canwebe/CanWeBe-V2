@@ -27,7 +27,7 @@ export default function ProjectInfo({ data }) {
         {/* <div className='wrapper'> */}
         <div className={`${styles.mainSection} wrapper`}>
           <InfoSection data={data} />
-          <Contributor data={data.contributor} />
+          {data?.contributor && <Contributor data={data.contributor} />}
           <ProjectReviewSection data={data.review} />
         </div>
         {/* </div> */}
