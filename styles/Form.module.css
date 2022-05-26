@@ -65,6 +65,15 @@
   font-size: 1.7rem;
 }
 
+select.textInput {
+  width: 90%;
+  max-width: 340px;
+}
+
+textarea.textInput {
+  resize: none;
+}
+
 .textInput::placeholder {
   color: #5e3e9d8f;
   font-size: 1.7rem;
@@ -90,6 +99,11 @@
   font-size: 1rem;
   margin-top: 13px;
   color: rgb(109, 48, 15);
+}
+
+.name {
+  text-transform: capitalize;
+  font-weight: 600;
 }
 
 /* Media Query */
