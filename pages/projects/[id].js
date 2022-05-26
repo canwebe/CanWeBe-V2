@@ -10,7 +10,7 @@ import Head from 'next/head'
 export default function ProjectInfo({ data }) {
   const router = useRouter()
 
-  return (
+  return data ? (
     <>
       <Head>
         <title>{data.name} | CanWeBe</title>
@@ -33,6 +33,8 @@ export default function ProjectInfo({ data }) {
         {/* </div> */}
       </div>
     </>
+  ) : (
+    <h1 className={styles.nodata}>No data Found</h1>
   )
 }
 
@@ -46,6 +48,7 @@ export async function getStaticProps(context) {
 export async function getStaticPaths() {
   const data = await getProjectList()
   const projectArray = data.map((item) => ({ params: { id: item.id } }))
+
   return {
     paths: projectArray,
     fallback: true,
