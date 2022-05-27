@@ -26,7 +26,7 @@ export default function InfoSection({ data }) {
     <div className={styles.photoDiv}>
       <div className={styles.infopart}>
         <div className={styles.techstack}>
-          <h3 className={styles.techstackH3}>Technology Used</h3>
+          <h3 className={styles.techstackH3}>Technology Tag</h3>
           <div className={styles.techstackWrapper}>
             {data.stack.map((item, i) => (
               <p key={i}>{item}</p>

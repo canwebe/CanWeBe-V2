@@ -5,17 +5,15 @@ import { useRef, useState, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
 import TeamList from '../components/teamList'
-
-import { FaChevronDown } from 'react-icons/fa'
-import { getProjectList, getTestimonyData } from '../helpers'
+import { getColData, getProjectList, getTeamData } from '../helpers'
 import styles from '../styles/Home.module.css'
 
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
-import useOffset from '../hooks/useOffset'
-export default function Home({ data, testimonyData }) {
+
+export default function Home({ data, testimonyData, teamData }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
   const projectRef = useRef()
@@ -166,7 +164,7 @@ export default function Home({ data, testimonyData }) {
         <section className={styles.teamSection}>
           <div className='wrapper'>
             <h3 className='header'>Our Team</h3>
-            <TeamList />
+            <TeamList teamData={teamData} />
           </div>
         </section>
         <section className={styles.feedbackSection}>
@@ -187,15 +185,25 @@ export default function Home({ data, testimonyData }) {
 }
 
 export async function getStaticProps() {
-  const newdata = await getProjectList(6)
-  const testimonyData = await getTestimonyData()
-  const data = await JSON.parse(await JSON.stringify(newdata))
+  let data = []
+  let testimonyData = []
+  let teamData = []
+
+  try {
+    const newdata = await getProjectList(6)
+    testimonyData = await getColData('testimony')
+    teamData = await getTeamData()
+    data = await JSON.parse(JSON.stringify(newdata))
+  } catch (error) {
+    console.log(error)
+  }
   // const data = []
   // const testimonyData = []
   return {
     props: {
       data,
       testimonyData,
+      teamData,
     },
   }
 }

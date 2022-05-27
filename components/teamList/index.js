@@ -3,10 +3,10 @@ import styles from './teamList.module.css'
 import { employeeData } from '../../data/data'
 import Image from 'next/image'
 
-export default function TeamList() {
+export default function TeamList({ teamData }) {
   return (
     <div className={styles.cardWrapper}>
-      {employeeData.map((item, i) => (
+      {teamData.map((item, i) => (
         <div className={styles.card} key={i}>
           <div className={styles.leftSide}>
             <div className={styles.avatar}>

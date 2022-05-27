@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { getAdditionalData, getProjectList } from '../../helpers'
+import { getColData, getProjectList } from '../../helpers'
 import styles from '../../styles/ProjectInfo.module.css'
 import { FaArrowLeft } from 'react-icons/fa'
 import InfoSection from '../../components/infoSection'
@@ -39,7 +39,8 @@ export default function ProjectInfo({ data }) {
 }
 
 export async function getStaticProps(context) {
-  const data = await getAdditionalData(context.params.id)
+  const colname = `projects/${context.params.id}/additional`
+  const [data] = await getColData(colname)
   return {
     props: { data },
   }
