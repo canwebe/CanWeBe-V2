@@ -1,7 +1,7 @@
 import AllProjects from '../../components/allprojects'
 import Featured from '../../components/featured'
 import TopRelease from '../../components/topRelease'
-import { getFeaturedItem, getProjectList } from '../../helpers'
+import { getColData, getProjectList } from '../../helpers'
 import Head from 'next/head'
 
 export default function Projects({ data, featured }) {
@@ -27,12 +27,17 @@ export default function Projects({ data, featured }) {
 }
 
 export async function getStaticProps() {
-  const jsondata = await getProjectList()
-  const data = await JSON.parse(await JSON.stringify(jsondata))
-  const featured = await getFeaturedItem()
-  // const data = []
-  // const featured = []
+  let data = []
+  let featured = []
+  try {
+    const jsondata = await getProjectList()
+    data = await JSON.parse(JSON.stringify(jsondata))
+    featured = await getColData('featured')
+  } catch (error) {
+    console.log(error)
+  }
+
   return {
-    props: { data, featured },
+    props: { data, featured: featured[0] },
   }
 }

@@ -176,7 +176,7 @@
 
 .contributorWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   padding: 40px 0 20px;
 }
@@ -187,6 +187,7 @@
   box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.6);
   /* height: fit-content; */
   border-radius: 20px;
+  max-width: 300px;
 }
 
 .contributorName {
@@ -197,6 +198,10 @@
   font-size: 1.2rem;
   color: white;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+}
+
+.contributorName:global(.lead) {
+  background-color: #e22b34;
 }
 
 .list {
@@ -328,7 +333,7 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 660px) {
   .imgpart {
     width: 100%;
     padding: 10px;

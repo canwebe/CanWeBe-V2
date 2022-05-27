@@ -19,20 +19,26 @@ export const getProjectList = async (lim) => {
 
   if (!snapshot.empty) {
     return snapshot.docs.map((item) => ({ ...item.data(), id: item.id }))
+  } else {
+    return null
   }
 }
 
-export const getTestimonyData = async () => {
-  const snapshot = await getDocs(collection(db, 'testimony'))
+export const getColData = async (colname) => {
+  const snapshot = await getDocs(collection(db, colname))
   if (!snapshot.empty) {
     return snapshot.docs.map((item) => item.data())
+  } else {
+    return null
   }
 }
 
-export const getFeaturedItem = async () => {
-  const snapshot = await getDocs(collection(db, 'featured'))
+export const getTeamData = async () => {
+  const snapshot = await getDocs(query(collection(db, 'team'), orderBy('rank')))
   if (!snapshot.empty) {
-    return snapshot.docs[0].data()
+    return snapshot.docs.map((item) => item.data())
+  } else {
+    return null
   }
 }
 

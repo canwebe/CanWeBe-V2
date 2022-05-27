@@ -6,7 +6,13 @@ export default function Contributor({ data }) {
       <div className={styles.contributorWrapper}>
         {data.map((item, i) => (
           <div className={styles.contributorCard} key={i}>
-            <p className={styles.contributorName}>{item.name}</p>
+            <p
+              className={`${styles.contributorName} ${
+                item?.lead ? 'lead' : ''
+              }`}
+            >
+              {item.name} {item?.lead && ' (LEAD)'}
+            </p>
             <ul className={styles.list}>
               {item.work.map((task, i) => (
                 <li key={i}>{task}</li>
