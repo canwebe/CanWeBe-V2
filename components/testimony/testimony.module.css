@@ -1,6 +1,6 @@
 .section {
   padding: 50px 0 50px;
-  /* background-color: var(--color-black-1); */
+  background-color: var(--color-black-1);
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
     url('/assets/testimonybg.png');
   position: relative;

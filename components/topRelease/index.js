@@ -1,6 +1,7 @@
 import styles from '../../styles/Projects.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+
 export default function TopRelease({ data }) {
   return (
     <section className={styles.topRelease}>
@@ -15,7 +16,9 @@ export default function TopRelease({ data }) {
                   width={800}
                   height={480}
                   layout='responsive'
-                  alt='imah'
+                  placeholder='blur'
+                  blurDataURL='/assets/placeholder.webp'
+                  alt='Project Img'
                 />
               </div>
               <div className={styles.topReleaseContent}>

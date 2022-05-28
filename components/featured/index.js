@@ -30,6 +30,8 @@ export default function Featured({ data }) {
               width={800}
               height={480}
               layout='responsive'
+              placeholder='blur'
+              blurDataURL='/assets/placeholder.webp'
             />
           )}
         </div>

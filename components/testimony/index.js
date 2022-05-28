@@ -2,7 +2,6 @@ import styles from './testimony.module.css'
 import Carausal from '../carausal/carousel'
 import CarauselItem from '../carausal/carouselItem'
 import Review from '../carausal/review'
-import { testimonyData } from '../../data/data'
 import TestimonySVG from '../svg/testimonySVG'
 
 export default function Testimony({ data }) {

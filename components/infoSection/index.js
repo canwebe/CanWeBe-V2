@@ -59,6 +59,8 @@ export default function InfoSection({ data }) {
             height={1575}
             alt={data.name}
             layout='responsive'
+            placeholder='blur'
+            blurDataURL='/assets/placeholder.webp'
           />
         ) : (
           <iframe
