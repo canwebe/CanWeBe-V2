@@ -1,6 +1,5 @@
 import SocialBtn from '../socialBtn'
 import styles from './teamList.module.css'
-import { employeeData } from '../../data/data'
 import Image from 'next/image'
 
 export default function TeamList({ teamData }) {
@@ -13,9 +12,11 @@ export default function TeamList({ teamData }) {
               <Image
                 className={styles.img}
                 src={item.img}
-                alt={item.nam + ' avatar'}
+                alt={item.name + ' avatar'}
                 width={100}
                 height={100}
+                placeholder='blur'
+                blurDataURL='/assets/avatar.webp'
                 layout='responsive'
               />
             </div>
