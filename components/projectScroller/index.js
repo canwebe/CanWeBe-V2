@@ -43,6 +43,7 @@ export default function ProjectScroll({ data }) {
       return null
     }
   }
+
   return (
     <div className={styles.scroller}>
       {data.map((item, i) => (
@@ -54,6 +55,8 @@ export default function ProjectScroll({ data }) {
               className={styles.img}
               width='200px'
               height='120px'
+              placeholder='blur'
+              blurDataURL='/assets/placeholder.webp'
               layout='responsive'
             />
           ) : (
