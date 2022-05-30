@@ -38,20 +38,20 @@ export default function ProjectInfo({ data }) {
   )
 }
 
-// export async function getStaticProps(context) {
-//   const colname = `projects/${context.params.id}/additional`
-//   const [data] = await getColData(colname)
-//   return {
-//     props: { data },
-//   }
-// }
+export async function getStaticProps(context) {
+  const colname = `projects/${context.params.id}/additional`
+  const [data] = await getColData(colname)
+  return {
+    props: { data },
+  }
+}
 
-// export async function getStaticPaths() {
-//   const data = await getProjectList()
-//   const projectArray = data.map((item) => ({ params: { id: item.id } }))
+export async function getStaticPaths() {
+  const data = await getProjectList()
+  const projectArray = data.map((item) => ({ params: { id: item.id } }))
 
-//   return {
-//     paths: projectArray,
-//     fallback: true,
-//   }
-// }
+  return {
+    paths: projectArray,
+    fallback: true,
+  }
+}

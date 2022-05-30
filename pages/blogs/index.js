@@ -14,7 +14,8 @@ export default function Blogs({ data }) {
       <div className='sectionbody'>
         <div className='wrapper'>
           <h1 className='pageHeader'>Blogs.</h1>
-          <h3 className='header'>All Posts</h3>
+          <p className='mt'>On Maintenance , Visit After Some Time</p>
+          {/* <h3 className='header'>All Posts</h3>
           <div className={styles.blogWrapper}>
             {data.map((item, i) => (
               <Link href={`/blogs/${item.slug}`} key={i}>
@@ -40,17 +41,17 @@ export default function Blogs({ data }) {
                 </a>
               </Link>
             ))}
-          </div>
+          </div>*/}
         </div>
       </div>
     </>
   )
 }
 
-export async function getStaticProps() {
-  const jsondata = await getColData('blogs')
-  const data = await JSON.parse(JSON.stringify(jsondata))
-  return {
-    props: { data },
-  }
-}
+// export async function getStaticProps() {
+//   const jsondata = await getColData('blogs')
+//   const data = await JSON.parse(JSON.stringify(jsondata))
+//   return {
+//     props: { data },
+//   }
+// }
