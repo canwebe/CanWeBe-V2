@@ -26,18 +26,18 @@ export default function Projects({ data, featured }) {
   )
 }
 
-export async function getStaticProps() {
-  let data = []
-  let featured = []
-  try {
-    const jsondata = await getProjectList()
-    data = await JSON.parse(JSON.stringify(jsondata))
-    featured = await getColData('featured')
-  } catch (error) {
-    console.log(error)
-  }
+// export async function getStaticProps() {
+//   let data = []
+//   let featured = []
+//   try {
+//     const jsondata = await getProjectList()
+//     data = await JSON.parse(JSON.stringify(jsondata))
+//     featured = await getColData('featured')
+//   } catch (error) {
+//     console.log(error)
+//   }
 
-  return {
-    props: { data, featured: featured[0] },
-  }
-}
+//   return {
+//     props: { data, featured: featured[0] },
+//   }
+// }

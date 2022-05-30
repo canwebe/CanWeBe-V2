@@ -9,23 +9,41 @@ import { blogPosts } from '../../data/data'
 import moment from 'moment'
 
 export default function Blogs({ data }) {
+  const [searchStr, setSearchStr] = useState('')
+  let filterList = data
+  if (searchStr.length > 3) {
+    filterList = data.filter((item) =>
+      item.title.toLowerCase().includes(searchStr.trim().toLowerCase())
+    )
+  }
   return (
     <>
       <div className='sectionbody'>
         <div className='wrapper'>
           <h1 className='pageHeader'>Blogs.</h1>
-          <p className='mt'>On Maintenance , Visit After Some Time</p>
-          {/* <h3 className='header'>All Posts</h3>
+
+          <input
+            className={styles.searchBox}
+            placeholder='Type to search blog posts'
+            type='text'
+            value={searchStr}
+            onChange={(e) => setSearchStr(e.target.value)}
+          />
+
+          <h3 className='header'>All Posts ({filterList.length})</h3>
+          {filterList.length === 0 && <p>No Post Found</p>}
           <div className={styles.blogWrapper}>
-            {data.map((item, i) => (
+            {filterList.map((item, i) => (
               <Link href={`/blogs/${item.slug}`} key={i}>
                 <a className={styles.postCard}>
                   <div className={styles.postimg}>
                     <Image
-                      src='/ogcanwebe.webp'
+                      src={item.imgsrc}
                       layout='fill'
                       objectFit='cover'
                       alt='blog image'
+                      placeholder='blur'
+                      blurDataURL='/assets/placeholder.webp'
                     />
                   </div>
                   <div className={styles.postcontent}>
@@ -41,17 +59,17 @@ export default function Blogs({ data }) {
                 </a>
               </Link>
             ))}
-          </div>*/}
+          </div>
         </div>
       </div>
     </>
   )
 }
 
-// export async function getStaticProps() {
-//   const jsondata = await getColData('blogs')
-//   const data = await JSON.parse(JSON.stringify(jsondata))
-//   return {
-//     props: { data },
-//   }
-// }
+export async function getStaticProps() {
+  const jsondata = await getColData('blogs', true)
+  const data = await JSON.parse(JSON.stringify(jsondata))
+  return {
+    props: { data },
+  }
+}

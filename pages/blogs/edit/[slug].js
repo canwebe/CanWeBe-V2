@@ -1,21 +1,28 @@
 import { useState } from 'react'
-import { addBlogPost, uploadImage } from '../../helpers'
-import styles from '../../styles/Create.module.css'
-
-export default function Create() {
+import { getBlogPost, getColData, updateBlogPost } from '../../../helpers'
+import styles from '../../../styles/Create.module.css'
+import { useRouter } from 'next/router'
+export default function Create({
+  name,
+  title,
+  taglist,
+  imgsrc,
+  content,
+  shortinfo,
+}) {
   const [data, setData] = useState({
-    title: '',
-    name: 'Golam Rabbani',
-    content: '',
-    shortinfo: '',
-    tags: '',
+    title,
+    name,
+    content,
+    imgsrc,
+    shortinfo,
+    tags: taglist.join(','),
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
-  const [photo, setPhoto] = useState(null)
-  const { title, name, content, imgsrc, shortinfo, tags } = data
 
+  const router = useRouter()
+  // const { title, name, content, imgsrc, shortinfo, tags } = data
   const handleChange = (e) => {
     const { name, value } = e.target
     setData((prev) => ({
@@ -23,26 +30,20 @@ export default function Create() {
       [name]: value,
     }))
   }
+
+  const handleDelete = () => {}
   const handleSubmit = async (e) => {
     console.log('click')
     e.preventDefault()
     setLoading(true)
-    setSuccess('')
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
       if (passcode === '123') {
-        await addBlogPost(data, photo)
+        await updateBlogPost(router.query.slug, data)
         setLoading(false)
-        setData({
-          title: '',
-          name: 'Golam Rabbani',
-          content: '',
-          shortinfo: '',
-          tags: '',
-        })
-        setPhoto(null)
-        setSuccess(title + ' added succesfully')
+        alert(title + ' updated succesfully')
+        router.back()
       } else {
         setError('Passcode wrong Try Again')
         setLoading(false)
@@ -57,7 +58,7 @@ export default function Create() {
     <>
       <div className='sectionbody'>
         <div className='wrapper'>
-          <h1 className='pageHeader'>Create Post.</h1>
+          <h1 className='pageHeader'>Update Post.</h1>
           <form className={styles.createWrapper} onSubmit={handleSubmit}>
             <input
               className={styles.inputtext}
@@ -66,22 +67,23 @@ export default function Create() {
               placeholder='Enter The Title'
               required
               type='text'
-              value={title}
+              value={data.title}
               maxLength={100}
             />
             <div className={styles.inputwrapper}>
               <input
                 className={styles.inputtext}
-                onChange={(e) => setPhoto(e.target.files[0])}
+                onChange={handleChange}
+                name='imgsrc'
                 placeholder='Paste Image Link'
                 required
-                accept='image/*'
-                type='file'
+                type='text'
+                value={data.imgsrc}
               />
               <select
                 className={styles.inputtext}
                 name='name'
-                value={name}
+                value={data.name}
                 required
                 onChange={handleChange}
               >
@@ -98,7 +100,7 @@ export default function Create() {
               placeholder='eg: react,javascript,html'
               required
               type='text'
-              value={tags}
+              value={data.tags}
             />
 
             <textarea
@@ -107,7 +109,7 @@ export default function Create() {
               placeholder='Type short info'
               required
               rows={2}
-              value={shortinfo}
+              value={data.shortinfo}
               maxLength={150}
               className={styles.shortinfo}
             />
@@ -117,19 +119,47 @@ export default function Create() {
               name='content'
               onChange={handleChange}
               required
-              value={content}
+              value={data.content}
               rows='10'
               placeholder='Attention this is markdown content'
             />
+            <div className={styles.btnWrapper}>
+              <button onClick={handleDelete} className={styles.btnDlt}>
+                Delete
+              </button>
+              <button className={styles.btn} type='submit' disabled={loading}>
+                {loading ? 'Updating' : 'Update Post'}
+              </button>
+            </div>
 
-            <button className={styles.btn} type='submit' disabled={loading}>
-              {loading ? 'Adding' : 'Add Post'}
-            </button>
             {error && <p className={styles.error}>{error}</p>}
-            {success && <p className={styles.success}>{success}</p>}
           </form>
         </div>
       </div>
     </>
   )
+}
+
+export async function getStaticPaths() {
+  const data = await getColData('blogs')
+  const dataArray = data.map((item) => ({
+    params: { slug: item.slug },
+  }))
+
+  return {
+    paths: dataArray,
+    fallback: false,
+  }
+}
+
+export async function getStaticProps({ params: { slug } }) {
+  const data = await getBlogPost('blogposts', slug)
+  const shortdata = await getBlogPost('blogs', slug)
+
+  const { name, title, taglist, imgsrc, content } = data
+  const { shortinfo } = shortdata
+
+  return {
+    props: { name, title, taglist, imgsrc, content, shortinfo },
+  }
 }

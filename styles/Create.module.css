@@ -26,10 +26,24 @@
   width: 50%;
 }
 
-.btn {
+.btn,
+.btnDlt {
   padding: 10px 20px;
   font-size: 1.2rem;
   cursor: pointer;
+}
+.btn {
+  width: 70%;
+}
+.btnDlt {
+  width: 30%;
+  color: white;
+  background-color: rgb(177, 25, 25);
+}
+
+.btnWrapper {
+  display: flex;
+  gap: 10px;
 }
 
 .error,

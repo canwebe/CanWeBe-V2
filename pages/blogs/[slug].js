@@ -6,6 +6,9 @@ import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
 import moment from 'moment'
 import readingTime from 'reading-time'
+import Youtube from '../../components/Youtube'
+import Link from 'next/link'
+import GoBackpageBtn from '../../components/goBackPageBtn'
 
 export default function Post({
   name,
@@ -14,6 +17,7 @@ export default function Post({
   imgsrc,
   seconds,
   source,
+  time,
 }) {
   const router = useRouter()
   return (
@@ -22,15 +26,12 @@ export default function Post({
         <div
           className={styles.blackBg}
           style={{
-            backgroundImage:
-              "linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url('/ogcanwebe.webp')",
+            backgroundImage: `linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(${imgsrc})`,
           }}
         ></div>
         <div className={styles.postWrapper}>
           <div className={styles.postTitleWrapper}>
-            <button className={styles.gobackBtn} onClick={() => router.back()}>
-              <FaArrowLeft /> Go Back
-            </button>
+            <GoBackpageBtn />
             <p className={styles.postTitle}>{title}</p>
             <div className={styles.datenameWrapper}>
               <p className={styles.date}>
@@ -43,7 +44,17 @@ export default function Post({
             </div>
           </div>
           <div className={styles.postContent}>
-            <MDXRemote {...source} />
+            <div className={styles.tagList}>
+              {taglist.map((item, i) => (
+                <Link key={i} href={`/tag/${item}`}>
+                  <a className={styles.tag}>#{item}</a>
+                </Link>
+              ))}
+            </div>
+            <p className={styles.timeToRead}>{time.text}</p>
+            <div className='blog'>
+              <MDXRemote {...source} components={{ Youtube }} />
+            </div>
           </div>
         </div>
       </div>
@@ -64,7 +75,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const data = await getBlogPost(slug)
+  const data = await getBlogPost('blogposts', slug)
   console.log(data)
   const {
     name,
@@ -76,8 +87,8 @@ export async function getStaticProps({ params: { slug } }) {
   } = data
   const mdxSource = await serialize(content)
   const time = readingTime(content)
-  console.log(time)
+
   return {
-    props: { name, title, taglist, imgsrc, seconds, source: mdxSource },
+    props: { name, title, taglist, imgsrc, seconds, time, source: mdxSource },
   }
 }

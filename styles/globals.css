@@ -96,3 +96,63 @@ body {
   text-align: center;
   padding: 50px 20px 0;
 }
+
+/* MDX */
+
+.blog h1 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #303237;
+}
+.blog hr {
+  color: #303237;
+  background-color: #303237;
+}
+
+.blog h2 {
+  margin: 22px 0;
+}
+.blog h2 {
+  margin: 19px 0;
+  color: #ce8f57;
+}
+
+.blog h3 {
+  margin: 18px 0;
+  color: #ce8f57;
+}
+.blog h4 {
+  margin: 17px 0;
+}
+
+.blog a {
+  color: #58a6ff;
+  font-weight: 600;
+}
+code {
+  background-color: #0b1723;
+  padding: 10px;
+  margin: 16px 0;
+}
+.blog ul,
+.blog ol {
+  color: #e47e24;
+  padding-left: 40px;
+  margin: 16px 0;
+  line-height: 25px;
+}
+.blog p {
+  margin: 16px 0;
+  line-height: 25px;
+}
+
+.blog img {
+  width: 80%;
+  margin: 18px auto;
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .blog img {
+    width: 100%;
+  }
+}
