@@ -1,0 +1,67 @@
+.blackBg {
+  background-color: rgb(0, 0, 0);
+  background-position: center;
+  background-size: cover;
+  min-height: 50vh;
+  margin-top: 68px;
+  position: sticky;
+  top: 68px;
+  z-index: -1;
+}
+
+.postWrapper {
+  width: 90%;
+  max-width: 900px;
+  margin: -40vh auto 0;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+  overflow: hidden;
+}
+.postContent {
+  background-color: var(--color-black-2);
+  padding: 20px;
+  min-height: 300vh;
+}
+
+.postTitleWrapper {
+  padding: 20px 20px 30px;
+  background-color: #34343486;
+  backdrop-filter: blur(10px);
+  /* margin-bottom: 20px; */
+}
+
+.postTitle {
+  margin: 20px 0 10px;
+  font-size: 2rem;
+}
+
+.gobackBtn {
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  gap: 6px;
+  transition: all 0.25s ease;
+  border: none;
+  outline: none;
+}
+.gobackBtn:hover {
+  color: #c9510c;
+}
+.gobackBtn:active {
+  transform: translateX(-15px);
+}
+
+.datenameWrapper {
+  display: flex;
+  gap: 30px;
+}
+.date,
+.name {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: rgb(209, 209, 209);
+}

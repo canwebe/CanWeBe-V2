@@ -184,26 +184,26 @@ export default function Home({ data, testimonyData, teamData }) {
   )
 }
 
-export async function getStaticProps() {
-  let data = []
-  let testimonyData = []
-  let teamData = []
+// export async function getStaticProps() {
+//   let data = []
+//   let testimonyData = []
+//   let teamData = []
 
-  try {
-    const newdata = await getProjectList(6)
-    testimonyData = await getColData('testimony')
-    teamData = await getTeamData()
-    data = await JSON.parse(JSON.stringify(newdata))
-  } catch (error) {
-    console.log(error)
-  }
-  // const data = []
-  // const testimonyData = []
-  return {
-    props: {
-      data,
-      testimonyData,
-      teamData,
-    },
-  }
-}
+//   try {
+//     const newdata = await getProjectList(6)
+//     testimonyData = await getColData('testimony')
+//     teamData = await getTeamData()
+//     data = await JSON.parse(JSON.stringify(newdata))
+//   } catch (error) {
+//     console.log(error)
+//   }
+//   // const data = []
+//   // const testimonyData = []
+//   return {
+//     props: {
+//       data,
+//       testimonyData,
+//       teamData,
+//     },
+//   }
+// }
