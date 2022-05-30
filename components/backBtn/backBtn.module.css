@@ -29,8 +29,8 @@
 
 @media screen and (max-width: 600px) {
   .btn {
-    right: 20px;
-    bottom: 20px;
+    right: 30px;
+    bottom: 50px;
     font-size: 1rem;
     width: 80px;
   }

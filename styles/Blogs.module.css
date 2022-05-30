@@ -1,0 +1,123 @@
+.blogWrapper {
+  display: grid;
+  padding-top: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 30px;
+  position: relative;
+}
+
+.postCard {
+  background-color: var(--color-black-2);
+  /* padding: 17px; */
+  display: flex;
+  padding: 4px;
+  gap: 20px;
+
+  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.postCard::after {
+  content: '';
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+  box-shadow: 2px 3px 26px rgba(0, 0, 0, 0.6);
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+.postcontent:hover {
+  opacity: 0.5;
+}
+.postCard:hover::after {
+  opacity: 1;
+}
+
+/* .title:hover {
+  color: #c45c20;
+} */
+.postimg {
+  width: 40%;
+  border-radius: 7px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  padding: 4px;
+  object-fit: cover;
+  position: relative;
+  background-color: rgb(118, 118, 49);
+}
+.postcontent {
+  width: 60%;
+  padding: 13px 13px 13px 0;
+  transition: 0.3s ease;
+}
+.allposts {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  transform: rotateZ(-90deg);
+}
+.img {
+  object-fit: cover;
+  /* aspect-ratio: 16/9; */
+  object-position: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: white;
+}
+.time {
+  color: green;
+  margin-bottom: 5px;
+}
+.name {
+  margin-bottom: 10px;
+  opacity: 0.6;
+  font-size: 0.8;
+}
+
+.info {
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .postCard {
+    flex-direction: column;
+    gap: 0px;
+  }
+  .postimg {
+    width: 100%;
+  }
+  .postcontent {
+    width: 100%;
+    padding: 10px 10px 17px;
+  }
+  .blogWrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .blogWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .blogWrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .postCard {
+    max-width: 380px;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
