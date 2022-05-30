@@ -1,13 +1,14 @@
 .nav {
-  background-color: #111111;
+  background-color: #00000099;
   padding: 14px 0;
   position: fixed;
   top: 0;
   left: 0;
+  backdrop-filter: blur(13px);
   right: 0;
   z-index: 999;
   /* border-bottom: 2px solid black; */
-  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.51);
+  box-shadow: 0 3px 20px rgb(0 0 0 / 51%);
 }
 
 .logo {

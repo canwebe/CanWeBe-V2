@@ -206,3 +206,62 @@ export const testimonyData = [
       'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
   },
 ]
+
+export const blogPosts = [
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+  {
+    name: 'golam rabbani',
+    title: 'SilentShare Desh Ka Bhabishya',
+    slug: 'silentshare',
+    timestamp: { nanoseconds: 669000000, seconds: 1653762982 },
+    content:
+      'While playing games, I was not able to check and know who was joining and leaving the Discord server. Now, Voicy informs me through a voice if any member joins or leaves my voice channel.',
+  },
+]

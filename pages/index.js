@@ -16,8 +16,8 @@ import Footer from '../components/footer'
 export default function Home({ data, testimonyData, teamData }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
-  const projectRef = useRef()
-  const heroRef = useRef(null)
+  // const projectRef = useRef()
+  // const heroRef = useRef(null)
 
   // const scrollY = useOffset()
   // let progress = 0
@@ -60,12 +60,10 @@ export default function Home({ data, testimonyData, teamData }) {
                   cutting edge apps and applications.
                 </p>
                 <div className={styles.heroBtnDiv}>
-                  <button
-                    className={styles.heroBtnProjects}
-                    onClick={() => projectRef.current.scrollIntoView()}
-                  >
-                    Our Projects
-                  </button>
+                  <Link href='/projects'>
+                    <a className={styles.heroBtnProjects}>Our Projects</a>
+                  </Link>
+
                   <Link href='/form/contact'>
                     <a className={styles.heroBtnContact}>Contact</a>
                   </Link>
@@ -90,11 +88,12 @@ export default function Home({ data, testimonyData, teamData }) {
         <section className={styles.maintainence}>
           <div className='wrapper'>
             <p className={styles.maintainenceP}>
-              We are on maintainence wait for our full website to back online
+              Over 40+ projects , 2k commits and real world contribution by
+              CanWeBe
             </p>
           </div>
         </section>
-        <section ref={projectRef} className={styles.projectSection}>
+        <section className={styles.projectSection}>
           <div className='wrapper'>
             <h3 className='header'>Our Projects</h3>
             <ProjectScroll data={data} />

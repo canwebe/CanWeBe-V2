@@ -115,10 +115,11 @@
 }
 
 .maintainence {
-  background-color: #151515;
+  background-color: #00000099;
   padding: 90px 0;
   text-align: center;
   font-size: 1.8rem;
+  backdrop-filter: blur(12px);
   color: rgb(199, 203, 212);
   position: relative;
 }
