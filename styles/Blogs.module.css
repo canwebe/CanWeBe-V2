@@ -88,6 +88,35 @@
   font-size: 0.9rem;
 }
 
+/* Tag */
+.tagName {
+  text-transform: uppercase;
+  color: rgb(131, 131, 131);
+  /* font-weight: 500; */
+}
+
+/* Search */
+.searchBox {
+  margin: 0 auto 10px;
+  display: block;
+  padding: 13px 20px;
+  font-size: 1.2rem;
+  width: 80%;
+  max-width: 400px;
+  border-radius: 8px;
+  background-color: #191818;
+  outline: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.768);
+}
+
+.searchBox:focus {
+  outline: 1px solid rgba(181, 181, 181, 0.675);
+}
+.searchBox::placeholder {
+  color: rgb(56, 59, 62);
+}
+
 @media screen and (max-width: 1300px) {
   .postCard {
     flex-direction: column;
@@ -119,5 +148,9 @@
     max-width: 380px;
     width: 95%;
     margin: 0 auto;
+  }
+  .searchBox {
+    margin: -10px auto 25px;
+    width: 100%;
   }
 }

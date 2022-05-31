@@ -1,0 +1,18 @@
+.gobackBtn {
+  background-color: transparent;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  gap: 6px;
+  transition: all 0.25s ease;
+  border: none;
+  outline: none;
+}
+.gobackBtn:hover {
+  color: #c9510c;
+}
+.gobackBtn:active {
+  transform: translateX(-15px);
+}
