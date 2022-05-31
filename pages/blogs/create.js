@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { addBlogPost } from '../../helpers'
+import { addBlogPost, uploadImage } from '../../helpers'
 import styles from '../../styles/Create.module.css'
 
 export default function Create() {
@@ -7,15 +7,15 @@ export default function Create() {
     title: '',
     name: 'Golam Rabbani',
     content: '',
-    imgsrc: '',
     shortinfo: '',
     tags: '',
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
-
+  const [photo, setPhoto] = useState(null)
   const { title, name, content, imgsrc, shortinfo, tags } = data
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setData((prev) => ({
@@ -31,17 +31,17 @@ export default function Create() {
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
-      if (passcode === '123') {
-        await addBlogPost(data)
+      if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
+        await addBlogPost(data, photo)
         setLoading(false)
         setData({
           title: '',
           name: 'Golam Rabbani',
           content: '',
-          imgsrc: '',
           shortinfo: '',
           tags: '',
         })
+        setPhoto(null)
         setSuccess(title + ' added succesfully')
       } else {
         setError('Passcode wrong Try Again')
@@ -53,6 +53,7 @@ export default function Create() {
       setLoading(false)
     }
   }
+
   return (
     <>
       <div className='sectionbody'>
@@ -72,12 +73,11 @@ export default function Create() {
             <div className={styles.inputwrapper}>
               <input
                 className={styles.inputtext}
-                onChange={handleChange}
-                name='imgsrc'
+                onChange={(e) => setPhoto(e.target.files[0])}
                 placeholder='Paste Image Link'
                 required
-                type='text'
-                value={imgsrc}
+                accept='image/*'
+                type='file'
               />
               <select
                 className={styles.inputtext}
@@ -123,7 +123,11 @@ export default function Create() {
               placeholder='Attention this is markdown content'
             />
 
-            <button className={styles.btn} type='submit' disabled={loading}>
+            <button
+              className={`${styles.btn} full`}
+              type='submit'
+              disabled={loading}
+            >
               {loading ? 'Adding' : 'Add Post'}
             </button>
             {error && <p className={styles.error}>{error}</p>}

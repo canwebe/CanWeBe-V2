@@ -433,6 +433,8 @@
   .maintainence {
     padding: 45px 0;
     font-size: 1.3rem;
+    background-color: #151515;
+    backdrop-filter: blur(0);
   }
   .maintainenceP {
     padding: 5px;

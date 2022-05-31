@@ -1,14 +1,22 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   getDocs,
   limit,
   orderBy,
   query,
   serverTimestamp,
+  updateDoc,
   where,
 } from 'firebase/firestore'
-import { db } from '../lib/firebase'
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from 'firebase/storage'
+import { db, storage } from '../lib/firebase'
 
 export const getProjectList = async (lim) => {
   let q
@@ -26,8 +34,16 @@ export const getProjectList = async (lim) => {
   }
 }
 
-export const getColData = async (colname) => {
-  const snapshot = await getDocs(collection(db, colname))
+export const getColData = async (colname, sort) => {
+  let snapshot
+  if (sort) {
+    snapshot = await getDocs(
+      query(collection(db, colname), orderBy('timestamp', 'desc'))
+    )
+  } else {
+    snapshot = await getDocs(collection(db, colname))
+  }
+
   if (!snapshot.empty) {
     return snapshot.docs.map((item) => item.data())
   } else {
@@ -57,8 +73,8 @@ export const addMessageForms = async (colname, data) => {
   await addDoc(collection(db, colname), data)
 }
 
-export const addBlogPost = async (data) => {
-  const { name, content, imgsrc, shortinfo, tags } = data
+export const addBlogPost = async (data, photo) => {
+  const { name, content, shortinfo, tags } = data
   const title = data.title.trim()
   const slug = title
     .toLowerCase()
@@ -70,6 +86,9 @@ export const addBlogPost = async (data) => {
     .split(',')
     .map((item) => item.toLowerCase().trim())
     .filter((item) => item !== '')
+
+  const imgsrc = await uploadImage(slug, photo)
+
   await addDoc(collection(db, 'blogs'), {
     name,
     imgsrc,
@@ -90,13 +109,86 @@ export const addBlogPost = async (data) => {
   })
 }
 
-export const getBlogPost = async (slug) => {
-  const q = query(collection(db, 'blogposts'), where('slug', '==', slug))
+export const getBlogPost = async (colname, slug) => {
+  const q = query(collection(db, colname), where('slug', '==', slug))
   const data = await getDocs(q)
 
   if (!data.empty) {
     return data.docs[0].data()
   } else {
     return null
+  }
+}
+
+export const updateBlogPost = async (slug, data, photo, isChange) => {
+  let { name, content, shortinfo, tags, imgsrc } = data
+  const title = data.title.trim()
+  const taglist = tags
+    .trim()
+    .split(',')
+    .map((item) => item.toLowerCase().trim())
+    .filter((item) => item !== '')
+
+  const q2 = query(collection(db, 'blogposts'), where('slug', '==', slug))
+  const q1 = query(collection(db, 'blogs'), where('slug', '==', slug))
+
+  const snapshot1 = await getDocs(q1)
+  const snapshot2 = await getDocs(q2)
+
+  if (!snapshot1.empty && !snapshot2.empty) {
+    if (isChange) {
+      imgsrc = await uploadImage(slug, photo)
+    }
+    await updateDoc(snapshot1.docs[0].ref, {
+      name,
+      imgsrc,
+      title,
+      shortinfo,
+      taglist,
+    })
+
+    await updateDoc(snapshot2.docs[0].ref, {
+      name,
+      content,
+      imgsrc,
+      taglist,
+      title,
+    })
+  }
+}
+
+export const getBlogPostByTag = async (tag) => {
+  const q = query(
+    collection(db, 'blogs'),
+    where('taglist', 'array-contains', tag)
+  )
+  const data = await getDocs(q)
+
+  if (!data.empty) {
+    return data.docs.map((item) => item.data())
+  } else {
+    return null
+  }
+}
+
+export const uploadImage = async (slug, file) => {
+  const storageRef = ref(storage, 'blogs/' + slug)
+  const snapshot = await uploadBytes(storageRef, file)
+  const url = await getDownloadURL(snapshot.ref)
+  return url
+}
+
+export const deletePost = async (slug) => {
+  const q2 = query(collection(db, 'blogposts'), where('slug', '==', slug))
+  const q1 = query(collection(db, 'blogs'), where('slug', '==', slug))
+  const storageRef = ref(storage, 'blogs/' + slug)
+
+  const snapshot1 = await getDocs(q1)
+  const snapshot2 = await getDocs(q2)
+
+  if (!snapshot1.empty && !snapshot2.empty) {
+    await deleteDoc(snapshot1.docs[0].ref)
+    await deleteDoc(snapshot2.docs[0].ref)
+    await deleteObject(storageRef)
   }
 }

@@ -18,9 +18,10 @@
   overflow: hidden;
 }
 .postContent {
-  background-color: var(--color-black-2);
-  padding: 20px;
-  min-height: 300vh;
+  background-color: #0d1117;
+  background-color: #202124;
+  padding: 30px 30px 60px;
+  color: #c9d1d9;
 }
 
 .postTitleWrapper {
@@ -35,25 +36,6 @@
   font-size: 2rem;
 }
 
-.gobackBtn {
-  background-color: transparent;
-  color: white;
-  display: flex;
-  align-items: center;
-  font-size: 1.2rem;
-  cursor: pointer;
-  gap: 6px;
-  transition: all 0.25s ease;
-  border: none;
-  outline: none;
-}
-.gobackBtn:hover {
-  color: #c9510c;
-}
-.gobackBtn:active {
-  transform: translateX(-15px);
-}
-
 .datenameWrapper {
   display: flex;
   gap: 30px;
@@ -64,4 +46,34 @@
   align-items: center;
   gap: 7px;
   color: rgb(209, 209, 209);
+}
+
+.timeToRead {
+  margin: 10px 0 25px;
+  color: #906ab2;
+}
+.tagList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  color: #2f2fef;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.tag:hover {
+  color: #8585e1;
+}
+
+@media screen and (max-width: 500px) {
+  .postWrapper {
+    width: 100%;
+    margin-bottom: -56px;
+  }
+  .postContent {
+    padding: 30px 19px 60px;
+  }
 }

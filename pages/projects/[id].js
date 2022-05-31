@@ -6,6 +6,7 @@ import InfoSection from '../../components/infoSection'
 import Contributor from '../../components/contributor'
 import ProjectReviewSection from '../../components/projectReviewSection'
 import Head from 'next/head'
+import GoBackpageBtn from '../../components/goBackPageBtn'
 
 export default function ProjectInfo({ data }) {
   const router = useRouter()
@@ -18,9 +19,7 @@ export default function ProjectInfo({ data }) {
       <div className='sectionbody'>
         <div className={styles.topBar}>
           <div className={`${styles.topBarWrapper} wrapper`}>
-            <button className={styles.gobackBtn} onClick={() => router.back()}>
-              <FaArrowLeft /> Go Back
-            </button>
+            <GoBackpageBtn />
             <p className={styles.projectName}>{data.name}</p>
           </div>
         </div>
