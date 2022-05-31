@@ -58,12 +58,6 @@
   box-shadow: none;
 }
 
-.btn:not(:global(.disabled)):hover,
-.btnNext:not(:global(.disabled)):hover,
-.btnPrev:hover {
-  background-color: #514adf;
-}
-
 .btn:not(:global(.disabled)):active,
 .btnNext:not(:global(.disabled)):active,
 .btnPrev:active {
@@ -118,6 +112,20 @@ textarea.textInput {
 .name {
   text-transform: capitalize;
   font-weight: 600;
+}
+
+@media (hover: hover) {
+  .btn:not(:global(.disabled)):hover,
+  .btnNext:not(:global(.disabled)):hover,
+  .btnPrev:hover {
+    background-color: #514adf;
+  }
+
+  .btn:not(:global(.disabled)):active,
+  .btnNext:not(:global(.disabled)):active,
+  .btnPrev:active {
+    background-color: #251f9e;
+  }
 }
 
 /* Media Query */

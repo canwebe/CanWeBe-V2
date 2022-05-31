@@ -32,13 +32,6 @@
   transition: all 0.3s ease;
 }
 
-.postcontent:hover {
-  opacity: 0.5;
-}
-.postCard:hover::after {
-  opacity: 1;
-}
-
 /* .title:hover {
   color: #c45c20;
 } */
@@ -50,12 +43,19 @@
   padding: 4px;
   object-fit: cover;
   position: relative;
-  background-color: rgb(118, 118, 49);
+  /* background-color: rgb(0, 0, 0); */
 }
 .postcontent {
   width: 60%;
   padding: 13px 13px 13px 0;
   transition: 0.3s ease;
+}
+
+.postcontent:active {
+  opacity: 0.5;
+}
+.postCard:active::after {
+  opacity: 1;
 }
 .allposts {
   position: absolute;
@@ -115,6 +115,15 @@
 }
 .searchBox::placeholder {
   color: rgb(56, 59, 62);
+}
+
+@media (hover: hover) {
+  .postcontent:hover {
+    opacity: 0.5;
+  }
+  .postCard:hover::after {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 1300px) {

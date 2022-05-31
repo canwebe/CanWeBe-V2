@@ -18,19 +18,26 @@
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
-
-.btn:hover {
-  background-color: #ffffff;
-}
 .btn:active {
-  background-color: #cccccc;
+  background-color: #ffffff;
   padding-left: 0;
+}
+
+@media (hover: hover) {
+  .btn:hover {
+    background-color: #ffffff;
+  }
+  .btn:active {
+    background-color: #cccccc;
+    padding-left: 0;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .btn {
-    right: 30px;
-    bottom: 50px;
+    left: 20px;
+    bottom: auto;
+    top: 30px;
     font-size: 1rem;
     width: 80px;
   }
