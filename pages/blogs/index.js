@@ -1,12 +1,10 @@
-import { serialize } from 'next-mdx-remote/serialize'
 import styles from '../../styles/Blogs.module.css'
-import { MDXRemote } from 'next-mdx-remote'
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { addMessageForms, getColData } from '../../helpers'
-import { blogPosts } from '../../data/data'
+import { getColData } from '../../helpers'
 import moment from 'moment'
+import Head from 'next/head'
 
 export default function Blogs({ data }) {
   const [searchStr, setSearchStr] = useState('')
@@ -18,6 +16,9 @@ export default function Blogs({ data }) {
   }
   return (
     <>
+      <Head>
+        <title>Blogs | CanWeBe</title>
+      </Head>
       <div className='sectionbody'>
         <div className='wrapper'>
           <h1 className='pageHeader'>Blogs.</h1>
@@ -38,7 +39,7 @@ export default function Blogs({ data }) {
                 <a className={styles.postCard}>
                   <div className={styles.postimg}>
                     <Image
-                      src={item.imgsrc}
+                      src={item.imgsrc || '/ogcanwebe.webp'}
                       layout='fill'
                       objectFit='cover'
                       alt='blog image'

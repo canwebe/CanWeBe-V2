@@ -107,6 +107,7 @@ export default function Create({
                 className={styles.inputFile}
                 onChange={handleFile}
                 type='file'
+                accept='image/*'
                 ref={fileRef}
               />
 

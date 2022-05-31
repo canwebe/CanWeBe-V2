@@ -62,22 +62,42 @@
   transition: all 0.3s ease-in-out;
 }
 
-.facebook:hover {
+.facebook:active {
   color: #1877f2;
 }
 
-.instagram:hover {
+.instagram:active {
   color: #e1306c;
 }
-.twitter:hover {
+.twitter:active {
   color: #1da1f2;
 }
-.linkedin:hover {
+.linkedin:active {
   color: #0077b5;
 }
 
-.youtube:hover {
+.youtube:active {
   color: #ff0000;
+}
+
+@media (hover: hover) {
+  .facebook:hover {
+    color: #1877f2;
+  }
+
+  .instagram:hover {
+    color: #e1306c;
+  }
+  .twitter:hover {
+    color: #1da1f2;
+  }
+  .linkedin:hover {
+    color: #0077b5;
+  }
+
+  .youtube:hover {
+    color: #ff0000;
+  }
 }
 
 /* Media */

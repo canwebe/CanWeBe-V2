@@ -91,11 +91,10 @@
   padding: 9px 30px;
   color: #d79292;
 }
-.heroBtnContact:hover {
+
+.heroBtnContact:active {
   background-color: #d79292;
   color: #000;
-}
-.heroBtnContact:active {
   transform: scale(0.96);
   border-color: white;
 }
@@ -106,20 +105,16 @@
   color: rgb(215, 215, 215);
 }
 
-.heroBtnProjects:hover {
-  background-color: #2222b7;
-}
-
 .heroBtnProjects:active {
+  background-color: #2222b7;
   transform: translateY(3px);
 }
 
 .maintainence {
-  background-color: #00000099;
+  background-color: #151515;
   padding: 90px 0;
   text-align: center;
   font-size: 1.8rem;
-  backdrop-filter: blur(12px);
   color: rgb(199, 203, 212);
   position: relative;
 }
@@ -172,12 +167,9 @@
   outline: none;
 }
 
-.fundBtn:hover {
+.fundBtn:active {
   background-color: #000000;
   color: rgb(224, 224, 224);
-}
-
-.fundBtn:active {
   transform: scale(0.9);
 }
 
@@ -210,14 +202,11 @@
   background-color: white;
   color: #000000;
 }
-.feedbackBtn:hover {
+
+.feedbackBtn:active {
   background-color: rgb(160, 58, 10);
   color: white;
   border-radius: 30px;
-}
-
-.feedbackBtn:active {
-  transform: translateY(4px);
 }
 
 /* .infoSection {
@@ -336,6 +325,41 @@
   font-size: 1.1rem;
 }
 
+@media (hover: hover) {
+  .heroBtnContact:hover {
+    background-color: #d79292;
+    color: #000;
+  }
+  .heroBtnContact:active {
+    transform: scale(0.96);
+    border-color: white;
+  }
+  .heroBtnProjects:hover {
+    background-color: #2222b7;
+  }
+
+  .heroBtnProjects:active {
+    transform: translateY(3px);
+  }
+  .fundBtn:hover {
+    background-color: #000000;
+    color: rgb(224, 224, 224);
+  }
+
+  .fundBtn:active {
+    transform: scale(0.9);
+  }
+  .feedbackBtn:hover {
+    background-color: rgb(160, 58, 10);
+    color: white;
+    border-radius: 30px;
+  }
+
+  .feedbackBtn:active {
+    transform: translateY(4px);
+  }
+}
+
 /* Media Queries */
 @media screen and (max-width: 1000px) {
   .whyusleft {
@@ -433,8 +457,6 @@
   .maintainence {
     padding: 45px 0;
     font-size: 1.3rem;
-    background-color: #151515;
-    backdrop-filter: blur(0);
   }
   .maintainenceP {
     padding: 5px;

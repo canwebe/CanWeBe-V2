@@ -70,11 +70,21 @@
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
 }
-.seeMoreBtn:hover {
+
+.seeMoreBtn:active {
   color: blueviolet;
 }
-.seeMoreBtn:hover .btnSvg {
+.seeMoreBtn:active .btnSvg {
   background-color: blueviolet;
+}
+
+@media (hover: hover) {
+  .seeMoreBtn:hover {
+    color: blueviolet;
+  }
+  .seeMoreBtn:hover .btnSvg {
+    background-color: blueviolet;
+  }
 }
 
 @media screen and (max-width: 361px) {

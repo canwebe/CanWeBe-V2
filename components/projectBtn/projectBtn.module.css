@@ -31,20 +31,9 @@
   transition: all 0.3s ease-in;
 }
 
-.view:hover,
-.github:hover,
-.youtube:hover,
-.fb:hover {
-  color: rgb(220, 211, 211);
-}
-
 .view {
   border-color: green;
   color: green;
-}
-
-.view:hover {
-  background-color: green;
 }
 
 .github {
@@ -52,24 +41,14 @@
   color: #c9510c;
 }
 
-.github:hover {
-  background-color: #c9510c;
-}
-
 .youtube {
   border-color: #bb1414;
   color: #bb1414;
-}
-.youtube:hover {
-  background-color: #bb1414;
 }
 
 .fb {
   border-color: #1877f2;
   color: #1877f2;
-}
-.fb:hover {
-  background-color: #1877f2;
 }
 
 .githubSmall {
@@ -79,19 +58,62 @@
 .youtubeSmall {
   background-color: #bb1414;
 }
-
-.githubSmall:hover {
-  background-color: #9d3d05;
-}
-.youtubeSmall:hover {
-  background-color: #970000;
-}
-
-.youtubeSmall:active,
-.githubSmall:active,
 .view:active,
 .github:active,
 .youtube:active,
+.fb:hover {
+  color: rgb(220, 211, 211);
+}
+.view:active {
+  background-color: green;
+}
+.github:active {
+  background-color: #c9510c;
+}
+.youtube:active {
+  background-color: #bb1414;
+}
 .fb:active {
-  transform: translateY(3px);
+  background-color: #1877f2;
+}
+.githubSmall:active {
+  background-color: #9d3d05;
+}
+.youtubeSmall:active {
+  background-color: #970000;
+}
+
+@media (hover: hover) {
+  .view:hover,
+  .github:hover,
+  .youtube:hover,
+  .fb:hover {
+    color: rgb(220, 211, 211);
+  }
+  .view:hover {
+    background-color: green;
+  }
+  .github:hover {
+    background-color: #c9510c;
+  }
+  .youtube:hover {
+    background-color: #bb1414;
+  }
+  .fb:hover {
+    background-color: #1877f2;
+  }
+  .githubSmall:hover {
+    background-color: #9d3d05;
+  }
+  .youtubeSmall:hover {
+    background-color: #970000;
+  }
+  .youtubeSmall:active,
+  .githubSmall:active,
+  .view:active,
+  .github:active,
+  .youtube:active,
+  .fb:active {
+    transform: translateY(3px);
+  }
 }

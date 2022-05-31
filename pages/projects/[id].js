@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
 import { getColData, getProjectList } from '../../helpers'
 import styles from '../../styles/ProjectInfo.module.css'
-import { FaArrowLeft } from 'react-icons/fa'
 import InfoSection from '../../components/infoSection'
 import Contributor from '../../components/contributor'
 import ProjectReviewSection from '../../components/projectReviewSection'

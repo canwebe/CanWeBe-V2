@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import { addBlogPost, uploadImage } from '../../helpers'
+import { addBlogPost } from '../../helpers'
 import styles from '../../styles/Create.module.css'
+import Head from 'next/head'
 
 export default function Create() {
   const [data, setData] = useState({
@@ -56,6 +57,9 @@ export default function Create() {
 
   return (
     <>
+      <Head>
+        <title>Create Blog | CanWeBe</title>
+      </Head>
       <div className='sectionbody'>
         <div className='wrapper'>
           <h1 className='pageHeader'>Create Post.</h1>
@@ -74,8 +78,6 @@ export default function Create() {
               <input
                 className={styles.inputtext}
                 onChange={(e) => setPhoto(e.target.files[0])}
-                placeholder='Paste Image Link'
-                required
                 accept='image/*'
                 type='file'
               />
