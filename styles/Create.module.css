@@ -18,12 +18,41 @@
   border: 2px solid rgb(60, 60, 60);
 }
 
-.inputwrapper {
+.inputwrapper,
+.inputwrapperEdit {
   display: flex;
   gap: 18px;
+  align-items: center;
+}
+
+.inputFile {
+  display: none;
+}
+.changePhoto {
+  background-color: aliceblue;
+  color: black;
+  border-radius: 20px;
+  padding: 5px 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
 }
 .inputwrapper .inputtext {
   width: 50%;
+}
+.inputwrapperEdit select.inputtext {
+  width: 30%;
+}
+
+.inputwrapperEdit .inputtext {
+  width: 70%;
+}
+
+.editPhoto {
+  display: flex;
+  margin: 5px 0;
+  gap: 10px 20px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .btn,
@@ -34,6 +63,10 @@
 }
 .btn {
   width: 70%;
+}
+
+.btn:global(.full) {
+  width: 100%;
 }
 .btnDlt {
   width: 30%;
@@ -57,4 +90,14 @@
 
 .success {
   color: rgb(5, 109, 1);
+}
+
+@media screen and (max-width: 750px) {
+  .inputwrapperEdit,
+  .inputwrapper {
+    flex-direction: column;
+  }
+  .inputtext {
+    width: 100% !important;
+  }
 }

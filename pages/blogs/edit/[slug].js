@@ -1,7 +1,13 @@
-import { useState } from 'react'
-import { getBlogPost, getColData, updateBlogPost } from '../../../helpers'
+import { useRef, useState } from 'react'
+import {
+  deletePost,
+  getBlogPost,
+  getColData,
+  updateBlogPost,
+} from '../../../helpers'
 import styles from '../../../styles/Create.module.css'
 import { useRouter } from 'next/router'
+
 export default function Create({
   name,
   title,
@@ -19,9 +25,13 @@ export default function Create({
     tags: taglist.join(','),
   })
   const [loading, setLoading] = useState(false)
+  const [isChange, setIsChange] = useState(false)
+  const [photo, setPhoto] = useState(null)
   const [error, setError] = useState('')
+  const fileRef = useRef()
 
   const router = useRouter()
+  const { slug } = router.query
   // const { title, name, content, imgsrc, shortinfo, tags } = data
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -31,7 +41,27 @@ export default function Create({
     }))
   }
 
-  const handleDelete = () => {}
+  const handleDelete = async (e) => {
+    e.preventDefault()
+    const passcode = prompt('Enter the passcode')
+    if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
+      try {
+        await deletePost(slug)
+        alert('Deleted succesfully')
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+
+  const handleClick = () => {
+    setIsChange(true)
+    fileRef.current.click()
+  }
+  const handleFile = (e) => {
+    setPhoto(e.target.files[0])
+  }
+
   const handleSubmit = async (e) => {
     console.log('click')
     e.preventDefault()
@@ -39,8 +69,8 @@ export default function Create({
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
-      if (passcode === '123') {
-        await updateBlogPost(router.query.slug, data)
+      if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
+        await updateBlogPost(slug, data, photo, isChange)
         setLoading(false)
         alert(title + ' updated succesfully')
         router.back()
@@ -54,11 +84,13 @@ export default function Create({
       setLoading(false)
     }
   }
+
   return (
     <>
       <div className='sectionbody'>
         <div className='wrapper'>
           <h1 className='pageHeader'>Update Post.</h1>
+
           <form className={styles.createWrapper} onSubmit={handleSubmit}>
             <input
               className={styles.inputtext}
@@ -70,15 +102,28 @@ export default function Create({
               value={data.title}
               maxLength={100}
             />
-            <div className={styles.inputwrapper}>
+            <div className={styles.editPhoto}>
+              <input
+                className={styles.inputFile}
+                onChange={handleFile}
+                type='file'
+                ref={fileRef}
+              />
+
+              {photo && <p>{photo.name}</p>}
+              <div className={styles.changePhoto} onClick={handleClick}>
+                Change Post Photo
+              </div>
+            </div>
+            <div className={styles.inputwrapperEdit}>
               <input
                 className={styles.inputtext}
                 onChange={handleChange}
-                name='imgsrc'
-                placeholder='Paste Image Link'
+                name='tags'
+                placeholder='eg: react,javascript,html'
                 required
                 type='text'
-                value={data.imgsrc}
+                value={data.tags}
               />
               <select
                 className={styles.inputtext}
@@ -93,16 +138,6 @@ export default function Create({
                 <option value='Mohd Zahid'>Mohd Zahid</option>
               </select>
             </div>
-            <input
-              className={styles.inputtext}
-              onChange={handleChange}
-              name='tags'
-              placeholder='eg: react,javascript,html'
-              required
-              type='text'
-              value={data.tags}
-            />
-
             <textarea
               onChange={handleChange}
               name='shortinfo'

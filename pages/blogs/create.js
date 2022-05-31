@@ -31,7 +31,7 @@ export default function Create() {
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
-      if (passcode === '123') {
+      if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
         await addBlogPost(data, photo)
         setLoading(false)
         setData({
@@ -53,6 +53,7 @@ export default function Create() {
       setLoading(false)
     }
   }
+
   return (
     <>
       <div className='sectionbody'>
@@ -122,7 +123,11 @@ export default function Create() {
               placeholder='Attention this is markdown content'
             />
 
-            <button className={styles.btn} type='submit' disabled={loading}>
+            <button
+              className={`${styles.btn} full`}
+              type='submit'
+              disabled={loading}
+            >
               {loading ? 'Adding' : 'Add Post'}
             </button>
             {error && <p className={styles.error}>{error}</p>}

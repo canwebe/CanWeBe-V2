@@ -1,6 +1,7 @@
 import {
   addDoc,
   collection,
+  deleteDoc,
   getDocs,
   limit,
   orderBy,
@@ -9,7 +10,12 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore'
-import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
+import {
+  deleteObject,
+  getDownloadURL,
+  ref,
+  uploadBytes,
+} from 'firebase/storage'
 import { db, storage } from '../lib/firebase'
 
 export const getProjectList = async (lim) => {
@@ -114,8 +120,8 @@ export const getBlogPost = async (colname, slug) => {
   }
 }
 
-export const updateBlogPost = async (slug, data) => {
-  const { name, content, imgsrc, shortinfo, tags } = data
+export const updateBlogPost = async (slug, data, photo, isChange) => {
+  let { name, content, shortinfo, tags, imgsrc } = data
   const title = data.title.trim()
   const taglist = tags
     .trim()
@@ -130,17 +136,18 @@ export const updateBlogPost = async (slug, data) => {
   const snapshot2 = await getDocs(q2)
 
   if (!snapshot1.empty && !snapshot2.empty) {
+    if (isChange) {
+      imgsrc = await uploadImage(slug, photo)
+    }
     await updateDoc(snapshot1.docs[0].ref, {
       name,
       imgsrc,
       title,
-      slug,
       shortinfo,
       taglist,
     })
 
     await updateDoc(snapshot2.docs[0].ref, {
-      slug,
       name,
       content,
       imgsrc,
@@ -169,4 +176,19 @@ export const uploadImage = async (slug, file) => {
   const snapshot = await uploadBytes(storageRef, file)
   const url = await getDownloadURL(snapshot.ref)
   return url
+}
+
+export const deletePost = async (slug) => {
+  const q2 = query(collection(db, 'blogposts'), where('slug', '==', slug))
+  const q1 = query(collection(db, 'blogs'), where('slug', '==', slug))
+  const storageRef = ref(storage, 'blogs/' + slug)
+
+  const snapshot1 = await getDocs(q1)
+  const snapshot2 = await getDocs(q2)
+
+  if (!snapshot1.empty && !snapshot2.empty) {
+    await deleteDoc(snapshot1.docs[0].ref)
+    await deleteDoc(snapshot2.docs[0].ref)
+    await deleteObject(storageRef)
+  }
 }
