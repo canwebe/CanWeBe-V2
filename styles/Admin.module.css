@@ -1,0 +1,8 @@
+.btnDeploy {
+  margin: 40vh auto 0;
+  padding: 10px 30px;
+  border: none;
+  display: block;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

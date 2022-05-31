@@ -4,10 +4,14 @@
   color: darkgray;
 }
 
-.links:hover {
+.links:active {
   color: rgb(255, 255, 255);
 }
-
+@media (hover: hover) {
+  .links:hover {
+    color: rgb(255, 255, 255);
+  }
+}
 @media screen and (max-width: 500px) {
   .links {
     font-size: 1.8rem;

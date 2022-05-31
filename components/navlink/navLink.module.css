@@ -19,7 +19,14 @@
   transform: scaleX(0);
 }
 
-.menu:hover::after {
+@media (hover: hover) {
+  .menu:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.menu:active::after {
   transform: scaleX(1);
   transform-origin: left;
 }

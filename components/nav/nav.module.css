@@ -65,16 +65,28 @@
   border-radius: 30px;
   transition: transform 0.2s ease-in-out;
 }
-.contactBtn:hover {
+
+@media (hover: hover) {
+  .contactBtn:hover {
+    transform: scale(0.9);
+  }
+  .contactBtn:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+    padding: 4px;
+  }
+  .contactBtn:active {
+    background-color: rgb(73, 73, 211);
+    color: white;
+  }
+}
+
+.contactBtn:active {
   transform: scale(0.9);
 }
-.contactBtn:hover::after {
+
+.contactBtn:active::after {
   transform: translate(-50%, -50%) scale(1);
   padding: 4px;
-}
-.contactBtn:active {
-  background-color: rgb(73, 73, 211);
-  color: white;
 }
 
 .menu {

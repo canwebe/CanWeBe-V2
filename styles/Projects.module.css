@@ -87,18 +87,6 @@
 .github {
   background-color: #000;
 }
-.youtube:hover {
-  background-color: rgb(194, 3, 3);
-  color: rgb(219, 219, 219);
-}
-.live:hover {
-  background-color: rgb(1, 79, 1);
-}
-.youtube:active,
-.live:active,
-.github:active {
-  transform: scale(0.9);
-}
 
 .featuredBtn {
   position: relative;
@@ -116,18 +104,6 @@
   background-color: white;
   transition: transform 0.25s ease-in-out;
   transform: scaleX(0);
-}
-
-.featuredBtn:hover::after {
-  transform: scaleX(1);
-}
-
-.featuredBtn:hover {
-  color: black;
-}
-.featuredBtn:active {
-  transform: scale(0.9);
-  background-color: rgba(255, 255, 255, 0.581);
 }
 
 .list {
@@ -167,7 +143,7 @@
   border-top: 5px solid rgb(102, 36, 196);
 }
 
-.allProjectCard:hover {
+.allProjectCard:active {
   background-color: rgb(44, 41, 41);
   border-color: orangered;
 }
@@ -202,18 +178,6 @@
   transform: scaleX(0);
 
   transition: transform 0.25s ease;
-}
-
-.allProjectBtn:hover::after {
-  transform-origin: left;
-  transform: scaleX(1);
-}
-
-.allProjectBtn:hover {
-  color: black;
-}
-.allProjectBtn:active {
-  border-color: blueviolet;
 }
 
 /* Top Relaese */
@@ -305,14 +269,6 @@
   transition: all 0.2s ease;
 }
 
-.topReleaseBtn:hover {
-  background-color: rgb(165, 197, 186);
-}
-
-.topReleaseBtn:active {
-  background-color: rgb(114, 154, 140);
-  outline: 3px solid rgb(42, 40, 40);
-}
 /* .topReleaseBtn::after {
   content: '';
   height: 100%;
@@ -330,7 +286,86 @@
   transform: scaleX(1);
   transform-origin: left;
 } */
+.topReleaseBtn:active {
+  background-color: rgb(114, 154, 140);
+  outline: 3px solid rgb(42, 40, 40);
+}
 
+.allProjectBtn:active {
+  border-color: blueviolet;
+  color: black;
+}
+.allProjectBtn:active::after {
+  transform-origin: left;
+  transform: scaleX(1);
+}
+.featuredBtn:active::after {
+  transform: scaleX(1);
+}
+
+.featuredBtn:active {
+  color: black;
+}
+
+.youtube:active {
+  background-color: rgb(194, 3, 3);
+  color: rgb(219, 219, 219);
+}
+.live:active {
+  background-color: rgb(1, 79, 1);
+}
+.github:active {
+  transform: scale(0.9);
+}
+
+@media (hover: hover) {
+  .youtube:hover {
+    background-color: rgb(194, 3, 3);
+    color: rgb(219, 219, 219);
+  }
+  .live:hover {
+    background-color: rgb(1, 79, 1);
+  }
+  .youtube:active,
+  .live:active,
+  .github:active {
+    transform: scale(0.9);
+  }
+  .featuredBtn:hover::after {
+    transform: scaleX(1);
+  }
+
+  .featuredBtn:hover {
+    color: black;
+  }
+  .featuredBtn:active {
+    transform: scale(0.9);
+    background-color: rgba(255, 255, 255, 0.581);
+  }
+  .allProjectCard:hover {
+    background-color: rgb(44, 41, 41);
+    border-color: orangered;
+  }
+  .allProjectBtn:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  .allProjectBtn:hover {
+    color: black;
+  }
+  .allProjectBtn:active {
+    border-color: blueviolet;
+  }
+  .topReleaseBtn:hover {
+    background-color: rgb(165, 197, 186);
+  }
+
+  .topReleaseBtn:active {
+    background-color: rgb(114, 154, 140);
+    outline: 3px solid rgb(42, 40, 40);
+  }
+}
 /* Media Query */
 @media screen and (max-width: 1210px) {
   .newRelease {

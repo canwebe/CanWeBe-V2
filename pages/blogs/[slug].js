@@ -1,6 +1,5 @@
-import { useRouter } from 'next/router'
 import styles from '../../styles/Post.module.css'
-import { FaArrowLeft, FaCalendarDay, FaUserCircle } from 'react-icons/fa'
+import { FaCalendarDay, FaUserCircle } from 'react-icons/fa'
 import { getBlogPost, getColData } from '../../helpers'
 import { serialize } from 'next-mdx-remote/serialize'
 import { MDXRemote } from 'next-mdx-remote'
@@ -9,6 +8,7 @@ import readingTime from 'reading-time'
 import Youtube from '../../components/Youtube'
 import Link from 'next/link'
 import GoBackpageBtn from '../../components/goBackPageBtn'
+import Head from 'next/head'
 
 export default function Post({
   name,
@@ -19,9 +19,11 @@ export default function Post({
   source,
   time,
 }) {
-  const router = useRouter()
   return (
     <>
+      <Head>
+        <title>{title} | CanWeBe</title>
+      </Head>
       <div className='sectionbody'>
         <div
           className={styles.blackBg}
