@@ -75,6 +75,7 @@ export const addMessageForms = async (colname, data) => {
 
 export const addBlogPost = async (data, photo) => {
   const { name, content, shortinfo, tags } = data
+  let imgsrc = ''
   const title = data.title.trim()
   const slug = title
     .toLowerCase()
@@ -87,7 +88,9 @@ export const addBlogPost = async (data, photo) => {
     .map((item) => item.toLowerCase().trim())
     .filter((item) => item !== '')
 
-  const imgsrc = await uploadImage(slug, photo)
+  if (photo) {
+    imgsrc = await uploadImage(slug, photo)
+  }
 
   await addDoc(collection(db, 'blogs'), {
     name,
@@ -178,7 +181,7 @@ export const uploadImage = async (slug, file) => {
   return url
 }
 
-export const deletePost = async (slug) => {
+export const deletePost = async (slug, photo) => {
   const q2 = query(collection(db, 'blogposts'), where('slug', '==', slug))
   const q1 = query(collection(db, 'blogs'), where('slug', '==', slug))
   const storageRef = ref(storage, 'blogs/' + slug)
@@ -189,6 +192,8 @@ export const deletePost = async (slug) => {
   if (!snapshot1.empty && !snapshot2.empty) {
     await deleteDoc(snapshot1.docs[0].ref)
     await deleteDoc(snapshot2.docs[0].ref)
-    await deleteObject(storageRef)
+    if (photo) {
+      await deleteObject(storageRef)
+    }
   }
 }

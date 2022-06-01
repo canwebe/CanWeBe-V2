@@ -16,6 +16,7 @@
   font-size: 1.2rem;
   color: rgb(220, 220, 220);
   border: 2px solid rgb(60, 60, 60);
+  line-height: 27px;
 }
 
 .inputwrapper,
@@ -79,17 +80,12 @@
   gap: 10px;
 }
 
-.error,
-.success {
+.error {
   text-align: center;
   margin: 10px auto;
 }
 .error {
   color: rgb(177, 25, 25);
-}
-
-.success {
-  color: rgb(5, 109, 1);
 }
 
 @media screen and (max-width: 750px) {

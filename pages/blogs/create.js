@@ -13,7 +13,6 @@ export default function Create() {
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
   const [photo, setPhoto] = useState(null)
   const { title, name, content, imgsrc, shortinfo, tags } = data
 
@@ -28,7 +27,6 @@ export default function Create() {
     console.log('click')
     e.preventDefault()
     setLoading(true)
-    setSuccess('')
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
@@ -43,7 +41,7 @@ export default function Create() {
           tags: '',
         })
         setPhoto(null)
-        setSuccess(title + ' added succesfully')
+        alert(title + ' added succesfully')
       } else {
         setError('Passcode wrong Try Again')
         setLoading(false)
@@ -133,7 +131,6 @@ export default function Create() {
               {loading ? 'Adding' : 'Add Post'}
             </button>
             {error && <p className={styles.error}>{error}</p>}
-            {success && <p className={styles.success}>{success}</p>}
           </form>
         </div>
       </div>
