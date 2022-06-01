@@ -46,7 +46,7 @@ export default function Create({
     const passcode = prompt('Enter the passcode')
     if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
       try {
-        await deletePost(slug)
+        await deletePost(slug, data.imgsrc)
         alert('Deleted succesfully')
       } catch (error) {
         console.log(error)

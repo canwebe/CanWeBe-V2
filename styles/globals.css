@@ -146,13 +146,7 @@ code {
 }
 
 .blog img {
-  width: 80%;
-  margin: 18px auto;
+  width: 100%;
+  margin: 19px auto;
   display: block;
-}
-
-@media screen and (max-width: 800px) {
-  .blog img {
-    width: 100%;
-  }
 }
