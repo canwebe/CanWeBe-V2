@@ -44,6 +44,10 @@ class MyDocument extends Document {
             property='twitter:image'
             content='https://canwebe.tech/img/ogcanwebe.webp'
           />
+          <meta
+            name='google-site-verification'
+            content='YnRLRY7HjWYXgRRS7bH4f7m4o_Nwa9b0FzERHTpSmm4'
+          />
           <link rel='canonical' href='https://canwebe.tech' />
 
           <link rel='apple-touch-icon' href='/logo192.png' />
