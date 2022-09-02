@@ -1,21 +1,24 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useRef, useState, useCallback } from "react";
-import Modal from "../components/modal";
-import ProjectScroll from "../components/projectScroller";
-import TeamList from "../components/teamList";
-import { getColData, getProjectList, getTeamData } from "../helpers";
-import styles from "../styles/Home.module.css";
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRef, useState, useCallback } from 'react'
+import Modal from '../components/modal'
+import ProjectScroll from '../components/projectScroller'
+import TeamList from '../components/teamList'
+import { getColData, getProjectList, getTeamData } from '../helpers'
+import styles from '../styles/Home.module.css'
 
-import LatestTech from "../components/svg/latestTech";
-import FreeSvg from "../components/svg/freeSvg";
-import Testimony from "../components/testimony";
-import Footer from "../components/footer";
+import LatestTech from '../components/svg/latestTech'
+import FreeSvg from '../components/svg/freeSvg'
+import Testimony from '../components/testimony'
+import Footer from '../components/footer'
+import Scroller from '../components/teamListScroller'
+import TeamCard from '../components/teamCard'
+import TeamListScroller from '../components/teamListScroller'
 
 export default function Home({ data, testimonyData, teamData }) {
-  const [isModal, setIsModal] = useState(false);
-  const [isImgLoad, setIsImgLoad] = useState(false);
+  const [isModal, setIsModal] = useState(false)
+  const [isImgLoad, setIsImgLoad] = useState(false)
   // const projectRef = useRef()
   // const heroRef = useRef(null)
 
@@ -27,8 +30,8 @@ export default function Home({ data, testimonyData, teamData }) {
   // }
 
   const handleImg = useCallback(() => {
-    setIsImgLoad(true);
-  }, []);
+    setIsImgLoad(true)
+  }, [])
 
   return (
     <>
@@ -43,9 +46,9 @@ export default function Home({ data, testimonyData, teamData }) {
         >
           <div className={styles.videooverlay} />
           <video className={styles.video} autoPlay loop muted playsInline>
-            <source src="/assets/bgvideo.mp4" type="video/mp4" />
+            <source src='/assets/bgvideo.mp4' type='video/mp4' />
           </video>
-          <div className="wrapper">
+          <div className='wrapper'>
             <div className={styles.heroDiv}>
               <div className={styles.heroLeft}>
                 <p className={styles.heroSubline}>
@@ -57,26 +60,26 @@ export default function Home({ data, testimonyData, teamData }) {
                 <p className={styles.subpara}>
                   We assist you to remodel everyday problems into modern techy
                   solution.We help the society by presenting cost-free cutting
-                  edge apps and applications.
+                  edge applications.
                 </p>
                 <div className={styles.heroBtnDiv}>
-                  <Link href="/projects">
+                  <Link href='/projects'>
                     <a className={styles.heroBtnProjects}>Our Projects</a>
                   </Link>
 
-                  <Link href="/form/contact">
+                  <Link href='/form/contact'>
                     <a className={styles.heroBtnContact}>Contact</a>
                   </Link>
                 </div>
               </div>
               <div
                 className={styles.heroRight}
-                style={{ opacity: isImgLoad ? "1" : "0" }}
+                style={{ opacity: isImgLoad ? '1' : '0' }}
               >
                 <Image
-                  src="/logo.webp"
-                  alt="logo"
-                  layout="responsive"
+                  src='/logo.webp'
+                  alt='logo'
+                  layout='responsive'
                   width={500}
                   height={500}
                   onLoad={handleImg}
@@ -86,7 +89,7 @@ export default function Home({ data, testimonyData, teamData }) {
           </div>
         </section>
         <section className={styles.maintainence}>
-          <div className="wrapper">
+          <div className='wrapper'>
             <p className={styles.maintainenceP}>
               Over 40+ projects , 2k commits and real world contribution by
               CanWeBe
@@ -94,8 +97,8 @@ export default function Home({ data, testimonyData, teamData }) {
           </div>
         </section>
         <section className={styles.projectSection}>
-          <div className="wrapper">
-            <h3 className="header">Our Projects</h3>
+          <div className='wrapper'>
+            <h3 className='header'>Our Projects</h3>
             <ProjectScroll data={data} />
           </div>
         </section>
@@ -148,7 +151,7 @@ export default function Home({ data, testimonyData, teamData }) {
         </section>
         <Testimony data={testimonyData} />
         <section className={styles.fundSection}>
-          <div className="wrapper">
+          <div className='wrapper'>
             <div className={styles.fundContent}>
               <p className={styles.fundP}>Want Help Us ?, Buy us a coffee</p>
               <button
@@ -161,16 +164,16 @@ export default function Home({ data, testimonyData, teamData }) {
           </div>
         </section>
         <section className={styles.teamSection}>
-          <div className="wrapper">
-            <h3 className="header">Our Team</h3>
-            <TeamList teamData={teamData} />
+          <div className='wrapper'>
+            <h3 className='header'>Our Team</h3>
+            <TeamListScroller teamData={teamData} />
           </div>
         </section>
         <section className={styles.feedbackSection}>
-          <div className="wrapper">
+          <div className='wrapper'>
             <div className={styles.feedbackCard}>
               <p>How was your experience with our services ?</p>
-              <Link href="/form/review">
+              <Link href='/form/review'>
                 <a className={styles.feedbackBtn}>Rate Us</a>
               </Link>
             </div>
@@ -180,21 +183,21 @@ export default function Home({ data, testimonyData, teamData }) {
       </div>
       {isModal && <Modal setIsModal={setIsModal} />}
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  let data = [];
-  let testimonyData = [];
-  let teamData = [];
+  let data = []
+  let testimonyData = []
+  let teamData = []
 
   try {
-    const newdata = await getProjectList(6);
-    testimonyData = await getColData("testimony");
-    teamData = await getTeamData();
-    data = await JSON.parse(JSON.stringify(newdata));
+    const newdata = await getProjectList(6)
+    testimonyData = await getColData('testimony')
+    teamData = await getTeamData('boardMember')
+    data = await JSON.parse(JSON.stringify(newdata))
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
   // const data = []
   // const testimonyData = []
@@ -204,5 +207,5 @@ export async function getStaticProps() {
       testimonyData,
       teamData,
     },
-  };
+  }
 }

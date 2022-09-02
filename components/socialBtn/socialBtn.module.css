@@ -4,6 +4,10 @@
   color: darkgray;
 }
 
+.links:global(.large) {
+  font-size: 1.6rem;
+}
+
 .links:active {
   color: rgb(255, 255, 255);
 }
@@ -13,7 +17,10 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .links {
+  .links:global(.large) {
     font-size: 1.8rem;
+  }
+  .links {
+    font-size: 1.6rem;
   }
 }

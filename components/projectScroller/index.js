@@ -3,6 +3,7 @@ import styles from './projectScroll.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaChevronRight } from 'react-icons/fa'
+import SeeAllBtn from '../seeAllBtn'
 
 export default function ProjectScroll({ data }) {
   const renderBtn = (type, links) => {
@@ -80,14 +81,7 @@ export default function ProjectScroll({ data }) {
           </div>
         </div>
       ))}
-      <div className={styles.seeMoreDiv}>
-        <Link href='/projects'>
-          <a className={styles.seeMoreBtn}>
-            <FaChevronRight className={styles.btnSvg} />
-            See All
-          </a>
-        </Link>
-      </div>
+      <SeeAllBtn name='projects' />
     </div>
   )
 }

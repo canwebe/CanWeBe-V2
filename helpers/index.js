@@ -51,8 +51,19 @@ export const getColData = async (colname, sort) => {
   }
 }
 
-export const getTeamData = async () => {
-  const snapshot = await getDocs(query(collection(db, 'team'), orderBy('rank')))
+export const getTeamData = async (boardMember) => {
+  let q
+  if (boardMember) {
+    q = query(
+      collection(db, 'team'),
+      where('boardMember', '==', true),
+      orderBy('rank')
+    )
+  } else {
+    q = query(collection(db, 'team'), where('boardMember', '==', false))
+  }
+
+  const snapshot = await getDocs(q)
   if (!snapshot.empty) {
     return snapshot.docs.map((item) => item.data())
   } else {
