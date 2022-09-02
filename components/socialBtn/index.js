@@ -8,7 +8,7 @@ import {
 } from 'react-icons/fa'
 import styles from './socialBtn.module.css'
 
-export default function SocialBtn({ type, link }) {
+export default function SocialBtn({ type, link, large }) {
   const content = {
     facebook: <FaFacebook />,
     gmail: <FaRegEnvelope />,
@@ -19,7 +19,12 @@ export default function SocialBtn({ type, link }) {
   }
 
   return (
-    <a className={styles.links} href={link} target='_blank' rel='noreferrer'>
+    <a
+      className={`${styles.links} ${large ? 'large' : ''}`}
+      href={link}
+      target='_blank'
+      rel='noreferrer'
+    >
       {content[type]}
     </a>
   )

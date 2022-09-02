@@ -44,13 +44,13 @@ body {
 ::-webkit-scrollbar {
   width: 0;
   height: 12px;
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 ::-webkit-scrollbar-track {
   background-color: #292929;
+  background-color: #323131;
   border-radius: 100vw;
-  cursor: pointer;
   margin-left: 25px;
 }
 
@@ -84,7 +84,6 @@ body {
   display: block;
   margin: 7px 0 20px 4px;
 }
-
 .sectionbody {
   padding-bottom: 60px;
 }

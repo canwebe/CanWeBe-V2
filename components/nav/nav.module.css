@@ -115,7 +115,7 @@
   font-size: 1.2rem;
 }
 
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 885px) {
   .menu {
     display: block;
   }

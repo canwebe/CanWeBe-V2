@@ -29,6 +29,7 @@ export default function Nav() {
           </Link>
           <div className={styles.linkWrapper}>
             <NavLink link='/' content='Home' />
+            <NavLink link='/team' content='Team' />
             <NavLink link='/projects' content='Projects' />
             <NavLink link='/blogs' content='Blogs' />
             <Link href='/form/contact'>
@@ -49,6 +50,9 @@ export default function Nav() {
             <div className={styles.sideMenu}>
               <div onClick={() => setIsMenu(false)}>
                 <NavLink link='/' content='Home' />
+              </div>
+              <div onClick={() => setIsMenu(false)}>
+                <NavLink link='/team' content='Team' />
               </div>
               <div onClick={() => setIsMenu(false)}>
                 <NavLink link='/projects' content='Projects' />

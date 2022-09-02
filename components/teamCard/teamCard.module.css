@@ -1,0 +1,120 @@
+.card {
+  /* width: 48%; */
+  display: flex;
+  border-radius: 17px 0 0 17px;
+  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.4);
+}
+
+.leftSide {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 17px;
+  gap: 12px;
+  border-radius: 17px 0 0 17px;
+}
+
+.rightSide {
+  background-color: rgb(0, 0, 0);
+  padding: 20px 15px;
+  height: 100%;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 3px;
+  overflow: hidden;
+  background-color: rgb(60, 3, 3);
+}
+
+.img {
+  border-radius: 50%;
+}
+.socialWrapper {
+  display: flex;
+  gap: 9px;
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: chocolate;
+}
+.designation {
+  margin: 4px 0 10px;
+  font-size: 0.9rem;
+  color: rgb(88, 127, 128);
+}
+
+.info {
+  color: #adadad;
+  font-size: 0.89rem;
+  line-height: 19px;
+}
+
+.card:global(.vertical) {
+  flex-direction: column;
+  border-top: 4px solid white;
+  border-radius: 17px 17px 0 0;
+}
+
+.card:global(.vertical) .leftSide {
+  width: 260px;
+  border-radius: 17px 17px 0 0;
+  gap: 17px;
+  padding: 9px 17px;
+}
+
+.card:global(.vertical) .avatar {
+  width: 134px;
+  height: 134px;
+  margin-top: -78px;
+  padding: 4px;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
+}
+
+.card:global(.vertical) .socialWrapper {
+  gap: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 500px) {
+  .card:global(.vertical) .leftSide {
+    width: 270px;
+  }
+
+  .card:global(.vertical) .avatar {
+    width: 139px;
+    height: 139px;
+  }
+
+  .card {
+    flex-direction: column;
+    border-top: 4px solid white;
+    border-radius: 17px 17px 0 0;
+    width: 300px;
+  }
+
+  .leftSide {
+    border-radius: 17px 17px 0 0;
+    gap: 17px;
+    padding: 9px 17px;
+  }
+
+  .avatar {
+    width: 124px;
+    height: 124px;
+    padding: 4px;
+    background-color: whitesmoke;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.34);
+  }
+
+  .socialWrapper {
+    gap: 20px;
+  }
+}

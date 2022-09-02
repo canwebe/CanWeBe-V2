@@ -1,0 +1,8 @@
+.sticky {
+  position: sticky;
+  top: 67.1px;
+  background-color: var(--color-black-1);
+  z-index: 99;
+  padding: 15px 0 1px;
+  margin-top: -15px;
+}
