@@ -2,16 +2,9 @@ import Image from 'next/image'
 import SocialBtn from '../socialBtn'
 import styles from './teamCard.module.css'
 
-export default function TeamCard({
-  name,
-  img,
-  social,
-  position,
-  info,
-  vertical,
-}) {
+export default function TeamCard({ name, img, social, position, info }) {
   return (
-    <div className={`${styles.card} ${vertical ? 'vertical' : ''}`}>
+    <div className={styles.card}>
       <div className={styles.leftSide}>
         <div className={styles.avatar}>
           <Image
@@ -27,12 +20,7 @@ export default function TeamCard({
         </div>
         <div className={styles.socialWrapper}>
           {social.map((item, i) => (
-            <SocialBtn
-              key={i}
-              type={item.name}
-              link={item.link}
-              large={vertical}
-            />
+            <SocialBtn key={i} type={item.name} link={item.link} />
           ))}
         </div>
       </div>

@@ -3,32 +3,21 @@ import TeamList from '../components/teamList'
 import { getTeamData } from '../helpers'
 import styles from '../styles/Team.module.css'
 
-export default function Team({ boardMembers, members }) {
+export default function Team({ members }) {
   return (
     <>
       <Head>
         <title>Team | CanWeBe</title>
       </Head>
-      <div className='sectionbody'>
-        <div className='wrapper'>
-          <h1 className='pageHeader'>Team.</h1>
+      <div className="sectionbody">
+        <div className="wrapper">
+          <h1 className="pageHeader">Our Team.</h1>
+          <p className="teamsectionP">
+            Meet our team who are good in each field. Helen Keller - &quot;Alone
+            we can do so little; together we can do so much&quot;
+          </p>
         </div>
-        <div>
-          <div className={styles.sticky}>
-            <div className='wrapper'>
-              <h3 className='header'>Board Members</h3>
-            </div>
-          </div>
-          <TeamList teamData={boardMembers} />
-        </div>
-        <div>
-          <div className={styles.sticky}>
-            <div className='wrapper'>
-              <h3 className='header'>Members</h3>
-            </div>
-          </div>
-          <TeamList teamData={members} />
-        </div>
+        <TeamList teamData={members} />
       </div>
     </>
   )
@@ -39,14 +28,12 @@ export async function getStaticProps() {
   let members = []
 
   try {
-    boardMembers = await getTeamData('boardMember')
     members = await getTeamData()
   } catch (error) {
     console.log(error)
   }
   return {
     props: {
-      boardMembers,
       members,
     },
   }

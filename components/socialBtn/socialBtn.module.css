@@ -1,11 +1,7 @@
 .links {
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   transition: all 0.3s ease-in-out;
   color: darkgray;
-}
-
-.links:global(.large) {
-  font-size: 1.6rem;
 }
 
 .links:active {
@@ -17,9 +13,6 @@
   }
 }
 @media screen and (max-width: 500px) {
-  .links:global(.large) {
-    font-size: 1.8rem;
-  }
   .links {
     font-size: 1.6rem;
   }
