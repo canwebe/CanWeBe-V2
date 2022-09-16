@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatarPart {
+  width: 100%;
+}
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.designation {
+  margin: 4px 0 12px;
+  transition: all 0.3s ease-in-out;
+  color: rgb(150, 150, 150);
+  width: fit-content;
+}
+
+.socialWrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.avatarPart img {
+  filter: grayscale(0.8);
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.card:active img {
+  filter: grayscale(0);
+  border-radius: 50%;
+}
+.card:active .name {
+  letter-spacing: 1px;
+}
+.card:active .designation {
+  background-color: crimson;
+  color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .name {
+    font-size: 1.1rem;
+    color: var(--color-canwebe);
+  }
+  .designation {
+    font-size: 0.8rem;
+    color: grey;
+  }
+  .socialWrapper {
+    gap: 10px;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover img {
+    filter: grayscale(0);
+    border-radius: 50%;
+  }
+  .card:hover .name {
+    color: var(--color-canwebe);
+    letter-spacing: 1px;
+  }
+  .card:hover .designation {
+    background-color: crimson;
+    color: white;
+  }
+  /* .card:hover {
+    transform: scale(1.05);
+  } */
+}
