@@ -149,3 +149,15 @@ code {
   margin: 19px auto;
   display: block;
 }
+
+.teamsectionP {
+  text-align: center;
+  font-size: 1.3rem;
+  color: rgb(193, 193, 193);
+}
+
+@media screen and (max-width: 500px) {
+  .teamsectionP {
+    font-size: 1.1rem;
+  }
+}

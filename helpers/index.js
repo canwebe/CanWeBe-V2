@@ -60,7 +60,7 @@ export const getTeamData = async (boardMember) => {
       orderBy('rank')
     )
   } else {
-    q = query(collection(db, 'team'), where('boardMember', '==', false))
+    q = query(collection(db, 'team'), orderBy('name'))
   }
 
   const snapshot = await getDocs(q)

@@ -1,19 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef, useState, useCallback } from 'react'
+import { useState, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
-import TeamList from '../components/teamList'
 import { getColData, getProjectList, getTeamData } from '../helpers'
 import styles from '../styles/Home.module.css'
-
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
-import Scroller from '../components/teamListScroller'
-import TeamCard from '../components/teamCard'
 import TeamListScroller from '../components/teamListScroller'
 
 export default function Home({ data, testimonyData, teamData }) {
@@ -199,8 +195,7 @@ export async function getStaticProps() {
   } catch (error) {
     console.log(error)
   }
-  // const data = []
-  // const testimonyData = []
+
   return {
     props: {
       data,
