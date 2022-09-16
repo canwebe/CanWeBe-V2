@@ -139,7 +139,7 @@
 
 .contributorWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 30px;
   padding: 40px 0 20px;
 }
