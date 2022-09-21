@@ -44,7 +44,6 @@ body {
 ::-webkit-scrollbar {
   width: 0;
   height: 12px;
-  cursor: pointer !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -159,5 +158,8 @@ code {
 @media screen and (max-width: 500px) {
   .teamsectionP {
     font-size: 1.1rem;
+  }
+  ::-webkit-scrollbar {
+    height: 0;
   }
 }
