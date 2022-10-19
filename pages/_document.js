@@ -59,12 +59,6 @@ class MyDocument extends Document {
             as="fonts"
             crossOrigin="anonymous"
           />
-          <link
-            rel="preload"
-            href="/assets/bgvideo.mp4"
-            as="video"
-            type="video/mp4"
-          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
