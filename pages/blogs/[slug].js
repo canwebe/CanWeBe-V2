@@ -9,6 +9,7 @@ import Youtube from '../../components/Youtube'
 import Link from 'next/link'
 import GoBackpageBtn from '../../components/goBackPageBtn'
 import Head from 'next/head'
+import HeadSeo from '../../components/HeadSeo'
 
 export default function Post({
   name,
@@ -18,13 +19,12 @@ export default function Post({
   seconds,
   source,
   time,
+  slug,
 }) {
   return (
     <>
-      <Head>
-        <title>{title} | CanWeBe</title>
-      </Head>
-      <div className='sectionbody'>
+      <HeadSeo title={title} url={'/blogs/' + slug} desc={title} />
+      <div className="sectionbody">
         <div
           className={styles.blackBg}
           style={{
@@ -37,11 +37,11 @@ export default function Post({
             <p className={styles.postTitle}>{title}</p>
             <div className={styles.datenameWrapper}>
               <p className={styles.date}>
-                <FaCalendarDay color='#00ecff' size={15} />{' '}
+                <FaCalendarDay color="#00ecff" size={15} />{' '}
                 {moment.unix(seconds).format('MMM DD , YYYY')}
               </p>
               <p className={styles.name}>
-                <FaUserCircle color='#bc5656' size={15} /> {name}
+                <FaUserCircle color="#bc5656" size={15} /> {name}
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@ export default function Post({
               ))}
             </div>
             <p className={styles.timeToRead}>{time.text}</p>
-            <div className='blog'>
+            <div className="blog">
               <MDXRemote {...source} components={{ Youtube }} />
             </div>
           </div>
@@ -91,6 +91,15 @@ export async function getStaticProps({ params: { slug } }) {
   const time = readingTime(content)
 
   return {
-    props: { name, title, taglist, imgsrc, seconds, time, source: mdxSource },
+    props: {
+      name,
+      title,
+      taglist,
+      imgsrc,
+      seconds,
+      time,
+      source: mdxSource,
+      slug,
+    },
   }
 }

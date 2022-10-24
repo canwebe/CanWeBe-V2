@@ -1,21 +1,20 @@
-import { useRouter } from 'next/router'
 import { getColData, getProjectList } from '../../helpers'
 import styles from '../../styles/ProjectInfo.module.css'
 import InfoSection from '../../components/infoSection'
 import Contributor from '../../components/contributor'
 import ProjectReviewSection from '../../components/projectReviewSection'
-import Head from 'next/head'
 import GoBackpageBtn from '../../components/goBackPageBtn'
+import HeadSeo from '../../components/HeadSeo'
 
-export default function ProjectInfo({ data }) {
-  const router = useRouter()
-
+export default function ProjectInfo({ data, id }) {
   return data ? (
     <>
-      <Head>
-        <title>{data.name} | CanWeBe</title>
-      </Head>
-      <div className='sectionbody'>
+      <HeadSeo
+        title={data?.name || 'Project Name'}
+        url={'/projects/' + id}
+        desc={data?.longinfo}
+      />
+      <div className="sectionbody">
         <div className={styles.topBar}>
           <div className={`${styles.topBarWrapper} wrapper`}>
             <GoBackpageBtn />
@@ -36,11 +35,11 @@ export default function ProjectInfo({ data }) {
   )
 }
 
-export async function getStaticProps(context) {
-  const colname = `projects/${context.params.id}/additional`
+export async function getStaticProps({ params: { id } }) {
+  const colname = `projects/${id}/additional`
   const [data] = await getColData(colname)
   return {
-    props: { data },
+    props: { data, id },
   }
 }
 
