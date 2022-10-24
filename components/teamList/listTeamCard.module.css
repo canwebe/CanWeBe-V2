@@ -33,11 +33,9 @@
 
 .card:active img {
   filter: grayscale(0);
-  border-radius: 50%;
+  border-radius: 10%;
 }
-.card:active .name {
-  letter-spacing: 1px;
-}
+
 .card:active .designation {
   background-color: crimson;
   color: white;
@@ -60,11 +58,10 @@
 @media (hover: hover) {
   .card:hover img {
     filter: grayscale(0);
-    border-radius: 50%;
+    border-radius: 10%;
   }
   .card:hover .name {
     color: var(--color-canwebe);
-    letter-spacing: 1px;
   }
   .card:hover .designation {
     background-color: crimson;

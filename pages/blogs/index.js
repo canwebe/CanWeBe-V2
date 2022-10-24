@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { getColData } from '../../helpers'
 import moment from 'moment'
-import Head from 'next/head'
+import HeadSeo from '../../components/HeadSeo'
 
 export default function Blogs({ data }) {
   const [searchStr, setSearchStr] = useState('')
@@ -16,22 +16,24 @@ export default function Blogs({ data }) {
   }
   return (
     <>
-      <Head>
-        <title>Blogs | CanWeBe</title>
-      </Head>
-      <div className='sectionbody'>
-        <div className='wrapper'>
-          <h1 className='pageHeader'>Blogs.</h1>
+      <HeadSeo
+        title="Blogs"
+        url="/blogs"
+        desc="All latest news, event  and blogs of CanWeBe! are listed here."
+      />
+      <div className="sectionbody">
+        <div className="wrapper">
+          <h1 className="pageHeader">Blogs.</h1>
 
           <input
             className={styles.searchBox}
-            placeholder='Type to search blog posts'
-            type='text'
+            placeholder="Type to search blog posts"
+            type="text"
             value={searchStr}
             onChange={(e) => setSearchStr(e.target.value)}
           />
 
-          <h3 className='header'>All Posts ({filterList.length})</h3>
+          <h3 className="header">All Posts ({filterList.length})</h3>
           {filterList.length === 0 && <p>No Post Found</p>}
           <div className={styles.blogWrapper}>
             {filterList.map((item, i) => (
@@ -40,11 +42,11 @@ export default function Blogs({ data }) {
                   <div className={styles.postimg}>
                     <Image
                       src={item.imgsrc || '/ogcanwebe.webp'}
-                      layout='fill'
-                      objectFit='cover'
-                      alt='blog image'
-                      placeholder='blur'
-                      blurDataURL='/assets/placeholder.webp'
+                      layout="fill"
+                      objectFit="cover"
+                      alt="blog image"
+                      placeholder="blur"
+                      blurDataURL="/assets/placeholder.webp"
                     />
                   </div>
                   <div className={styles.postcontent}>
