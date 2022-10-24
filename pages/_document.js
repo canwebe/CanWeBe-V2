@@ -1,4 +1,4 @@
-import Document, { Head, Html, Main, NextScript } from "next/document";
+import Document, { Head, Html, Main, NextScript } from 'next/document'
 
 class MyDocument extends Document {
   render() {
@@ -49,16 +49,7 @@ class MyDocument extends Document {
             content="YnRLRY7HjWYXgRRS7bH4f7m4o_Nwa9b0FzERHTpSmm4"
           />
           <link rel="canonical" href="https://canwebe.tech" />
-
           <link rel="apple-touch-icon" href="/logo192.png" />
-          {/* <link rel='manifest' href='/manifest.json' /> */}
-          <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
-            // rel='stylesheet'
-            rel="prefetch"
-            as="fonts"
-            crossOrigin="anonymous"
-          />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
@@ -66,8 +57,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument
