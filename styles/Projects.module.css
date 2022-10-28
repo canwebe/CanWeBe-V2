@@ -114,7 +114,7 @@
 }
 
 /* All Projects */
-.allProjects {
+/* .allProjects {
   background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.5),
@@ -122,62 +122,34 @@
     ),
     url(/assets/allprojects.png);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.95);
-}
+} */
 .allProjectWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   gap: 40px;
-  margin: 50px 0;
-}
-
-.allProjectCard {
-  background-color: var(--color-black-2);
-  padding: 25px 30px 20px;
-  box-shadow: 2px 3px 18px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  cursor: pointer;
-  border-radius: 7px;
-  /* min-width: 200px; */
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  border-top: 5px solid rgb(102, 36, 196);
-}
-
-.allProjectCard:active {
-  background-color: rgb(44, 41, 41);
-  border-color: orangered;
+  margin: 60px 0 30px;
 }
 
 .allProjectName {
   font-size: 1.4rem;
-}
-.allProjectInfo {
-  font-size: 0.9rem;
-  margin: 10px 0 20px;
-  opacity: 0.7;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
 }
 
-.allProjectBtn {
-  padding: 7px 20px;
-  border: 2px solid white;
-  display: block;
-  z-index: 1;
-  position: relative;
+.allProjectName:active {
+  color: var(--color-canwebe);
 }
 
-.allProjectBtn::after {
-  content: '';
-  width: 100%;
-  position: absolute;
-  background-color: white;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: -1;
-  transform-origin: right;
-  transform: scaleX(0);
-
-  transition: transform 0.25s ease;
+.allProjects h2 {
+  text-align: center;
+  font-size: 2.3rem;
+  color: var(--color-blue-1);
+}
+.allProjects p {
+  text-align: center;
+  margin-top: 10px;
+  color: #9c9c9c;
 }
 
 /* Top Relaese */
@@ -288,17 +260,8 @@
 } */
 .topReleaseBtn:active {
   background-color: rgb(114, 154, 140);
-  outline: 3px solid rgb(42, 40, 40);
 }
 
-.allProjectBtn:active {
-  border-color: blueviolet;
-  color: black;
-}
-.allProjectBtn:active::after {
-  transform-origin: left;
-  transform: scaleX(1);
-}
 .featuredBtn:active::after {
   transform: scaleX(1);
 }
@@ -342,28 +305,20 @@
     transform: scale(0.9);
     background-color: rgba(255, 255, 255, 0.581);
   }
-  .allProjectCard:hover {
-    background-color: rgb(44, 41, 41);
-    border-color: orangered;
-  }
-  .allProjectBtn:hover::after {
-    transform-origin: left;
-    transform: scaleX(1);
-  }
 
-  .allProjectBtn:hover {
-    color: black;
-  }
-  .allProjectBtn:active {
-    border-color: blueviolet;
-  }
   .topReleaseBtn:hover {
     background-color: rgb(165, 197, 186);
   }
 
   .topReleaseBtn:active {
     background-color: rgb(114, 154, 140);
-    outline: 3px solid rgb(42, 40, 40);
+  }
+
+  .allProjectName:hover {
+    color: var(--color-canwebe);
+  }
+  .allProjectName:active {
+    transform: scale(0.97);
   }
 }
 /* Media Query */
@@ -405,12 +360,6 @@
   }
 }
 
-@media screen and (max-width: 680px) {
-  .allProjectWrapper {
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 90%), 1fr));
-  }
-}
-
 @media screen and (max-width: 600px) {
   .featuredLeft {
     /* height: 260px;
@@ -420,6 +369,11 @@
   .allProjects {
     margin-bottom: 0;
   }
+  .allProjectWrapper {
+    justify-content: center;
+    margin-top: 35px;
+  }
+
   .github,
   .youtube {
     display: none;
@@ -428,14 +382,24 @@
 
 @media screen and (max-width: 500px) {
   .allProjectWrapper {
-    grid-template-columns: 92%;
-    justify-content: center;
-    margin-top: 35px;
+    flex-flow: nowrap column;
   }
+
+  .allProjects h2 {
+    font-size: 2rem;
+  }
+  .allProjects p {
+    margin-top: 20px;
+  }
+
   .featured,
   .topRelease,
   .allProjects {
     padding: 20px 15px 40px;
+  }
+
+  .featured,
+  .topRelease {
     margin-bottom: 50px;
   }
   .featuredWrapper {

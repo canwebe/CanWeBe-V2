@@ -9,17 +9,17 @@ export default function Nav() {
 
   return (
     <nav className={styles.nav}>
-      <div className='wrapper'>
+      <div className="wrapper">
         <div className={styles.navWrapper}>
-          <Link href='/'>
+          <Link href="/">
             <a className={styles.logo}>
               <div className={styles.img}>
                 <Image
-                  src='/logo.webp'
-                  alt='logo'
+                  src="/logo.webp"
+                  alt="logo"
                   width={70}
                   height={70}
-                  layout='responsive'
+                  layout="responsive"
                 />
               </div>
               <div>
@@ -28,11 +28,11 @@ export default function Nav() {
             </a>
           </Link>
           <div className={styles.linkWrapper}>
-            <NavLink link='/' content='Home' />
-            <NavLink link='/team' content='Team' />
-            <NavLink link='/projects' content='Projects' />
-            <NavLink link='/blogs' content='Blogs' />
-            <Link href='/form/contact'>
+            <NavLink link="/" content="Home" />
+            <NavLink link="/team" content="Team" />
+            <NavLink link="/products" content="Products" />
+            <NavLink link="/blogs" content="Blogs" />
+            <Link href="/form/contact">
               <a className={styles.contactBtn}>Contact</a>
             </Link>
           </div>
@@ -46,21 +46,21 @@ export default function Nav() {
       </div>
       {isMenu && (
         <div className={styles.sideMenuBg}>
-          <div className='wrapper'>
+          <div className="wrapper">
             <div className={styles.sideMenu}>
               <div onClick={() => setIsMenu(false)}>
-                <NavLink link='/' content='Home' />
+                <NavLink link="/" content="Home" />
               </div>
               <div onClick={() => setIsMenu(false)}>
-                <NavLink link='/team' content='Team' />
+                <NavLink link="/team" content="Team" />
               </div>
               <div onClick={() => setIsMenu(false)}>
-                <NavLink link='/projects' content='Projects' />
+                <NavLink link="/products" content="Products" />
               </div>
               <div onClick={() => setIsMenu(false)}>
-                <NavLink link='/blogs' content='Blogs' />
+                <NavLink link="/blogs" content="Blogs" />
               </div>
-              <Link href='/form/contact'>
+              <Link href="/form/contact">
                 <a className={styles.contactBtn}>Contact</a>
               </Link>
             </div>

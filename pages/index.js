@@ -1,20 +1,22 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import { useState, useCallback } from "react";
-import Modal from "../components/modal";
-import ProjectScroll from "../components/projectScroller";
-import { getColData, getProjectList, getTeamData } from "../helpers";
-import styles from "../styles/Home.module.css";
-import LatestTech from "../components/svg/latestTech";
-import FreeSvg from "../components/svg/freeSvg";
-import Testimony from "../components/testimony";
-import Footer from "../components/footer";
-import TeamListScroller from "../components/teamListScroller";
+import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState, useCallback } from 'react'
+import Modal from '../components/modal'
+import ProjectScroll from '../components/projectScroller'
+import { getColData, getProjectList, getTeamData } from '../helpers'
+import styles from '../styles/Home.module.css'
+import LatestTech from '../components/svg/latestTech'
+import FreeSvg from '../components/svg/freeSvg'
+import Testimony from '../components/testimony'
+import Footer from '../components/footer'
+import Loading from '../components/LoadingScreen'
 
 export default function Home({ data, testimonyData, teamData }) {
-  const [isModal, setIsModal] = useState(false);
-  const [isImgLoad, setIsImgLoad] = useState(false);
+  const [isModal, setIsModal] = useState(false)
+  const [isImgLoad, setIsImgLoad] = useState(false)
+  const [isReady, setIsReady] = useState(false)
+
   // const projectRef = useRef()
   // const heroRef = useRef(null)
 
@@ -26,8 +28,8 @@ export default function Home({ data, testimonyData, teamData }) {
   // }
 
   const handleImg = useCallback(() => {
-    setIsImgLoad(true);
-  }, []);
+    setIsImgLoad(true)
+  }, [])
 
   return (
     <>
@@ -40,14 +42,22 @@ export default function Home({ data, testimonyData, teamData }) {
           type="video/mp4"
         />
       </Head>
-      <div className={styles.main}>
+      {!isReady && <Loading />}
+      <div style={{ opacity: !isReady ? 0 : 1 }}>
         <section
           className={styles.heroSection}
           // ref={heroRef}
           // style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />
-          <video className={styles.video} autoPlay loop muted playsInline>
+          <video
+            onLoadedData={() => setIsReady(true)}
+            className={styles.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
             <source src="/assets/bgvideo.mp4" type="video/mp4" />
           </video>
           <div className="wrapper">
@@ -65,8 +75,8 @@ export default function Home({ data, testimonyData, teamData }) {
                   edge applications.
                 </p>
                 <div className={styles.heroBtnDiv}>
-                  <Link href="/projects">
-                    <a className={styles.heroBtnProjects}>Our Projects</a>
+                  <Link href="/products">
+                    <a className={styles.heroBtnProjects}>Our Products</a>
                   </Link>
 
                   <Link href="/form/contact">
@@ -76,7 +86,7 @@ export default function Home({ data, testimonyData, teamData }) {
               </div>
               <div
                 className={styles.heroRight}
-                style={{ opacity: isImgLoad ? "1" : "0" }}
+                style={{ opacity: isImgLoad ? '1' : '0' }}
               >
                 <Image
                   src="/logo.webp"
@@ -100,7 +110,7 @@ export default function Home({ data, testimonyData, teamData }) {
         </section>
         <section className={styles.projectSection}>
           <div className="wrapper">
-            <h3 className="header">Our Projects</h3>
+            <h3 className="header">Latest Products</h3>
             <ProjectScroll data={data} />
           </div>
         </section>
@@ -165,12 +175,6 @@ export default function Home({ data, testimonyData, teamData }) {
             </div>
           </div>
         </section>
-        <section className={styles.teamSection}>
-          <div className="wrapper">
-            <h3 className="header">Our Team</h3>
-            <TeamListScroller teamData={teamData} />
-          </div>
-        </section>
         <section className={styles.feedbackSection}>
           <div className="wrapper">
             <div className={styles.feedbackCard}>
@@ -183,23 +187,24 @@ export default function Home({ data, testimonyData, teamData }) {
         </section>
         <Footer />
       </div>
+
       {isModal && <Modal setIsModal={setIsModal} />}
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
-  let data = [];
-  let testimonyData = [];
-  let teamData = [];
+  let data = []
+  let testimonyData = []
+  let teamData = []
 
   try {
-    const newdata = await getProjectList(6);
-    testimonyData = await getColData("testimony");
-    teamData = await getTeamData("boardMember");
-    data = await JSON.parse(JSON.stringify(newdata));
+    const newdata = await getProjectList(6)
+    testimonyData = await getColData('testimony')
+    teamData = await getTeamData('boardMember')
+    data = await JSON.parse(JSON.stringify(newdata))
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
 
   return {
@@ -208,5 +213,5 @@ export async function getStaticProps() {
       testimonyData,
       teamData,
     },
-  };
+  }
 }

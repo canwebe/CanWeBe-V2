@@ -100,13 +100,13 @@
 }
 
 .heroBtnProjects {
-  background-color: #3939ef;
+  background-color: var(--color-canwebe-deep);
   border-radius: 7px;
-  color: rgb(215, 215, 215);
+  /* color: rgb(255, 255, 255); */
 }
 
 .heroBtnProjects:active {
-  background-color: #2222b7;
+  background-color: var(--color-canwebe-extradeep);
   transform: translateY(3px);
 }
 
@@ -215,11 +215,7 @@
   background-color: #0d0c0c;
   position: relative;
 } */
-.teamSection {
-  background-color: var(--color-black-1);
-  padding: 40px 0 90px;
-  position: relative;
-}
+
 /* Why US */
 .whyus {
   min-height: 100%;
@@ -232,11 +228,17 @@
 .whyusright {
   width: 50%;
 }
+
+.whyusright {
+  background-color: white;
+  background-color: #dedcdb;
+  color: #000;
+}
 .whyusleft {
   height: calc(100vh - 67px);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
   position: sticky;
@@ -245,20 +247,22 @@
   background-color: var(--color-black-1);
 }
 .whyusleftp {
-  font-size: 3rem;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .whyusleftsubp {
   font-size: 1.2rem;
   opacity: 0.7;
 }
-.whyusleftp::after {
+/* .whyusleftp::after {
   width: 100px;
   content: '';
   height: 2px;
   display: block;
   background-color: rgb(126, 126, 233);
   margin: 5px auto 0;
-}
+} */
 
 .point1,
 .point2,
@@ -269,11 +273,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  position: sticky;
-  top: 68px;
-  box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.3);
 }
-.point1 {
+/* .point1 {
   background-color: #205375;
   background-color: #98613f;
 }
@@ -283,7 +284,7 @@
 .point3 {
   background-color: #947ec3;
   background-color: #417d7a;
-}
+} */
 
 /* Latest Tech Point 1 */
 .point1Svg {
@@ -296,6 +297,7 @@
 .point1H4 {
   font-size: 1.5rem;
   margin: 10px 0;
+  color: #c25d5d;
 }
 .point1P {
   font-size: 1.1rem;
@@ -312,10 +314,11 @@
 .problemQ {
   font-size: 2rem;
   text-align: right;
-  border-right: 4px solid white;
+  border-right: 4px solid rgb(109, 109, 109);
   padding-right: 20px;
   width: 250px;
-  color: #2d208c;
+  color: #2a16c8;
+  /* color: #412309; */
   font-weight: 500;
 }
 
@@ -335,7 +338,7 @@
     border-color: white;
   }
   .heroBtnProjects:hover {
-    background-color: #2222b7;
+    background-color: var(--color-canwebe-extradeep);
   }
 
   .heroBtnProjects:active {
@@ -369,7 +372,7 @@
     width: 60%;
   }
   .whyusleftp {
-    font-size: 2.3rem;
+    font-size: 3rem;
   }
   .whyusleftsubp {
     font-size: 1rem;
@@ -386,7 +389,7 @@
 @media screen and (max-width: 810px) {
   .heroDiv {
     flex-direction: column-reverse;
-    padding: 60px 0;
+    padding: 20px 0;
   }
   .heroLeft {
     width: 100%;
@@ -425,9 +428,6 @@
 
   .fundSection {
     padding: 40px 0;
-  }
-  .teamSection {
-    padding-bottom: 60px;
   }
 }
 
@@ -470,13 +470,13 @@
   }
 
   .whyusleftp {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
   }
   .whyusleftsubp {
     font-size: 0.9rem;
   }
   .whyusleft {
-    gap: 12px;
+    gap: 8px;
   }
   .point1H4 {
     font-size: 1.3rem;

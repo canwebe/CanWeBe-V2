@@ -10,34 +10,34 @@ export default function ProjectScroll({ data }) {
     if (type === 'liveyoutube') {
       return (
         <>
-          <ProjectBtn type='view' link={links.live} />
-          <ProjectBtn small type='youtube' link={links.youtube} />
+          <ProjectBtn type="view" link={links.live} />
+          <ProjectBtn small type="youtube" link={links.youtube} />
         </>
       )
     } else if (type === 'livegithub') {
       return (
         <>
-          <ProjectBtn type='view' link={links.live} />
-          <ProjectBtn small type='github' link={links.github} />
+          <ProjectBtn type="view" link={links.live} />
+          <ProjectBtn small type="github" link={links.github} />
         </>
       )
     } else if (type === 'youtubegithub') {
       return (
         <>
-          <ProjectBtn type='youtube' link={links.youtube} />
-          <ProjectBtn small type='github' link={links.github} />
+          <ProjectBtn type="youtube" link={links.youtube} />
+          <ProjectBtn small type="github" link={links.github} />
         </>
       )
     } else if (type === 'youtube') {
       return (
         <>
-          <ProjectBtn type='youtube' link={links.youtube} />
+          <ProjectBtn type="youtube" link={links.youtube} />
         </>
       )
     } else if (type === 'fb') {
       return (
         <>
-          <ProjectBtn type='fb' link={links.fb} />
+          <ProjectBtn type="fb" link={links.fb} />
         </>
       )
     } else {
@@ -54,20 +54,20 @@ export default function ProjectScroll({ data }) {
               src={item.imgsrc}
               alt={item.name + ' image'}
               className={styles.img}
-              width='200px'
-              height='120px'
-              placeholder='blur'
-              blurDataURL='/assets/placeholder.webp'
-              layout='responsive'
+              width="200px"
+              height="120px"
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.webp"
+              layout="responsive"
             />
           ) : (
             <iframe
-              width='100%'
-              height='170px'
+              width="100%"
+              height="170px"
               src={item.embed}
               title={item.name}
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           )}
@@ -81,7 +81,7 @@ export default function ProjectScroll({ data }) {
           </div>
         </div>
       ))}
-      <SeeAllBtn name='projects' />
+      <SeeAllBtn name="products" />
     </div>
   )
 }

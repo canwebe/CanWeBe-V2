@@ -5,8 +5,8 @@ import Link from 'next/link'
 export default function TopRelease({ data }) {
   return (
     <section className={styles.topRelease}>
-      <div className='wrapper'>
-        <h3 className={styles.topReleaseH3}>Top Projects</h3>
+      <div className="wrapper">
+        <h3 className={styles.topReleaseH3}>Top Products</h3>
         <div className={styles.topReleaseWrapper}>
           {data.map((item, i) => (
             <div key={i} className={styles.topReleaseCard}>
@@ -15,10 +15,10 @@ export default function TopRelease({ data }) {
                   src={item.imgsrc}
                   width={800}
                   height={480}
-                  layout='responsive'
-                  placeholder='blur'
-                  blurDataURL='/assets/placeholder.webp'
-                  alt='Project Img'
+                  layout="responsive"
+                  placeholder="blur"
+                  blurDataURL="/assets/placeholder.webp"
+                  alt="Project Img"
                 />
               </div>
               <div className={styles.topReleaseContent}>
@@ -26,7 +26,7 @@ export default function TopRelease({ data }) {
                 <p className={styles.topReleaseInfo}>
                   {item.info.substring(0, 60) + '...'}
                 </p>
-                <Link href={`/projects/${item.id}`}>
+                <Link href={`/products/${item.id}`}>
                   <a className={styles.topReleaseBtn}>View</a>
                 </Link>
               </div>
