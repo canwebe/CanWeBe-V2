@@ -10,7 +10,7 @@ import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
-import Loading from '../components/LoadingScreen'
+import thumb from '../public/assets/thumb.webp'
 
 export default function Home({ data, testimonyData, teamData }) {
   const [isModal, setIsModal] = useState(false)
@@ -42,17 +42,23 @@ export default function Home({ data, testimonyData, teamData }) {
           type="video/mp4"
         />
       </Head>
-      {!isReady && <Loading />}
-      <div style={{ opacity: !isReady ? 0 : 1 }}>
+      <div>
         <section
           className={styles.heroSection}
           // ref={heroRef}
           // style={{ transform: `translateY(-${progress * 20}vh)` }}
         >
           <div className={styles.videooverlay} />
+          <div
+            style={{ opacity: !isReady ? 1 : 0 }}
+            className={styles.thumbnail}
+          >
+            <Image src={thumb} alt={'Thumbnail'} layout="fill" priority />
+          </div>
           <video
             onLoadedData={() => setIsReady(true)}
             className={styles.video}
+            style={{ opacity: isReady ? 1 : 0 }}
             autoPlay
             loop
             muted
