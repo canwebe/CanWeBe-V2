@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useState, useCallback } from 'react'
 import Modal from '../components/modal'
 import ProjectScroll from '../components/projectScroller'
-import { getColData, getProjectList, getTeamData } from '../helpers'
+import { getColData, getProjectList } from '../helpers'
 import styles from '../styles/Home.module.css'
 import LatestTech from '../components/svg/latestTech'
 import FreeSvg from '../components/svg/freeSvg'
@@ -12,23 +12,17 @@ import Testimony from '../components/testimony'
 import Footer from '../components/footer'
 import thumb from '../public/assets/thumb.webp'
 
-export default function Home({ data, testimonyData, teamData }) {
+export default function Home({ data, testimonyData }) {
   const [isModal, setIsModal] = useState(false)
   const [isImgLoad, setIsImgLoad] = useState(false)
   const [isReady, setIsReady] = useState(false)
 
-  // const projectRef = useRef()
-  // const heroRef = useRef(null)
-
-  // const scrollY = useOffset()
-  // let progress = 0
-  // const { current } = heroRef
-  // if (current) {
-  //   progress = Math.min(1, scrollY / current.clientHeight)
-  // }
-
   const handleImg = useCallback(() => {
     setIsImgLoad(true)
+  }, [])
+
+  const handleVideo = useCallback(() => {
+    setIsReady(true)
   }, [])
 
   return (
@@ -43,11 +37,7 @@ export default function Home({ data, testimonyData, teamData }) {
         />
       </Head>
       <div>
-        <section
-          className={styles.heroSection}
-          // ref={heroRef}
-          // style={{ transform: `translateY(-${progress * 20}vh)` }}
-        >
+        <section className={styles.heroSection}>
           <div className={styles.videooverlay} />
           <div
             style={{ opacity: !isReady ? 1 : 0 }}
@@ -56,7 +46,7 @@ export default function Home({ data, testimonyData, teamData }) {
             <Image src={thumb} alt={'Thumbnail'} layout="fill" priority />
           </div>
           <video
-            onLoadedData={() => setIsReady(true)}
+            onLoadedData={handleVideo}
             className={styles.video}
             style={{ opacity: isReady ? 1 : 0 }}
             autoPlay
@@ -202,12 +192,10 @@ export default function Home({ data, testimonyData, teamData }) {
 export async function getStaticProps() {
   let data = []
   let testimonyData = []
-  let teamData = []
 
   try {
     const newdata = await getProjectList(6)
     testimonyData = await getColData('testimony')
-    teamData = await getTeamData('boardMember')
     data = await JSON.parse(JSON.stringify(newdata))
   } catch (error) {
     console.log(error)
@@ -217,7 +205,6 @@ export async function getStaticProps() {
     props: {
       data,
       testimonyData,
-      teamData,
     },
   }
 }
