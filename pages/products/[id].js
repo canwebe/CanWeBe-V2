@@ -1,7 +1,6 @@
 import { getColData, getProjectList } from '../../helpers'
 import styles from '../../styles/ProjectInfo.module.css'
 import InfoSection from '../../components/infoSection'
-import Contributor from '../../components/contributor'
 import ProjectReviewSection from '../../components/projectReviewSection'
 import GoBackpageBtn from '../../components/goBackPageBtn'
 import HeadSeo from '../../components/HeadSeo'
@@ -24,7 +23,6 @@ export default function ProjectInfo({ data, id }) {
         {/* <div className='wrapper'> */}
         <div className={`${styles.mainSection} wrapper`}>
           <InfoSection data={data} />
-          {data?.contributor && <Contributor data={data.contributor} />}
           <ProjectReviewSection reviews={data.review} name={data.name} />
         </div>
         {/* </div> */}

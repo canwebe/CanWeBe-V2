@@ -10,17 +10,17 @@ export default function Featured({ data }) {
   return (
     <section className={styles.featured}>
       <p className={styles.newRelease}>New Release</p>
-      <h3 className='header'>Featured</h3>
+      <h3 className="header">Featured</h3>
       <div className={styles.featuredWrapper}>
         <div className={styles.featuredLeft}>
           {data.embed ? (
             <iframe
-              width='100%'
-              height='100%'
+              width="100%"
+              height="100%"
               src={data.embed}
               title={data.name}
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
           ) : (
@@ -29,9 +29,9 @@ export default function Featured({ data }) {
               alt={data.name}
               width={800}
               height={480}
-              layout='responsive'
-              placeholder='blur'
-              blurDataURL='/assets/placeholder.webp'
+              layout="responsive"
+              placeholder="blur"
+              blurDataURL="/assets/placeholder.webp"
             />
           )}
         </div>
@@ -39,7 +39,7 @@ export default function Featured({ data }) {
           <p className={styles.featuredName}>{data.name}</p>
           <p className={styles.featuredInfo}>{data.info}</p>
           <div className={styles.btnWrapper}>
-            <Link href={`/projects/${data.id}`}>
+            <Link href={`/products/${data.id}`}>
               <a className={styles.featuredBtn}>View</a>
             </Link>
             {data.links.map((item, i) => (
@@ -47,8 +47,8 @@ export default function Featured({ data }) {
                 key={i}
                 className={styles[item.name]}
                 href={item.link}
-                target='_blank'
-                rel='noopener noreferrer'
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {btn[item.name]}
               </a>

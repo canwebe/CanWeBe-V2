@@ -8,13 +8,13 @@ export default function Projects({ data, featured }) {
   return (
     <>
       <HeadSeo
-        title="Projects"
-        url="/projects"
+        title="Products"
+        url="/products"
         desc="List of Some of the projects done by CanWeBe!. Other projects yet to come Stay tuned with CWB."
       />
       <div className="sectionbody">
         <div className="wrapper">
-          <h1 className="pageHeader">Projects.</h1>
+          <h1 className="pageHeader">Products.</h1>
         </div>
         <div className="wrapper">
           <Featured data={featured} />

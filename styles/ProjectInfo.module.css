@@ -2,7 +2,7 @@
   background-color: black;
   padding: 30px 30px 20px;
   /* margin-top: 0px; */
-  min-height: 180px;
+  min-height: 169px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -131,48 +131,6 @@
 
 .icon {
   font-size: 1.3rem;
-}
-
-.contributorSection {
-  margin-top: 40px;
-}
-
-.contributorWrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 30px;
-  padding: 40px 0 20px;
-}
-
-.contributorCard {
-  background-color: var(--color-black-2);
-  color: rgba(255, 255, 255, 0.708);
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.6);
-  /* height: fit-content; */
-  border-radius: 20px;
-  max-width: 300px;
-}
-
-.contributorName {
-  background-color: rgb(95, 43, 226);
-  background-color: #534870;
-  padding: 10px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: white;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-}
-
-.contributorName:global(.lead) {
-  background-color: #e22b34;
-}
-
-.list {
-  display: flex;
-  flex-direction: column;
-  padding: 15px 20px 25px 35px;
-  gap: 6px;
-  font-size: 1rem;
 }
 
 .projectReviewSection {
@@ -346,9 +304,6 @@
     width: 100%;
     padding: 10px;
   }
-  .contributorWrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media screen and (max-width: 550px) {
@@ -371,10 +326,6 @@
   .list {
     font-size: 0.8rem;
   }
-
-  .contributorName {
-    font-size: 1.1rem;
-  }
   .giveReviewP {
     font-size: 1rem;
   }
@@ -386,13 +337,13 @@
   .youtube,
   .facebook,
   .github {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .icon {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
   .btnWrapper {
-    gap: 13px 18px;
+    gap: 18px;
   }
 
   .review {

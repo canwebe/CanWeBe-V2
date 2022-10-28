@@ -11,7 +11,7 @@
 
 .postWrapper {
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px;
   margin: -40vh auto 0;
   box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.4);
   border-radius: 7px;
@@ -20,12 +20,12 @@
 .postContent {
   background-color: #0d1117;
   background-color: #202124;
-  padding: 30px 30px 60px;
+  padding: 30px 70px 70px;
   color: #c9d1d9;
 }
 
 .postTitleWrapper {
-  padding: 20px 20px 30px;
+  padding: 50px 70px 30px;
   background-color: #34343486;
   backdrop-filter: blur(10px);
   /* margin-bottom: 20px; */
@@ -74,12 +74,18 @@
   }
 }
 
+@media screen and (max-width: 950px) {
+  .postContent {
+    padding: 30px 19px 60px;
+  }
+  .postTitleWrapper {
+    padding: 20px 20px 30px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .postWrapper {
     width: 100%;
     margin-bottom: -56px;
-  }
-  .postContent {
-    padding: 30px 19px 60px;
   }
 }

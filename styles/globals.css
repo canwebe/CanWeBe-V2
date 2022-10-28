@@ -5,6 +5,9 @@
   --color-black-2: #3b3b3b;
   --color-white-1: #fff;
   --color-canwebe: #e47e24;
+  --color-canwebe-deep: #c45c20;
+  --color-canwebe-extradeep: #9a400c;
+  --color-blue-1: #7e7ee9;
 }
 
 html,
@@ -81,7 +84,7 @@ body {
   content: '';
   height: 2px;
   width: 100px;
-  background-color: rgb(126, 126, 233);
+  background-color: var(--color-blue-1);
   display: block;
   margin: 7px 0 20px 4px;
 }
@@ -164,4 +167,8 @@ code {
   ::-webkit-scrollbar {
     height: 0;
   }
+}
+
+.none {
+  display: none;
 }

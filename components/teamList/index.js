@@ -1,7 +1,4 @@
-import SocialBtn from '../socialBtn'
 import styles from './teamList.module.css'
-import Image from 'next/image'
-import SeeAllBtn from '../seeAllBtn'
 import ListTeamCard from './listTeamCard'
 
 export default function TeamList({ teamData }) {
