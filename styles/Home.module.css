@@ -129,12 +129,13 @@
 }
 
 .maintainence {
-  background-color: #151515;
+  background-color: #0f0f0fc9;
   padding: 90px 0;
   text-align: center;
   font-size: 1.8rem;
-  color: rgb(199, 203, 212);
+  color: #c7cbd4;
   position: relative;
+  backdrop-filter: blur(12px);
 }
 
 .projectSection {
