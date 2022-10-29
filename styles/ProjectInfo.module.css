@@ -312,8 +312,9 @@
   }
 
   .mainSection {
-    padding: 25px 20px 40px;
+    padding: 45px 20px 40px;
     width: 100%;
+    margin: 0;
   }
   .photoDiv {
     gap: 30px;
