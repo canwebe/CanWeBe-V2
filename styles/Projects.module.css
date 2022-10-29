@@ -187,14 +187,6 @@
   box-shadow: 2px 0 25px #000;
 }
 
-.topReleaseCard:hover {
-  transform: translateY(-20px);
-}
-
-.topReleaseCard:hover ~ .topReleaseCard {
-  left: 30px;
-}
-
 .topReleaseContent {
   padding: 0 15px 17px;
 }
@@ -305,7 +297,13 @@
     transform: scale(0.9);
     background-color: rgba(255, 255, 255, 0.581);
   }
+  .topReleaseCard:hover {
+    transform: translateY(-20px);
+  }
 
+  .topReleaseCard:hover ~ .topReleaseCard {
+    left: 30px;
+  }
   .topReleaseBtn:hover {
     background-color: rgb(165, 197, 186);
   }
@@ -378,6 +376,10 @@
   .youtube {
     display: none;
   }
+
+  .topRelease {
+    padding-inline: 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -389,13 +391,16 @@
   }
 
   .featured,
-  .topRelease,
   .allProjects {
     padding: 20px 15px 40px;
   }
 
-  .featured,
   .topRelease {
+    padding: 20px 0 40px 10px;
+    margin-bottom: 30px;
+  }
+
+  .featured {
     margin-bottom: 50px;
   }
   .featuredWrapper {
@@ -413,5 +418,26 @@
   .featuredLeft {
     /* height: 200px; */
     padding: 5px;
+  }
+  .topReleaseCard:not(:first-child) {
+    margin: 0;
+    box-shadow: none;
+  }
+  .topReleaseWrapper {
+    gap: 25px;
+  }
+
+  .topReleaseCard {
+    box-shadow: none;
+    border: 2px solid grey;
+  }
+
+  .topReleaseCard:active {
+    border-color: white;
+  }
+
+  .topReleaseImg {
+    border-radius: 13px 13px 0 0;
+    overflow: hidden;
   }
 }
