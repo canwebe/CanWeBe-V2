@@ -51,6 +51,15 @@ class MyDocument extends Document {
           <link rel="canonical" href="https://canwebe.tech" />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
+          />
         </Head>
         <body>
           <Main />
