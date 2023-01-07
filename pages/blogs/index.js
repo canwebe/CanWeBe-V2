@@ -39,26 +39,14 @@ export default function Blogs({ data }) {
             {filterList.map((item, i) => (
               <Link href={`/blogs/${item.slug}`} key={i}>
                 <a className={styles.postCard}>
-                  <div className={styles.postimg}>
-                    <Image
-                      src={item.imgsrc || '/ogcanwebe.webp'}
-                      layout="fill"
-                      objectFit="cover"
-                      alt="blog image"
-                      placeholder="blur"
-                      blurDataURL="/assets/placeholder.webp"
-                    />
-                  </div>
-                  <div className={styles.postcontent}>
-                    <p className={styles.time}>
-                      {moment
-                        .unix(item.timestamp.seconds)
-                        .format('MMM DD , YYYY')}
-                    </p>
-                    <p className={styles.title}>{item.title}</p>
-                    <p className={styles.name}>By {item.name}</p>
-                    <p className={styles.info}>{item.shortinfo}</p>
-                  </div>
+                  <p className={styles.time}>
+                    {moment
+                      .unix(item.timestamp.seconds)
+                      .format('MMM DD , YYYY')}
+                  </p>
+                  <p className={styles.title}>{item.title}</p>
+                  <p className={styles.name}>By {item.name}</p>
+                  <p className={styles.info}>{item.shortinfo}</p>
                 </a>
               </Link>
             ))}

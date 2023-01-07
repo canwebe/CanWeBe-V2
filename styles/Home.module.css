@@ -89,6 +89,7 @@
 
 .heroBtnDiv {
   display: flex;
+  align-items: center;
   gap: 26px;
   margin-top: 24px;
 }
