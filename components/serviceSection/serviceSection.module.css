@@ -1,0 +1,82 @@
+.body {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 20px;
+  justify-content: center;
+  width: min(90%, 1200px);
+  margin: -120px auto 40px;
+  padding: 25px 20px;
+  background-color: rgb(91 89 89 / 70%);
+  backdrop-filter: blur(6px);
+  border-radius: 7px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 230px;
+  /* width: 33.33%; */
+  min-width: 230px;
+  max-width: 350px;
+}
+
+.number {
+  background-color: #e15a5a;
+  color: rgb(237, 237, 237);
+  display: grid;
+  place-items: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.column:nth-child(1) .number {
+  background-color: var(--color-canwebe);
+}
+.column:nth-child(2) .number {
+  background-color: var(--color-blue-1);
+  color: black;
+}
+
+.column h4 {
+  margin-block: 8px 10px;
+  color: #e15a5a;
+}
+.column:nth-child(1) h4 {
+  color: var(--color-canwebe);
+}
+.column:nth-child(2) h4 {
+  color: var(--color-blue-1);
+}
+
+.column .description {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+@media screen and (max-width: 1000px) {
+  .body {
+    margin-top: -150px;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .body {
+    margin-top: -220px;
+  }
+}
+
+@media screen and (max-width: 578px) {
+  .body {
+    margin-top: -320px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .body {
+    margin-top: -290px;
+  }
+}

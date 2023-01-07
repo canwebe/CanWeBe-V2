@@ -131,7 +131,7 @@
 
 .maintainence {
   background-color: #0f0f0fc9;
-  padding: 90px 0;
+  padding: 90px 0 150px;
   text-align: center;
   font-size: 1.8rem;
   color: #c7cbd4;
@@ -157,41 +157,6 @@
   display: block;
   margin: 7px 0 20px 4px;
 } */
-
-.fundSection {
-  background-color: #beb8b2;
-  color: #000000;
-  padding: 80px 0;
-  position: relative;
-}
-
-.fundContent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.fundP {
-  font-size: 1.5rem;
-}
-
-.fundBtn {
-  padding: 8px 40px;
-  font-size: 1.4rem;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.24s ease-in;
-  border: 1px solid black;
-  outline: none;
-}
-
-.fundBtn:active {
-  background-color: #000000;
-  color: rgb(224, 224, 224);
-  transform: scale(0.9);
-}
 
 .feedbackSection {
   padding: 50px 0;
@@ -364,14 +329,7 @@
   .heroBtnProjects:active {
     transform: translateY(3px);
   }
-  .fundBtn:hover {
-    background-color: #000000;
-    color: rgb(224, 224, 224);
-  }
 
-  .fundBtn:active {
-    transform: scale(0.9);
-  }
   .feedbackBtn:hover {
     background-color: rgb(160, 58, 10);
     color: white;
@@ -397,12 +355,19 @@
   .whyusleftsubp {
     font-size: 1rem;
   }
+
+  .maintainence {
+    padding-bottom: 180px;
+  }
 }
 @media screen and (max-width: 860px) {
   .feedbackCard {
     padding: 35px;
     gap: 15px;
     text-align: center;
+  }
+  .maintainence {
+    padding-bottom: 250px;
   }
 }
 
@@ -445,9 +410,11 @@
   .maintainence {
     font-size: 1.4rem;
   }
+}
 
-  .fundSection {
-    padding: 40px 0;
+@media screen and (max-width: 578px) {
+  .maintainence {
+    padding-bottom: 350px;
   }
 }
 
@@ -475,18 +442,11 @@
     gap: 20px;
   }
   .maintainence {
-    padding: 45px 0;
+    padding-block: 45px 300px;
     font-size: 1.3rem;
   }
   .maintainenceP {
     padding: 5px;
-  }
-  .fundContent {
-    text-align: center;
-    gap: 15px;
-  }
-  .fundP {
-    font-size: 1.4rem;
   }
 
   .whyusleftp {

@@ -11,6 +11,7 @@ import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
 import thumb from '../public/assets/thumb.webp'
+import ServiceSection from '../components/serviceSection'
 
 export default function Home({ data, testimonyData }) {
   const [isModal, setIsModal] = useState(false)
@@ -36,7 +37,7 @@ export default function Home({ data, testimonyData }) {
           type="video/mp4"
         />
       </Head>
-      <div>
+      <>
         <section className={styles.heroSection}>
           <div className={styles.videooverlay} />
           <div
@@ -105,6 +106,7 @@ export default function Home({ data, testimonyData }) {
           </div>
         </section>
         <section className={styles.projectSection}>
+          <ServiceSection />
           <div className="wrapper">
             <h3 className="header">Latest Products</h3>
             <ProjectScroll data={data} />
@@ -158,19 +160,6 @@ export default function Home({ data, testimonyData }) {
           </div>
         </section>
         <Testimony data={testimonyData} />
-        <section className={styles.fundSection}>
-          <div className="wrapper">
-            <div className={styles.fundContent}>
-              <p className={styles.fundP}>Want Help Us ?, Buy us a coffee</p>
-              <button
-                onClick={() => setIsModal(true)}
-                className={styles.fundBtn}
-              >
-                help
-              </button>
-            </div>
-          </div>
-        </section>
         <section className={styles.feedbackSection}>
           <div className="wrapper">
             <div className={styles.feedbackCard}>
@@ -182,7 +171,7 @@ export default function Home({ data, testimonyData }) {
           </div>
         </section>
         <Footer />
-      </div>
+      </>
 
       {isModal && <Modal setIsModal={setIsModal} />}
     </>

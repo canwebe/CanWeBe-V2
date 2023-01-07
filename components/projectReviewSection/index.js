@@ -16,7 +16,7 @@ export default function ProjectReviewSection({ reviews, name }) {
           <a className={styles.giveReviewBtn}>Give Review</a>
         </Link>
       </div>
-      {reviews.length && (
+      {reviews.length ? (
         <div className={styles.reviewWrapper}>
           {reviews.map((item, i) => (
             <div key={i} className={styles.reviewCard}>
@@ -25,7 +25,7 @@ export default function ProjectReviewSection({ reviews, name }) {
             </div>
           ))}
         </div>
-      )}
+      ) : null}
     </div>
   )
 }
