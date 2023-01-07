@@ -13,20 +13,6 @@
   width: 100%;
 }
 
-.header {
-  font-size: 1.4rem;
-  text-align: center;
-}
-
-.header::after {
-  content: '';
-  height: 2px;
-  width: 100px;
-  background-color: rgb(126, 126, 233);
-  display: block;
-  margin: 7px auto 20px;
-}
-
 .subheader {
   font-size: 1.8rem;
   text-align: center;
@@ -37,7 +23,7 @@
 
 .svg {
   width: 150px;
-  margin: 35px auto 20px;
+  margin: 15px auto 20px;
 }
 @media screen and (max-width: 900px) {
   .svg {

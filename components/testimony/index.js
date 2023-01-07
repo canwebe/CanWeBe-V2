@@ -7,8 +7,7 @@ import TestimonySVG from '../svg/testimonySVG'
 export default function Testimony({ data }) {
   return (
     <section className={styles.section}>
-      <div className='wrapper'>
-        <h1 className={styles.header}>Testimony</h1>
+      <div className="wrapper">
         <div className={styles.svg}>
           <TestimonySVG />
         </div>
