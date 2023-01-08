@@ -1,13 +1,7 @@
 .heroSection {
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('/headerbg.svg'); */
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; */
   overflow-x: hidden;
   position: sticky;
   top: 0;
-  /* z-index: -1; */
   background-color: var(--color-black-1);
 }
 
@@ -145,19 +139,6 @@
   position: relative;
 }
 
-/* .header {
-  font-size: 1.4rem;
-}
-
-.header::after {
-  content: '';
-  height: 2px;
-  width: 100px;
-  background-color: rgb(126, 126, 233);
-  display: block;
-  margin: 7px 0 20px 4px;
-} */
-
 .feedbackSection {
   padding: 50px 0;
   background-color: rgb(168, 65, 10);
@@ -193,13 +174,6 @@
   color: white;
   border-radius: 30px;
 }
-
-/* .infoSection {
-  padding: 35px 0;
-  text-align: center;
-  background-color: #0d0c0c;
-  position: relative;
-} */
 
 /* Why US */
 .whyus {
@@ -240,14 +214,6 @@
   font-size: 1.2rem;
   opacity: 0.7;
 }
-/* .whyusleftp::after {
-  width: 100px;
-  content: '';
-  height: 2px;
-  display: block;
-  background-color: rgb(126, 126, 233);
-  margin: 5px auto 0;
-} */
 
 .point1,
 .point2,
@@ -259,18 +225,6 @@
   align-items: center;
   flex-direction: column;
 }
-/* .point1 {
-  background-color: #205375;
-  background-color: #98613f;
-}
-.point2 {
-  background-color: #6a67ce;
-}
-.point3 {
-  background-color: #947ec3;
-  background-color: #417d7a;
-} */
-
 /* Latest Tech Point 1 */
 .point1Svg {
   width: 200px;
@@ -303,7 +257,6 @@
   padding-right: 20px;
   width: 250px;
   color: #2a16c8;
-  /* color: #412309; */
   font-weight: 500;
 }
 
@@ -423,8 +376,6 @@
     padding: 30px 0;
   }
   .heroRight {
-    /* width: 260px;
-    padding: 23px; */
     display: none;
   }
   .heroH1 {
@@ -492,9 +443,7 @@
   .maintainenceP {
     padding: 8px;
   }
-  .fundSection {
-    padding: 35px 0;
-  }
+
   .feedbackCard {
     padding: 25px;
   }

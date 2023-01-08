@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import TeamList from '../components/teamList'
 import { getTeamData } from '../helpers'
-import styles from '../styles/Team.module.css'
 
 export default function Team({ members }) {
   return (
@@ -24,7 +23,6 @@ export default function Team({ members }) {
 }
 
 export async function getStaticProps() {
-  let boardMembers = []
   let members = []
 
   try {

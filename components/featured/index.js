@@ -18,8 +18,6 @@ export default function Featured({ data }) {
           />
           {data.embed ? (
             <iframe
-              // width="100%"
-              // height="100%"
               src={data.embed}
               title={data.name}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
