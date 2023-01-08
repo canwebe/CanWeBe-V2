@@ -30,12 +30,6 @@ export default function Home({ data, testimonyData }) {
     <>
       <Head>
         <title>Home | CanWeBe</title>
-        <link
-          rel="preload"
-          href="/assets/bgvideo.mp4"
-          as="video"
-          type="video/mp4"
-        />
       </Head>
       <>
         <section className={styles.heroSection}>
@@ -54,6 +48,7 @@ export default function Home({ data, testimonyData }) {
             loop
             muted
             playsInline
+            preload="auto"
           >
             <source src="/assets/bgvideo.mp4" type="video/mp4" />
           </video>
