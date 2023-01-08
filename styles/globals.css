@@ -35,7 +35,9 @@ html {
   max-width: 1400px;
   margin: 0 auto;
 }
-
+iframe {
+  border: none;
+}
 img {
   width: 100%;
 }
