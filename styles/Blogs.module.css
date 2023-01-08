@@ -9,32 +9,11 @@
 .postCard {
   background-color: var(--color-black-2);
   padding: 25px 20px;
-  /* display: flex;
-  flex-direction: column;
-  gap: 10px; */
   border-radius: 7px;
   transition: all 0.3s ease;
   position: relative;
   border: 1px solid var(--color-black-2);
 }
-
-/* .postCard::after {
-  content: '';
-  width: 100%;
-  opacity: 0;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  position: absolute;
-  box-shadow: 10px 10px 26px rgba(0, 0, 0, 0.23);
-  border-radius: 7px;
-  transition: all 0.3s ease;
-} */
-
-/* .title:hover {
-  color: #c45c20;
-} */
 
 .allposts {
   position: absolute;
@@ -68,7 +47,6 @@
 .tagName {
   text-transform: uppercase;
   color: rgb(131, 131, 131);
-  /* font-weight: 500; */
 }
 
 /* Search */

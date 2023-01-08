@@ -9,20 +9,20 @@ export default function Featured({ data }) {
   }
   return (
     <section className={styles.featured}>
-      <p className={styles.newRelease}>New Release</p>
-      <h3 className="header">Featured</h3>
       <div className={styles.featuredWrapper}>
         <div className={styles.featuredLeft}>
+          <img
+            className={styles.laptop}
+            src="/assets/laptop.png"
+            alt="laptop"
+          />
           {data.embed ? (
             <iframe
-              width="100%"
-              height="100%"
               src={data.embed}
               title={data.name}
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-            ></iframe>
+            />
           ) : (
             <Image
               src={data.imgsrc}
