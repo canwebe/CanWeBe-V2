@@ -52,43 +52,42 @@ export default function Home({ data, testimonyData }) {
           >
             <source src="/assets/bgvideo.mp4" type="video/mp4" />
           </video>
-          <div className="wrapper">
-            <div className={styles.heroDiv}>
-              <div className={styles.heroLeft}>
-                <p className={styles.heroSubline}>
-                  A Software Development Organization
-                </p>
-                <h1 className={styles.heroH1}>
-                  Welcome to <span className={styles.canwebe}>CanWeBe</span>
-                </h1>
-                <p className={styles.subpara}>
-                  We assist you to remodel everyday problems into modern techy
-                  solution.We help the society by presenting cost-free cutting
-                  edge applications.
-                </p>
-                <div className={styles.heroBtnDiv}>
-                  <Link href="/products">
-                    <a className={styles.heroBtnProjects}>Our Products</a>
-                  </Link>
 
-                  <Link href="/form/contact">
-                    <a className={styles.heroBtnContact}>Contact</a>
-                  </Link>
-                </div>
+          <div className={`${styles.heroDiv} wrapper`}>
+            <div className={styles.heroLeft}>
+              <p className={styles.heroSubline}>
+                A Software Development Organization
+              </p>
+              <h1 className={styles.heroH1}>
+                Welcome to <span className={styles.canwebe}>CanWeBe</span>
+              </h1>
+              <p className={styles.subpara}>
+                We assist you to remodel everyday problems into modern techy
+                solution.We help the society by presenting cost-free cutting
+                edge applications.
+              </p>
+              <div className={styles.heroBtnDiv}>
+                <Link href="/products">
+                  <a className={styles.heroBtnProjects}>Our Products</a>
+                </Link>
+
+                <Link href="/form/contact">
+                  <a className={styles.heroBtnContact}>Contact</a>
+                </Link>
               </div>
-              <div
-                className={styles.heroRight}
-                style={{ opacity: isImgLoad ? '1' : '0' }}
-              >
-                <Image
-                  src="/logo.webp"
-                  alt="logo"
-                  layout="responsive"
-                  width={500}
-                  height={500}
-                  onLoad={handleImg}
-                />
-              </div>
+            </div>
+            <div
+              className={styles.heroRight}
+              style={{ opacity: isImgLoad ? '1' : '0' }}
+            >
+              <Image
+                src="/logo.webp"
+                alt="logo"
+                layout="responsive"
+                width={500}
+                height={500}
+                onLoad={handleImg}
+              />
             </div>
           </div>
         </section>

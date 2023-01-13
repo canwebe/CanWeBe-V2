@@ -20,6 +20,7 @@ export default function ListTeamCard({
             alt={name + ' avatar'}
             width={100}
             height={100}
+            // sizes="(min-width:1200px) 20vw,(min-width:900px) 25vw,(min-width:650px) 33vw,50vw"
             placeholder="blur"
             blurDataURL="/assets/avatar.webp"
             layout="responsive"

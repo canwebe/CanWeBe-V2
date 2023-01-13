@@ -27,13 +27,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
-        strategy='afterInteractive'
-        src='https://www.googletagmanager.com/gtag/js?id=G-KKCN2BJ79G
-        '
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-KKCN2BJ79G
+        "
       />
       <Script
-        id='gtag-init'
-        strategy='afterInteractive'
+        id="gtag-init"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -46,10 +46,10 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Head>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Nav />
-      <div className='navGap'></div>
+      {/* <div className='navGap'></div> */}
       <Component {...pageProps} />
     </>
   )
