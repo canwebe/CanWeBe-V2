@@ -11,6 +11,7 @@ import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
 import thumb from '../public/assets/thumb.webp'
+import logo from '../public/logo.webp'
 import ServiceSection from '../components/serviceSection'
 
 export default function Home({ data, testimonyData }) {
@@ -38,7 +39,7 @@ export default function Home({ data, testimonyData }) {
             style={{ opacity: !isReady ? 1 : 0 }}
             className={styles.thumbnail}
           >
-            <Image src={thumb} alt={'Thumbnail'} layout="fill" priority />
+            <Image src={thumb} alt={'Thumbnail'} fill priority />
           </div>
           <video
             onLoadedData={handleVideo}
@@ -52,43 +53,40 @@ export default function Home({ data, testimonyData }) {
           >
             <source src="/assets/bgvideo.mp4" type="video/mp4" />
           </video>
-          <div className="wrapper">
-            <div className={styles.heroDiv}>
-              <div className={styles.heroLeft}>
-                <p className={styles.heroSubline}>
-                  A Software Development Organization
-                </p>
-                <h1 className={styles.heroH1}>
-                  Welcome to <span className={styles.canwebe}>CanWeBe</span>
-                </h1>
-                <p className={styles.subpara}>
-                  We assist you to remodel everyday problems into modern techy
-                  solution.We help the society by presenting cost-free cutting
-                  edge applications.
-                </p>
-                <div className={styles.heroBtnDiv}>
-                  <Link href="/products">
-                    <a className={styles.heroBtnProjects}>Our Products</a>
-                  </Link>
 
-                  <Link href="/form/contact">
-                    <a className={styles.heroBtnContact}>Contact</a>
-                  </Link>
-                </div>
+          <div className={`${styles.heroDiv} wrapper`}>
+            <div className={styles.heroLeft}>
+              <p className={styles.heroSubline}>
+                A Software Development Organization
+              </p>
+              <h1 className={styles.heroH1}>
+                Welcome to <span className={styles.canwebe}>CanWeBe</span>
+              </h1>
+              <p className={styles.subpara}>
+                We assist you to remodel everyday problems into modern techy
+                solution.We help the society by presenting cost-free cutting
+                edge applications.
+              </p>
+              <div className={styles.heroBtnDiv}>
+                <Link href="/products" className={styles.heroBtnProjects}>
+                  Our Products
+                </Link>
+
+                <Link href="/form/contact" className={styles.heroBtnContact}>
+                  Contact
+                </Link>
               </div>
-              <div
-                className={styles.heroRight}
-                style={{ opacity: isImgLoad ? '1' : '0' }}
-              >
-                <Image
-                  src="/logo.webp"
-                  alt="logo"
-                  layout="responsive"
-                  width={500}
-                  height={500}
-                  onLoad={handleImg}
-                />
-              </div>
+            </div>
+            <div
+              className={styles.heroRight}
+              style={{ opacity: isImgLoad ? '1' : '0' }}
+            >
+              <Image
+                src={logo}
+                placeholder="blur"
+                alt="logo"
+                onLoad={handleImg}
+              />
             </div>
           </div>
         </section>
@@ -159,8 +157,8 @@ export default function Home({ data, testimonyData }) {
           <div className="wrapper">
             <div className={styles.feedbackCard}>
               <p>How was your experience with our services ?</p>
-              <Link href="/form/review">
-                <a className={styles.feedbackBtn}>Rate Us</a>
+              <Link href="/form/review" className={styles.feedbackBtn}>
+                Rate Us
               </Link>
             </div>
           </div>

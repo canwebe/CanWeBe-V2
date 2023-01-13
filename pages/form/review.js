@@ -34,7 +34,7 @@ export default function Review({ projectlist }) {
         setFinsh(true)
         setTimeout(() => {
           router.back()
-        }, 4000)
+        }, 3000)
       })
     } catch (error) {
       setLoading(false)
@@ -57,15 +57,15 @@ export default function Review({ projectlist }) {
   const question = [
     <>
       <label>
-        1. Do you want to give <strong>review</strong> for
+        1. For which product you want to give <strong>review</strong>
       </label>
       <select
-        name='project'
+        name="project"
         onChange={handleChange}
         value={project}
         className={styles.textInput}
       >
-        <option value='canwebe'>CanWeBe</option>
+        <option value="canwebe">CanWeBe</option>
         {projectlist.map((item, i) => (
           <option key={i} value={item.toLowerCase()}>
             {item}
@@ -77,14 +77,14 @@ export default function Review({ projectlist }) {
       <label>2. Hey I&apos;m Anish. And you are ?</label>
       <input
         className={styles.textInput}
-        name='name'
+        name="name"
         value={name}
-        placeholder='Your Name'
+        placeholder="Your Name"
         onChange={handleChange}
-        type='text'
+        type="text"
         required
         autoFocus
-        autoCapitalize='words'
+        autoCapitalize="words"
       />
     </>,
     <>
@@ -102,21 +102,21 @@ export default function Review({ projectlist }) {
       </label>
       <textarea
         className={styles.textInput}
-        name='feedback'
+        name="feedback"
         value={feedback}
         rows={2}
-        placeholder='Type your feedback'
+        placeholder="Type your feedback"
         onChange={handleChange}
         autoFocus
         required
-        autoCapitalize='on'
+        autoCapitalize="on"
       />
     </>,
   ]
   return (
     <div className={styles.formSection}>
       <BackBtn />
-      <div className='wrapper'>
+      <div className="wrapper">
         {finish ? (
           <p className={styles.thanks}>
             Thanks For Your Review , We will add this soon.
@@ -126,7 +126,7 @@ export default function Review({ projectlist }) {
           </p>
         ) : (
           <form
-            autoComplete='off'
+            autoComplete="off"
             className={styles.form}
             onSubmit={handleSubmit}
           >
@@ -177,7 +177,7 @@ export default function Review({ projectlist }) {
                     feedback === '' ? 'disabled' : ''
                   }`}
                   disabled={feedback === '' || loading}
-                  type='submit'
+                  type="submit"
                 >
                   {loading ? 'loading' : 'Submit'}
                 </button>

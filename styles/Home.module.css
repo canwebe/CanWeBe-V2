@@ -1,7 +1,8 @@
 .heroSection {
   overflow-x: hidden;
   position: sticky;
-  top: 0;
+  top: 67.2px;
+  height: calc(100% - 67.2px);
   background-color: var(--color-black-1);
 }
 
@@ -43,7 +44,7 @@
   justify-content: center;
   gap: 50px;
   align-items: center;
-  min-height: 90.5vh;
+  height: 100%;
   z-index: 999 !important;
   position: relative;
 }
@@ -57,6 +58,11 @@
   box-shadow: 2px 5px 22px rgba(0, 0, 0, 0.8);
   border-radius: 50%;
   transition: all 1s ease;
+  position: relative;
+}
+
+.heroRight img {
+  height: auto;
 }
 
 .heroH1 {
@@ -141,7 +147,7 @@
 
 .feedbackSection {
   padding: 50px 0;
-  background-color: rgb(168, 65, 10);
+  background-color: #a8410a;
   position: relative;
 }
 
@@ -177,7 +183,7 @@
 
 /* Why US */
 .whyus {
-  min-height: 100%;
+  min-height: calc(100vh - 67.2px);
   display: flex;
   padding-top: 30px;
   background-color: var(--color-black-1);
@@ -189,19 +195,18 @@
 }
 
 .whyusright {
-  background-color: white;
   background-color: #dedcdb;
   color: #000;
 }
 .whyusleft {
-  height: calc(100vh - 67px);
+  height: calc(100vh - 67.2px);
   display: flex;
   flex-direction: column;
   gap: 8px;
   justify-content: center;
   align-items: center;
   position: sticky;
-  top: 67px;
+  top: 67.1px;
   z-index: 1;
   background-color: var(--color-black-1);
 }
@@ -218,7 +223,7 @@
 .point1,
 .point2,
 .point3 {
-  height: calc(100vh - 67px);
+  height: calc(100vh - 67.2px);
   padding: 20px;
   display: flex;
   justify-content: center;
@@ -354,8 +359,8 @@
   .point1,
   .point2,
   .point3 {
-    height: calc(75vh - 67px);
-    top: calc(67px + 25vh);
+    height: calc(75vh - 67.2px);
+    top: calc(67.2px + 25vh);
   }
 }
 
@@ -446,5 +451,15 @@
 
   .feedbackCard {
     padding: 25px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .heroBtnDiv {
+    gap: 15px;
+  }
+  .heroBtnContact,
+  .heroBtnProjects {
+    font-size: 1.1rem;
   }
 }

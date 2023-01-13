@@ -1,12 +1,11 @@
 .topBar {
   background-color: black;
-  padding: 30px 30px 20px;
-  min-height: 169px;
+  padding: 20px 30px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   position: sticky;
-  top: 20px;
+  top: 67.2px;
   z-index: 1;
 }
 
@@ -37,11 +36,14 @@
 .imgpart {
   width: 65%;
   aspect-ratio: 16/9;
-  object-fit: cover;
-  padding: 10px;
+  position: relative;
   box-shadow: 0px 0px 25px rgb(0, 0, 0);
-  background-color: rgb(183, 200, 215);
+  border: 10px solid rgb(183, 200, 215);
 }
+.imgpart img {
+  object-fit: cover;
+}
+
 .infopart {
   width: 35%;
 }
@@ -266,7 +268,7 @@
 
   .imgpart {
     width: 90%;
-    padding: 15px;
+    border-width: 15px;
   }
   .infopart {
     width: 100%;
@@ -300,13 +302,13 @@
 @media screen and (max-width: 660px) {
   .imgpart {
     width: 100%;
-    padding: 10px;
+    border-width: 10px;
   }
 }
 
 @media screen and (max-width: 550px) {
   .imgpart {
-    padding: 5px;
+    border-width: 5px;
   }
 
   .mainSection {

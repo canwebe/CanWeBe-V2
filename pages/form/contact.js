@@ -38,7 +38,7 @@ export default function Contact() {
         setLoading(false)
         setTimeout(() => {
           router.back()
-        }, 4000)
+        }, 3000)
       })
     } catch (error) {
       setLoading(false)
@@ -53,14 +53,14 @@ export default function Contact() {
       </label>
       <input
         className={styles.textInput}
-        name='name'
+        name="name"
         value={name}
-        placeholder='Your Name'
+        placeholder="Your Name"
         onChange={handleChange}
-        type='text'
+        type="text"
         required
         autoFocus
-        autoCapitalize='words'
+        autoCapitalize="words"
       />
     </>,
     <>
@@ -70,11 +70,11 @@ export default function Contact() {
       </label>
       <input
         className={styles.textInput}
-        name='email'
+        name="email"
         value={email}
-        placeholder='example@email.com'
+        placeholder="example@email.com"
         onChange={handleChange}
-        type='email'
+        type="email"
         required
       />
     </>,
@@ -84,13 +84,13 @@ export default function Contact() {
       </label>
       <textarea
         className={styles.textInput}
-        name='query'
+        name="query"
         value={query}
         rows={2}
-        placeholder='Type your message here'
+        placeholder="Type your message here"
         onChange={handleChange}
         required
-        autoCapitalize='on'
+        autoCapitalize="on"
         autoFocus
       />
     </>,
@@ -99,7 +99,7 @@ export default function Contact() {
   return (
     <div className={styles.formSection}>
       <BackBtn />
-      <div className='wrapper'>
+      <div className="wrapper">
         {finish ? (
           <p className={styles.thanks}>
             Thanks For You Your Time , We will get back to you soon.
@@ -109,7 +109,7 @@ export default function Contact() {
           </p>
         ) : (
           <form
-            autoComplete='off'
+            autoComplete="off"
             className={styles.form}
             onSubmit={handleSubmit}
           >
@@ -151,7 +151,7 @@ export default function Contact() {
                 <button
                   className={`${styles.btn} ${query === '' ? 'disabled' : ''}`}
                   disabled={query === '' || loading}
-                  type='submit'
+                  type="submit"
                 >
                   {loading ? 'loading' : 'Submit'}
                 </button>

@@ -12,8 +12,8 @@ export default function ProjectReviewSection({ reviews, name }) {
             pathname: '/form/review',
             query: { project: name.toLowerCase() },
           }}
-        >
-          <a className={styles.giveReviewBtn}>Give Review</a>
+          className={styles.giveReviewBtn}>
+          Give Review
         </Link>
       </div>
       {reviews.length ? (
@@ -27,5 +27,5 @@ export default function ProjectReviewSection({ reviews, name }) {
         </div>
       ) : null}
     </div>
-  )
+  );
 }
