@@ -26,8 +26,8 @@ export default function TopRelease({ data }) {
                 <p className={styles.topReleaseInfo}>
                   {item.info.substring(0, 60) + '...'}
                 </p>
-                <Link href={`/products/${item.id}`}>
-                  <a className={styles.topReleaseBtn}>View</a>
+                <Link href={`/products/${item.id}`} className={styles.topReleaseBtn}>
+                  View
                 </Link>
               </div>
             </div>
@@ -35,5 +35,5 @@ export default function TopRelease({ data }) {
         </div>
       </div>
     </section>
-  )
+  );
 }

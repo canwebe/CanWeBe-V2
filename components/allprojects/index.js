@@ -7,11 +7,14 @@ export default function AllProjects({ data }) {
       <p>Stay tuned with CWB other products are yet to come</p>
       <div className={styles.allProjectWrapper}>
         {data.map((item) => (
-          <Link key={item.id} href={`/products/${item.id}`}>
-            <a className={styles.allProjectName}>{item.name}</a>
+          <Link
+            key={item.id}
+            href={`/products/${item.id}`}
+            className={styles.allProjectName}>
+            {item.name}
           </Link>
         ))}
       </div>
     </section>
-  )
+  );
 }

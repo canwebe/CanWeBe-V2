@@ -39,8 +39,8 @@ export default function Featured({ data }) {
           <p className={styles.featuredName}>{data.name}</p>
           <p className={styles.featuredInfo}>{data.info}</p>
           <div className={styles.btnWrapper}>
-            <Link href={`/products/${data.id}`}>
-              <a className={styles.featuredBtn}>View</a>
+            <Link href={`/products/${data.id}`} className={styles.featuredBtn}>
+              View
             </Link>
             {data.links.map((item, i) => (
               <a
@@ -63,5 +63,5 @@ export default function Featured({ data }) {
         </div>
       </div>
     </section>
-  )
+  );
 }
