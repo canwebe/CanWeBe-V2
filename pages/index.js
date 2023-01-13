@@ -11,6 +11,7 @@ import FreeSvg from '../components/svg/freeSvg'
 import Testimony from '../components/testimony'
 import Footer from '../components/footer'
 import thumb from '../public/assets/thumb.webp'
+import logo from '../public/logo.webp'
 import ServiceSection from '../components/serviceSection'
 
 export default function Home({ data, testimonyData }) {
@@ -38,7 +39,7 @@ export default function Home({ data, testimonyData }) {
             style={{ opacity: !isReady ? 1 : 0 }}
             className={styles.thumbnail}
           >
-            <Image src={thumb} alt={'Thumbnail'} layout="fill" priority />
+            <Image src={thumb} alt={'Thumbnail'} fill priority />
           </div>
           <video
             onLoadedData={handleVideo}
@@ -67,12 +68,12 @@ export default function Home({ data, testimonyData }) {
                 edge applications.
               </p>
               <div className={styles.heroBtnDiv}>
-                <Link href="/products">
-                  <a className={styles.heroBtnProjects}>Our Products</a>
+                <Link href="/products" className={styles.heroBtnProjects}>
+                  Our Products
                 </Link>
 
-                <Link href="/form/contact">
-                  <a className={styles.heroBtnContact}>Contact</a>
+                <Link href="/form/contact" className={styles.heroBtnContact}>
+                  Contact
                 </Link>
               </div>
             </div>
@@ -81,11 +82,9 @@ export default function Home({ data, testimonyData }) {
               style={{ opacity: isImgLoad ? '1' : '0' }}
             >
               <Image
-                src="/logo.webp"
+                src={logo}
+                placeholder="blur"
                 alt="logo"
-                layout="responsive"
-                width={500}
-                height={500}
                 onLoad={handleImg}
               />
             </div>
@@ -158,8 +157,8 @@ export default function Home({ data, testimonyData }) {
           <div className="wrapper">
             <div className={styles.feedbackCard}>
               <p>How was your experience with our services ?</p>
-              <Link href="/form/review">
-                <a className={styles.feedbackBtn}>Rate Us</a>
+              <Link href="/form/review" className={styles.feedbackBtn}>
+                Rate Us
               </Link>
             </div>
           </div>

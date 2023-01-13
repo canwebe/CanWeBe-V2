@@ -7,6 +7,11 @@
 
 .avatarPart {
   width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  transition: border-radius 0.3s ease-in;
 }
 .name {
   font-size: 1.3rem;
@@ -27,13 +32,16 @@
 
 .avatarPart img {
   filter: grayscale(0.8);
-  transition: all 0.3s ease-in-out;
-  border-radius: 5px;
+  transform: scale(1);
+  transition: all 0.3s ease-in;
 }
 
 .card:active img {
-  border-radius: 10%;
   transform: scale(1.05);
+}
+
+.card:active .avatarPart {
+  border-radius: 5%;
 }
 
 .card:active .designation {
@@ -61,8 +69,12 @@
 @media (hover: hover) {
   .card:hover img {
     filter: grayscale(0);
-    border-radius: 10%;
+
     transform: scale(1.05);
+  }
+
+  .card:hover .avatarPart {
+    border-radius: 5%;
   }
   .card:hover .name {
     color: var(--color-canwebe);

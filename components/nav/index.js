@@ -4,6 +4,8 @@ import NavLink from '../navlink'
 import { MdMenu, MdClose } from 'react-icons/md'
 import styles from './nav.module.css'
 import { useState } from 'react'
+import logo from '../../public/logo.webp'
+
 export default function Nav() {
   const [isMenu, setIsMenu] = useState(false)
 
@@ -12,29 +14,21 @@ export default function Nav() {
       <nav className={styles.nav}>
         <div className="wrapper">
           <div className={styles.navWrapper}>
-            <Link href="/">
-              <a className={styles.logo}>
-                <div className={styles.img}>
-                  <Image
-                    src="/logo.webp"
-                    alt="logo"
-                    width={70}
-                    height={70}
-                    layout="responsive"
-                  />
-                </div>
-                <div>
-                  <span className={styles.can}>Can</span>WeBe!
-                </div>
-              </a>
+            <Link href="/" className={styles.logo}>
+              <div className={styles.img}>
+                <Image src={logo} alt="logo" placeholder="blur" />
+              </div>
+              <div>
+                <span className={styles.can}>Can</span>WeBe!
+              </div>
             </Link>
             <div className={styles.linkWrapper}>
               <NavLink link="/" content="Home" />
               <NavLink link="/team" content="Team" />
               <NavLink link="/products" content="Products" />
               <NavLink link="/blogs" content="Blogs" />
-              <Link href="/form/contact">
-                <a className={styles.contactBtn}>Contact</a>
+              <Link href="/form/contact" className={styles.contactBtn}>
+                Contact
               </Link>
             </div>
             <div
@@ -61,8 +55,8 @@ export default function Nav() {
           <div onClick={() => setIsMenu(false)}>
             <NavLink link="/blogs" content="Blogs" />
           </div>
-          <Link href="/form/contact">
-            <a className={styles.contactBtn}>Contact</a>
+          <Link href="/form/contact" className={styles.contactBtn}>
+            Contact
           </Link>
         </div>
       ) : // </div>

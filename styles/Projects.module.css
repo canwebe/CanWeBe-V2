@@ -23,6 +23,7 @@
 
 .laptop {
   filter: drop-shadow(0 15px 20px rgba(0, 0, 0, 0.7));
+  height: auto;
 }
 .featuredLeft iframe {
   position: absolute;
@@ -148,9 +149,16 @@
 
 .topReleaseImg {
   min-width: 220px;
+  aspect-ratio: 1.6;
+  position: relative;
+  overflow: hidden;
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   filter: saturate(0.4);
+}
+
+.topReleaseImg img {
+  object-fit: cover;
 }
 
 .topReleaseCard {
@@ -363,6 +371,7 @@
   }
   .topReleaseWrapper {
     gap: 25px;
+    padding-top: 40px;
   }
 
   .topReleaseCard {
@@ -376,6 +385,6 @@
 
   .topReleaseImg {
     border-radius: 13px 13px 0 0;
-    overflow: hidden;
+    min-width: 260px;
   }
 }

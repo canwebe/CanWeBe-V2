@@ -24,6 +24,9 @@
   width: 40px;
   height: 40px;
 }
+.img img {
+  height: auto;
+}
 
 .can {
   color: var(--color-canwebe-deep);
