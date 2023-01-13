@@ -10,11 +10,12 @@
 
 html,
 body,
-#__next {
+#__next,
+main {
   height: 100%;
 }
 
-#__next {
+main {
   overflow: auto;
 }
 
@@ -48,7 +49,6 @@ img {
 body {
   background-color: var(--color-black-1);
   color: var(--color-white-1);
-  font-family: 'Montserrat', sans-serif;
 }
 
 ::-webkit-scrollbar {
