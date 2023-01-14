@@ -2,7 +2,7 @@
   overflow-x: hidden;
   position: sticky;
   top: 67.2px;
-  height: calc(100% - 67.2px);
+  height: calc(100vh - 67.2px);
   background-color: var(--color-black-1);
 }
 
