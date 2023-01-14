@@ -6,6 +6,9 @@ import Nav from '../components/nav'
 import nProgress from 'nprogress'
 import { useEffect } from 'react'
 import { Router } from 'next/router'
+import { Montserrat } from '@next/font/google'
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 function MyApp({ Component, pageProps }) {
   nProgress.configure({ showSpinner: false })
@@ -48,9 +51,12 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Nav />
+
       {/* <div className='navGap'></div> */}
-      <Component {...pageProps} />
+      <main className={montserrat.className}>
+        <Nav />
+        <Component {...pageProps} />
+      </main>
     </>
   )
 }

@@ -6,15 +6,15 @@ export default function NavLink({ link, content }) {
   const router = useRouter()
 
   return (
-    (<Link
+    <Link
       href={link}
+      scroll={true}
       className={cls(
         styles.menu,
         router.pathname === link ? styles.active : ''
-      )}>
-
+      )}
+    >
       {content}
-
-    </Link>)
-  );
+    </Link>
+  )
 }

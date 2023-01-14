@@ -3,11 +3,19 @@ import Image from 'next/image'
 import NavLink from '../navlink'
 import { MdMenu, MdClose } from 'react-icons/md'
 import styles from './nav.module.css'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import logo from '../../public/logo.webp'
 
 export default function Nav() {
   const [isMenu, setIsMenu] = useState(false)
+
+  useEffect(() => {
+    if (isMenu) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenu])
 
   return (
     <>

@@ -110,11 +110,11 @@
   font-size: 1.5rem;
   background-color: #000000be;
   backdrop-filter: blur(7px);
-  position: absolute;
+  position: fixed;
   top: 67.2px;
   left: 0;
   right: 0;
-  height: calc(100% - 69.2px);
+  bottom: 0;
   z-index: 999;
   border-bottom: 2px solid var(--color-canwebe-deep);
 }
@@ -138,8 +138,8 @@
   }
   .sideMenu {
     gap: 25px;
-    background-color: #000000c4;
-    backdrop-filter: blur(10px);
+    background-color: #000000b0;
+    backdrop-filter: blur(20px);
   }
   .img {
     display: block;
