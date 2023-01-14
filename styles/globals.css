@@ -8,15 +8,8 @@
   --color-blue-1: #7e7ee9;
 }
 
-html,
-body,
-#__next,
-main {
-  height: 100%;
-}
-
-main {
-  overflow: auto;
+#__next {
+  isolation: isolate;
 }
 
 a {
@@ -28,10 +21,15 @@ a {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  -webkit-tap-highlight-color: transparent;
 }
 
 html {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html:focus-within {
   scroll-behavior: smooth;
 }
 
@@ -49,6 +47,8 @@ img {
 body {
   background-color: var(--color-black-1);
   color: var(--color-white-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
 }
 
 ::-webkit-scrollbar {
@@ -164,6 +164,9 @@ code {
 @media screen and (max-width: 500px) {
   .teamsectionP {
     font-size: 1.1rem;
+  }
+  .pageHeader {
+    margin-top: 20px;
   }
   ::-webkit-scrollbar {
     height: 0;
