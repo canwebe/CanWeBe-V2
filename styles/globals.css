@@ -47,7 +47,6 @@ img {
 body {
   background-color: var(--color-black-1);
   color: var(--color-white-1);
-  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
