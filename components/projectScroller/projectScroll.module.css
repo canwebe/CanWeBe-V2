@@ -16,8 +16,31 @@
   background-color: var(--color-black-2);
   box-shadow: 0px 2px 20px 2px rgba(0, 0, 0, 0.5);
 }
+
+.card::before {
+  content: '';
+  height: 100px;
+  background-color: #646464;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 7px 7px 20% 20%;
+  width: 100%;
+}
 .img {
-  border-radius: 7px 7px 0 0;
+  border-radius: 7px;
+  position: relative;
+  width: 90%;
+  aspect-ratio: 16/9;
+  height: auto;
+  margin-inline: auto;
+  overflow: hidden;
+  margin-top: 15px;
+  border: 2px solid #e4e4e4;
+}
+
+.img img {
+  object-fit: cover;
 }
 .content {
   margin: 15px 0;
