@@ -27,6 +27,10 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
+  console.log(
+    'Hey explorer!, Are you lost?? Because this is not the right place for you. If you want to work with us at CanWeBe contact us now.'
+  )
+
   return (
     <>
       <Script

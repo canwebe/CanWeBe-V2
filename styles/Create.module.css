@@ -11,12 +11,15 @@
 .shortinfo,
 .markdownArea {
   padding: 10px 18px;
-  background-color: transparent;
+  background-color: #1e1d1d;
   outline: none;
   font-size: 1.2rem;
-  color: rgb(220, 220, 220);
-  border: 2px solid rgb(60, 60, 60);
+  color: #9c9c9c;
+  border: 2px solid #3c3c3c;
   line-height: 27px;
+}
+.createWrapper ::placeholder {
+  color: #444242;
 }
 
 .inputwrapper,
@@ -26,17 +29,6 @@
   align-items: center;
 }
 
-.inputFile {
-  display: none;
-}
-.changePhoto {
-  background-color: aliceblue;
-  color: black;
-  border-radius: 20px;
-  padding: 5px 8px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
 .inputwrapper .inputtext {
   width: 50%;
 }
@@ -48,19 +40,12 @@
   width: 70%;
 }
 
-.editPhoto {
-  display: flex;
-  margin: 5px 0;
-  gap: 10px 20px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 .btn,
 .btnDlt {
   padding: 10px 20px;
   font-size: 1.2rem;
   cursor: pointer;
+  border: none;
 }
 .btn {
   width: 70%;

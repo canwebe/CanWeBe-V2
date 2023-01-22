@@ -84,9 +84,8 @@ export const addMessageForms = async (colname, data) => {
   await addDoc(collection(db, colname), data)
 }
 
-export const addBlogPost = async (data, photo) => {
+export const addBlogPost = async (data) => {
   const { name, content, shortinfo, tags } = data
-  let imgsrc = ''
   const title = data.title.trim()
   const slug = title
     .toLowerCase()
@@ -99,13 +98,8 @@ export const addBlogPost = async (data, photo) => {
     .map((item) => item.toLowerCase().trim())
     .filter((item) => item !== '')
 
-  if (photo) {
-    imgsrc = await uploadImage(slug, photo)
-  }
-
   await addDoc(collection(db, 'blogs'), {
     name,
-    imgsrc,
     title,
     slug,
     shortinfo,
@@ -116,7 +110,6 @@ export const addBlogPost = async (data, photo) => {
     slug,
     name,
     content,
-    imgsrc,
     taglist,
     title,
     timestamp: serverTimestamp(),
@@ -134,8 +127,8 @@ export const getBlogPost = async (colname, slug) => {
   }
 }
 
-export const updateBlogPost = async (slug, data, photo, isChange) => {
-  let { name, content, shortinfo, tags, imgsrc } = data
+export const updateBlogPost = async (slug, data, isChange) => {
+  let { name, content, shortinfo, tags } = data
   const title = data.title.trim()
   const taglist = tags
     .trim()
@@ -150,12 +143,8 @@ export const updateBlogPost = async (slug, data, photo, isChange) => {
   const snapshot2 = await getDocs(q2)
 
   if (!snapshot1.empty && !snapshot2.empty) {
-    if (isChange) {
-      imgsrc = await uploadImage(slug, photo)
-    }
     await updateDoc(snapshot1.docs[0].ref, {
       name,
-      imgsrc,
       title,
       shortinfo,
       taglist,
@@ -164,7 +153,6 @@ export const updateBlogPost = async (slug, data, photo, isChange) => {
     await updateDoc(snapshot2.docs[0].ref, {
       name,
       content,
-      imgsrc,
       taglist,
       title,
     })
@@ -192,10 +180,9 @@ export const uploadImage = async (slug, file) => {
   return url
 }
 
-export const deletePost = async (slug, photo) => {
+export const deletePost = async (slug) => {
   const q2 = query(collection(db, 'blogposts'), where('slug', '==', slug))
   const q1 = query(collection(db, 'blogs'), where('slug', '==', slug))
-  const storageRef = ref(storage, 'blogs/' + slug)
 
   const snapshot1 = await getDocs(q1)
   const snapshot2 = await getDocs(q2)
@@ -203,8 +190,5 @@ export const deletePost = async (slug, photo) => {
   if (!snapshot1.empty && !snapshot2.empty) {
     await deleteDoc(snapshot1.docs[0].ref)
     await deleteDoc(snapshot2.docs[0].ref)
-    if (photo) {
-      await deleteObject(storageRef)
-    }
   }
 }
