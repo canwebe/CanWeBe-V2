@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import {
   deletePost,
   getBlogPost,
@@ -7,28 +7,18 @@ import {
 } from '../../../helpers'
 import styles from '../../../styles/Create.module.css'
 import { useRouter } from 'next/router'
+import { members } from '../../../helpers/data'
 
-export default function Create({
-  name,
-  title,
-  taglist,
-  imgsrc,
-  content,
-  shortinfo,
-}) {
+export default function Create({ name, title, taglist, content, shortinfo }) {
   const [data, setData] = useState({
     title,
     name,
     content,
-    imgsrc,
     shortinfo,
     tags: taglist.join(','),
   })
   const [loading, setLoading] = useState(false)
-  const [isChange, setIsChange] = useState(false)
-  const [photo, setPhoto] = useState(null)
   const [error, setError] = useState('')
-  const fileRef = useRef()
 
   const router = useRouter()
   const { slug } = router.query
@@ -46,31 +36,25 @@ export default function Create({
     const passcode = prompt('Enter the passcode')
     if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
       try {
-        await deletePost(slug, data.imgsrc)
+        await deletePost(slug)
         alert('Deleted succesfully')
       } catch (error) {
         console.log(error)
+        setError(error.message)
       }
+    } else {
+      setError('Passcode wrong Try Again')
     }
   }
 
-  const handleClick = () => {
-    setIsChange(true)
-    fileRef.current.click()
-  }
-  const handleFile = (e) => {
-    setPhoto(e.target.files[0])
-  }
-
   const handleSubmit = async (e) => {
-    console.log('click')
     e.preventDefault()
     setLoading(true)
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
       if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
-        await updateBlogPost(slug, data, photo, isChange)
+        await updateBlogPost(slug, data)
         setLoading(false)
         alert(title + ' updated succesfully')
         router.back()
@@ -87,62 +71,50 @@ export default function Create({
 
   return (
     <>
-      <div className='sectionbody'>
-        <div className='wrapper'>
-          <h1 className='pageHeader'>Update Post.</h1>
+      <div className="sectionbody">
+        <div className="wrapper">
+          <h1 className="pageHeader">Update Post.</h1>
 
           <form className={styles.createWrapper} onSubmit={handleSubmit}>
             <input
               className={styles.inputtext}
               onChange={handleChange}
-              name='title'
-              placeholder='Enter The Title'
+              name="title"
+              placeholder="Enter The Title"
               required
-              type='text'
+              type="text"
               value={data.title}
               maxLength={100}
             />
-            <div className={styles.editPhoto}>
-              <input
-                className={styles.inputFile}
-                onChange={handleFile}
-                type='file'
-                accept='image/*'
-                ref={fileRef}
-              />
-
-              {photo && <p>{photo.name}</p>}
-              <div className={styles.changePhoto} onClick={handleClick}>
-                Change Post Photo
-              </div>
-            </div>
             <div className={styles.inputwrapperEdit}>
               <input
                 className={styles.inputtext}
                 onChange={handleChange}
-                name='tags'
-                placeholder='eg: react,javascript,html'
+                name="tags"
+                placeholder="eg: react,javascript,html"
                 required
-                type='text'
+                type="text"
                 value={data.tags}
               />
               <select
                 className={styles.inputtext}
-                name='name'
+                name="name"
                 value={data.name}
                 required
                 onChange={handleChange}
               >
-                <option value='Golam Rabbani'>Golam Rabbani</option>
-                <option value='Anish Tharu'>Anish Tharu</option>
-                <option value='Ganesh Kumar'>Ganesh Kumar</option>
-                <option value='Mohd Zahid'>Mohd Zahid</option>
+                <option value="">Author</option>
+                {members.map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
               </select>
             </div>
             <textarea
               onChange={handleChange}
-              name='shortinfo'
-              placeholder='Type short info'
+              name="shortinfo"
+              placeholder="Type short info"
               required
               rows={2}
               value={data.shortinfo}
@@ -152,18 +124,18 @@ export default function Create({
 
             <textarea
               className={styles.markdownArea}
-              name='content'
+              name="content"
               onChange={handleChange}
               required
               value={data.content}
-              rows='10'
-              placeholder='Attention this is markdown content'
+              rows="10"
+              placeholder="Attention this is markdown content"
             />
             <div className={styles.btnWrapper}>
               <button onClick={handleDelete} className={styles.btnDlt}>
                 Delete
               </button>
-              <button className={styles.btn} type='submit' disabled={loading}>
+              <button className={styles.btn} type="submit" disabled={loading}>
                 {loading ? 'Updating' : 'Update Post'}
               </button>
             </div>

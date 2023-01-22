@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { addBlogPost } from '../../helpers'
 import styles from '../../styles/Create.module.css'
 import Head from 'next/head'
+import { members } from '../../helpers/data'
 
 export default function Create() {
   const [data, setData] = useState({
@@ -13,8 +14,7 @@ export default function Create() {
   })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [photo, setPhoto] = useState(null)
-  const { title, name, content, imgsrc, shortinfo, tags } = data
+  const { title, name, content, shortinfo, tags } = data
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -24,14 +24,13 @@ export default function Create() {
     }))
   }
   const handleSubmit = async (e) => {
-    console.log('click')
     e.preventDefault()
     setLoading(true)
     setError('')
     const passcode = prompt('Enter the passcode')
     try {
       if (passcode === process.env.NEXT_PUBLIC_ADMIN_KEY) {
-        await addBlogPost(data, photo)
+        await addBlogPost(data)
         setLoading(false)
         setData({
           title: '',
@@ -40,7 +39,6 @@ export default function Create() {
           shortinfo: '',
           tags: '',
         })
-        setPhoto(null)
         alert(title + ' added succesfully')
       } else {
         setError('Passcode wrong Try Again')
@@ -58,54 +56,50 @@ export default function Create() {
       <Head>
         <title>Create Blog | CanWeBe</title>
       </Head>
-      <div className='sectionbody'>
-        <div className='wrapper'>
-          <h1 className='pageHeader'>Create Post.</h1>
+      <div className="sectionbody">
+        <div className="wrapper">
+          <h1 className="pageHeader">Create Post.</h1>
           <form className={styles.createWrapper} onSubmit={handleSubmit}>
             <input
               className={styles.inputtext}
               onChange={handleChange}
-              name='title'
-              placeholder='Enter The Title'
+              name="title"
+              placeholder="Enter The Title"
               required
-              type='text'
+              type="text"
               value={title}
               maxLength={100}
             />
             <div className={styles.inputwrapper}>
-              <input
-                className={styles.inputtext}
-                onChange={(e) => setPhoto(e.target.files[0])}
-                accept='image/*'
-                type='file'
-              />
               <select
                 className={styles.inputtext}
-                name='name'
+                name="name"
                 value={name}
                 required
                 onChange={handleChange}
               >
-                <option value='Golam Rabbani'>Golam Rabbani</option>
-                <option value='Anish Tharu'>Anish Tharu</option>
-                <option value='Ganesh Kumar'>Ganesh Kumar</option>
-                <option value='Mohd Zahid'>Mohd Zahid</option>
+                <option value="">Author</option>
+                {members.map((item) => (
+                  <option value={item} key={item}>
+                    {item}
+                  </option>
+                ))}
               </select>
+              <input
+                className={styles.inputtext}
+                onChange={handleChange}
+                name="tags"
+                placeholder="eg: react,javascript,html"
+                required
+                type="text"
+                value={tags}
+              />
             </div>
-            <input
-              className={styles.inputtext}
-              onChange={handleChange}
-              name='tags'
-              placeholder='eg: react,javascript,html'
-              required
-              type='text'
-              value={tags}
-            />
 
             <textarea
               onChange={handleChange}
-              name='shortinfo'
-              placeholder='Type short info'
+              name="shortinfo"
+              placeholder="Type short info"
               required
               rows={2}
               value={shortinfo}
@@ -115,17 +109,17 @@ export default function Create() {
 
             <textarea
               className={styles.markdownArea}
-              name='content'
+              name="content"
               onChange={handleChange}
               required
               value={content}
-              rows='10'
-              placeholder='Attention this is markdown content'
+              rows="10"
+              placeholder="Attention this is markdown content"
             />
 
             <button
               className={`${styles.btn} full`}
-              type='submit'
+              type="submit"
               disabled={loading}
             >
               {loading ? 'Adding' : 'Add Post'}

@@ -23,7 +23,7 @@ export default function ProjectInfo({ data, id }) {
         {/* <div className='wrapper'> */}
         <div className={`${styles.mainSection} wrapper`}>
           <InfoSection data={data} />
-          <ProjectReviewSection reviews={data.review} name={data.name} />
+          <ProjectReviewSection reviews={data?.review} name={data.name} />
         </div>
         {/* </div> */}
       </div>

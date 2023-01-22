@@ -8,7 +8,6 @@ import readingTime from 'reading-time'
 import Youtube from '../../components/Youtube'
 import Link from 'next/link'
 import GoBackpageBtn from '../../components/goBackPageBtn'
-import Head from 'next/head'
 import HeadSeo from '../../components/HeadSeo'
 
 export default function Post({
@@ -21,45 +20,47 @@ export default function Post({
   time,
   slug,
 }) {
-  return <>
-    <HeadSeo title={title} url={'/blogs/' + slug} desc={title} />
-    <div className="sectionbody">
-      <div
-        className={styles.blackBg}
-        style={{
-          backgroundImage: `linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(${imgsrc})`,
-        }}
-      ></div>
-      <div className={styles.postWrapper}>
-        <div className={styles.postTitleWrapper}>
-          <GoBackpageBtn />
-          <p className={styles.postTitle}>{title}</p>
-          <div className={styles.datenameWrapper}>
-            <p className={styles.date}>
-              <FaCalendarDay color="#00ecff" size={15} />{' '}
-              {moment.unix(seconds).format('MMM DD , YYYY')}
-            </p>
-            <p className={styles.name}>
-              <FaUserCircle color="#bc5656" size={15} /> {name}
-            </p>
+  return (
+    <>
+      <HeadSeo title={title} url={'/blogs/' + slug} desc={title} />
+      <div className="sectionbody">
+        <div
+          className={styles.blackBg}
+          style={{
+            backgroundImage: `linear-gradient(to right,rgba(0,0,0,0.4),rgba(0,0,0,0.7)),url(${imgsrc})`,
+          }}
+        ></div>
+        <div className={styles.postWrapper}>
+          <div className={styles.postTitleWrapper}>
+            <GoBackpageBtn />
+            <p className={styles.postTitle}>{title}</p>
+            <div className={styles.datenameWrapper}>
+              <p className={styles.date}>
+                <FaCalendarDay color="#00ecff" size={15} />{' '}
+                {moment.unix(seconds).format('MMM DD , YYYY')}
+              </p>
+              <p className={styles.name}>
+                <FaUserCircle color="#bc5656" size={15} /> {name}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className={styles.postContent}>
-          <div className={styles.tagList}>
-            {taglist.map((item, i) => (
-              (<Link key={i} href={`/tag/${item}`} className={styles.tag}>
-                #{item}
-              </Link>)
-            ))}
-          </div>
-          <p className={styles.timeToRead}>{time.text}</p>
-          <div className="blog">
-            <MDXRemote {...source} components={{ Youtube }} />
+          <div className={styles.postContent}>
+            <div className={styles.tagList}>
+              {taglist.map((item, i) => (
+                <Link key={i} href={`/tag/${item}`} className={styles.tag}>
+                  #{item}
+                </Link>
+              ))}
+            </div>
+            <p className={styles.timeToRead}>{time.text}</p>
+            <div className="blog">
+              <MDXRemote {...source} components={{ Youtube }} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </>;
+    </>
+  )
 }
 
 export async function getStaticPaths() {
@@ -76,7 +77,6 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const data = await getBlogPost('blogposts', slug)
-  console.log(data)
   const {
     name,
     title,
