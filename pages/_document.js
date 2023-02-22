@@ -26,7 +26,7 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://canwebe.tech/img/ogcanwebe.webp"
+            content="https://canwebe.tech/ogcanwebe.webp"
           />
           <meta property="og:site_name" content="CanWeBe!" />
           <meta property="og:url" content="https://canwebe.tech" />
@@ -42,7 +42,7 @@ class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://canwebe.tech/img/ogcanwebe.webp"
+            content="https://canwebe.tech/ogcanwebe.webp"
           />
           <meta
             name="google-site-verification"
