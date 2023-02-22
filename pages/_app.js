@@ -27,8 +27,7 @@ function MyApp({ Component, pageProps }) {
     }
   }, [])
 
-
-  useEffect(()=>{
+  useEffect(() => {
     console.log(
       '%cCan%cWeBe!',
       'color: #e47e24; font-size: 4.5em; font-weight: bolder; text-shadow: #000 1px 1px;',
@@ -38,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       '%cHey explorer!, Are you lost?? Because this is not the right place for you. If you want to work with us at CanWeBe contact us now.',
       'color: #e1e1e1; font-size: 1.5em;'
     )
-  },[])
+  }, [])
 
   return (
     <>
@@ -65,7 +64,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      {/* <div className='navGap'></div> */}
       <main className={montserrat.className}>
         <Nav />
         <Component {...pageProps} />

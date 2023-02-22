@@ -1,228 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-<loc>https://www.canwebe.tech/</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>1.00</priority>
+  <loc>https://www.canwebe.tech/</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/team</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>https://www.canwebe.tech/team</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>https://www.canwebe.tech/products</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/blogs</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.80</priority>
+  <loc>https://www.canwebe.tech/blogs</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/contact</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.50</priority>
+  <loc>https://www.canwebe.tech/form/contact</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.50</priority>
+  <loc>https://www.canwebe.tech/form/review</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/e6Z4OnMnJXyAK6cPtiPJ</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/e6Z4OnMnJXyAK6cPtiPJ</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/v6a3WUGOrD0wmpqN6fys</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/UOLVhb2CG25F2RP2Isc5</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/Yo4sE4IeEfyENsHxcJDz</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/saYOj8TcIWRtfOEw5Gpx</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/xMjeq31X5jlx7pZwoyih</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/v6a3WUGOrD0wmpqN6fys</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/25Stvs6UsfxvrzWIZd6V</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/Yo4sE4IeEfyENsHxcJDz</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/7R4mn8bKvKvCDSvoGfIH</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/7R4mn8bKvKvCDSvoGfIH</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/KZijv4Lbtu1TIkBsexBY</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/9TGqtf1kRR8ZLmntKeVU</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/fHQEV8dftigz3IeO02is</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/ECdb5wUrWQYnNraWhlFj</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/Mj4mG5UuA8NQRVXoCQsV</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/KZijv4Lbtu1TIkBsexBY</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/Hu2vgKXYEEulMZ4kbxIS</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/xMjeq31X5jlx7pZwoyih</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/sBvBlaz2fEsonImeK4PH</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/25Stvs6UsfxvrzWIZd6V</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/Hk1sgrYZ4C7cPo4Hcygi</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/fHQEV8dftigz3IeO02is</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/wpctyBVJ4zLXKd2dB4N0</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/Mj4mG5UuA8NQRVXoCQsV</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/cdKM0pG14nMsCXHKqrAz</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/Hu2vgKXYEEulMZ4kbxIS</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/jSKrQqZvqFSV1I5piP9E</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/Hk1sgrYZ4C7cPo4Hcygi</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/SCXWBj5CJpaYJTqDjEVd</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/wpctyBVJ4zLXKd2dB4N0</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/ggDEal7qFITg4SJCiAg9</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/jSKrQqZvqFSV1I5piP9E</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/projects/HyWZLwgCgBYirodULTuQ</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/SCXWBj5CJpaYJTqDjEVd</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/blogs/history-of-canwebe</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.64</priority>
+  <loc>https://www.canwebe.tech/products/ggDEal7qFITg4SJCiAg9</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=silentshare</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/blogs/history-of-canwebe</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.64</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=timeborn</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=silentshare</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=astrodata</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=keepkaro</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=catmanual</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=dailosocial</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=agility</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=timeborn</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=voicy</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=astrodata</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=quickmotto</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=voicy</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=bhagavad+gita</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=rudebudget</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=cwb+posts</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=taskor</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=unfunny</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=quickmotto</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=ui+%26+ux</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=catmanual</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=hgames</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=agility</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=motion+design</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=bhagavad+gita</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=mslack</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=cwb+posts</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=snewz</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=unfunny</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=videography</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=hgames</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=logo+design</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=motion+design</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/form/review?project=book+review+app</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=snewz</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/tag/canwebe</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=videography</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
 <url>
-<loc>https://www.canwebe.tech/tag/story</loc>
-<lastmod>2022-10-24T18:36:28+00:00</lastmod>
-<priority>0.31</priority>
+  <loc>https://www.canwebe.tech/form/review?project=logo+design</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
 </url>
+<url>
+  <loc>https://www.canwebe.tech/tag/canwebe</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://www.canwebe.tech/tag/story</loc>
+  <lastmod>2023-02-22T14:12:48+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
 </urlset>

@@ -6,10 +6,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <meta
-            name="description"
-            content="It is a software development organization where we deliver instrumental and good quality software frequently."
-          />
-          <meta
             name="keywords"
             content="Project,Rabbani,CanWeBe,CanWeBe!,canwebe,canwebe.netlify,netlify,golam_rabbani,golam,subrot,kaushik,web_project,startup"
           />
@@ -17,7 +13,7 @@ class MyDocument extends Document {
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             property="og:title"
-            content="CanWeBe!-A Software Developement Organization"
+            content="CanWeBe!- A Software Developement Organization"
           />
           <meta
             property="og:description"
@@ -34,7 +30,7 @@ class MyDocument extends Document {
           <meta property="twitter:url" content="https://canwebe.tech" />
           <meta
             property="twitter:title"
-            content="CanWeBe!-A Software Developement Organization"
+            content="CanWeBe!- A Software Developement Organization"
           />
           <meta
             property="twitter:description"
@@ -48,18 +44,8 @@ class MyDocument extends Document {
             name="google-site-verification"
             content="YnRLRY7HjWYXgRRS7bH4f7m4o_Nwa9b0FzERHTpSmm4"
           />
-          <link rel="canonical" href="https://canwebe.tech" />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="icon" href="/favicon.ico" />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com"
-            crossOrigin="anonymous"
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;800&display=swap"
-          />
         </Head>
         <body>
           <Main />
