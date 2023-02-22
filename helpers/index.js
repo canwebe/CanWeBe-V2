@@ -10,12 +10,7 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore'
-import {
-  deleteObject,
-  getDownloadURL,
-  ref,
-  uploadBytes,
-} from 'firebase/storage'
+import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { db, storage } from '../lib/firebase'
 
 export const getProjectList = async (lim) => {
