@@ -16,6 +16,7 @@ export default function Contact() {
   const [finish, setFinish] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const { refer } = router.query
   const regex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
@@ -95,10 +96,10 @@ export default function Contact() {
       />
     </>,
   ]
-
+  console.log(refer)
   return (
     <div className={styles.formSection}>
-      <BackBtn />
+      <BackBtn refer={refer} />
       <div className="wrapper">
         {finish ? (
           <p className={styles.thanks}>
