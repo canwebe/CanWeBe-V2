@@ -76,7 +76,10 @@ export const getAdditionalData = async (id) => {
 }
 
 export const addMessageForms = async (colname, data) => {
-  await addDoc(collection(db, colname), data)
+  await addDoc(collection(db, colname), {
+    ...data,
+    timestamp: serverTimestamp(),
+  })
 }
 
 export const addBlogPost = async (data) => {
