@@ -115,8 +115,8 @@
 }
 
 .youtube {
-  border-color: red;
-  color: red;
+  border-color: #ff4141;
+  color: #ff4141;
 }
 
 .facebook {
@@ -205,6 +205,7 @@
 }
 .youtube:active {
   background-color: rgb(204, 9, 9);
+  border-color: rgb(204, 9, 9);
   color: #ffffff;
 }
 .facebook:active {
@@ -232,6 +233,7 @@
   }
   .youtube:hover {
     background-color: rgb(204, 9, 9);
+    border-color: rgb(204, 9, 9);
     color: #ffffff;
   }
   .facebook:hover {
