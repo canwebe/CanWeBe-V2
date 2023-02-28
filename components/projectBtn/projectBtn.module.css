@@ -32,8 +32,8 @@
 }
 
 .view {
-  border-color: green;
-  color: green;
+  border-color: #16bb16;
+  color: #16bb16;
 }
 
 .github {
@@ -66,6 +66,7 @@
 }
 .view:active {
   background-color: green;
+  border-color: green;
 }
 .github:active {
   background-color: #c9510c;
@@ -92,6 +93,7 @@
   }
   .view:hover {
     background-color: green;
+    border-color: green;
   }
   .github:hover {
     background-color: #c9510c;
