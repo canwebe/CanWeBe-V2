@@ -16,6 +16,7 @@ export default function Contact() {
   const [finish, setFinish] = useState(false)
   const [loading, setLoading] = useState(false)
   const router = useRouter()
+  const { refer } = router.query
   const regex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
@@ -37,8 +38,12 @@ export default function Contact() {
         setFinish(true)
         setLoading(false)
         setTimeout(() => {
-          router.back()
-        }, 3000)
+          if (refer) {
+            window.location.assign(refer)
+          } else {
+            router.back()
+          }
+        }, 4000)
       })
     } catch (error) {
       setLoading(false)
@@ -98,11 +103,11 @@ export default function Contact() {
 
   return (
     <div className={styles.formSection}>
-      <BackBtn />
+      <BackBtn refer={refer} />
       <div className="wrapper">
         {finish ? (
           <p className={styles.thanks}>
-            Thanks For You Your Time , We will get back to you soon.
+            Thanks For Your Time , We will get back to you soon.
             <span className={styles.redirect}>
               Wait automatically redirecting
             </span>
