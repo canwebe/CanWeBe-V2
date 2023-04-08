@@ -5,7 +5,7 @@ export default function HeadSeo({ title, url, desc }) {
     <Head>
       <meta name="description" content={desc} />
       <title>{`${title} | CanWeBe`}</title>
-      <link rel="canonical" href={'https://www.canwebe.tech' + url} />
+      <link rel="canonical" href={'https://www.canwebe.in' + url} />
     </Head>
   )
 }

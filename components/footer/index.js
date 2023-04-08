@@ -56,7 +56,7 @@ export default function Footer() {
                 <FaTwitter />
               </a>
             </div>
-            <h4>contact@canwebe.tech</h4>
+            <h4>contact@canwebe.in</h4>
             <p className={styles.teamPara}>
               CanWeBe is a software development organization which is founded by
               a group of students.We here at canwebe mainly developed softwares

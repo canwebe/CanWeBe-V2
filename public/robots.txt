@@ -3,4 +3,4 @@ Disallow: /admin
 Disallow: /admin/
 Disallow: /blogs/edit/
 Disallow: /blogs/create
-Sitemap: https://www.canwebe.tech/sitemap.xml
+Sitemap: https://www.canwebe.in/sitemap.xml

@@ -22,12 +22,12 @@ class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta
             property="og:image"
-            content="https://www.canwebe.tech/ogcanwebe.webp"
+            content="https://www.canwebe.in/ogcanwebe.webp"
           />
           <meta property="og:site_name" content="CanWeBe!" />
-          <meta property="og:url" content="https://www.canwebe.tech" />
+          <meta property="og:url" content="https://www.canwebe.in" />
           <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:url" content="https://www.canwebe.tech" />
+          <meta property="twitter:url" content="https://www.canwebe.in" />
           <meta
             property="twitter:title"
             content="CanWeBe!- A Software Developement Organization"
@@ -38,11 +38,7 @@ class MyDocument extends Document {
           />
           <meta
             property="twitter:image"
-            content="https://www.canwebe.tech/ogcanwebe.webp"
-          />
-          <meta
-            name="google-site-verification"
-            content="YnRLRY7HjWYXgRRS7bH4f7m4o_Nwa9b0FzERHTpSmm4"
+            content="https://www.canwebe.in/ogcanwebe.webp"
           />
           <link rel="apple-touch-icon" href="/logo192.png" />
           <link rel="icon" href="/favicon.ico" />
