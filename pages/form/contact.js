@@ -43,7 +43,7 @@ export default function Contact() {
           } else {
             router.back()
           }
-        }, 4000)
+        }, 3000)
       })
     } catch (error) {
       setLoading(false)

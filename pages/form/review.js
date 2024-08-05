@@ -8,7 +8,11 @@ import { addMessageForms, getProjectList } from '../../helpers'
 
 export default function Review({ projectlist }) {
   const router = useRouter()
-  const pname = router.query?.project
+  const query = router.query
+
+  const pname = query?.project
+  const refer= query?.refer
+
   const [data, setData] = useState({
     name: '',
     project: pname || 'canwebe',
@@ -19,6 +23,8 @@ export default function Review({ projectlist }) {
   const [finish, setFinsh] = useState(false)
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(pname ? 1 : 0)
+
+
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -33,7 +39,11 @@ export default function Review({ projectlist }) {
         setLoading(false)
         setFinsh(true)
         setTimeout(() => {
-          router.back()
+          if (refer) {
+            window.location.assign(refer)
+          } else {
+            router.back()
+          }
         }, 3000)
       })
     } catch (error) {
@@ -65,12 +75,14 @@ export default function Review({ projectlist }) {
         value={project}
         className={styles.textInput}
       >
-        <option value="canwebe">CanWeBe</option>
+     
+        <option value="canwebe">CanWeBe!</option>
         {projectlist.map((item, i) => (
           <option key={i} value={item.toLowerCase()}>
             {item}
           </option>
-        ))}
+        ))}   
+        <option value='other'>Other</option>
       </select>
     </>,
     <>
@@ -193,7 +205,7 @@ export default function Review({ projectlist }) {
 export async function getStaticProps() {
   const data = await getProjectList()
   const projectlist = data.map((item) => item.name)
-  // const projectlist = await JSON.parse(await JSON.stringify(data))
+
   return {
     props: {
       projectlist,
